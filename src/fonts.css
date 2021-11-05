@@ -1,0 +1,23 @@
+.Footerroboto{
+    font-family: 'Roboto', sans-serif;
+    color: #d3d3d3;
+    font-weight: 700;
+}
+
+.footerelements{
+    color:  #9b9b9b;
+    font-size: 100;
+    display: block;
+}
+
+.booksimg{
+    overflow: hidden;
+}
+
+.navbar{
+    background-color: #26a3a6;
+}
+.logo{
+    width: 5%;
+    margin-right: 2%;
+}
