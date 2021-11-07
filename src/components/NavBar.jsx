@@ -9,12 +9,12 @@ function NavBar() {
     return (
         <>
             {
-                logged == true
+                logged === true
                     ?
-                    <div classNameName="container-fluid ">
+                    <div className="container-fluid ">
                         <nav className="navbar navbar-expand-lg navbar-light navbar">
                             <div className="container-fluid">
-                                <img src={logo} className="logo" />
+                                <img src={logo} className="logo" alt="" />
                                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
@@ -54,20 +54,20 @@ function NavBar() {
                         </nav>
                     </div>
                     :
-                    <div classNameName="container-fluid ">
+                    <div className="container-fluid ">
                         <nav className="navbar navbar-expand-lg navbar-light navbar">
                             <div className="container-fluid">
-                                <img src={logo} className="logo" />
+                                <img src={logo} className="logo" alt="" />
                                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
                                 <div className=" collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul className=" ms-5 ps-5 navbar-nav me-auto mb-2 mb-lg-0">
                                         <li className=" nav-item">
-                                        <button className ="ms-5 btn btn-outline-dark text-light" type ="submit">Log In </button>
+                                            <button className="ms-5 btn btn-outline-dark text-light" type="submit">Log In </button>
                                         </li>
                                         <li className=" nav-item">
-                                        <button className ="ms-5 btn btn-outline-dark text-light" type ="submit">Register</button>
+                                            <button className="ms-5 btn btn-outline-dark text-light" type="submit">Register</button>
                                         </li>
 
                                     </ul>
