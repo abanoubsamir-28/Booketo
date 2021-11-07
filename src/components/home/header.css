@@ -1,0 +1,28 @@
+.header__content {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header__content h1 {
+    color: var(--redColor);
+    font-family: var(--fontTitle);
+    font-size: 3.688rem;
+}
+
+.header input {
+    border: 1px solid var(--tealColor);
+    z-index: 4;
+}
+
+.header__content .searchIco {
+    background-color: var(--tealColor);
+    padding: 0.5rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 0 50rem 50rem 0;
+    margin-left: -.9rem;
+}
+
+.header__img img {
+    object-fit: none;
+}

@@ -1,12 +1,10 @@
-import Button from '@mui/material/Button';
 import './App.css';
+import Home from './components/home/Home';
 
 function App() {
   return (
     <>
-    
-    
-    
+    <Home/>
      </>
 
   );
