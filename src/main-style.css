@@ -1,0 +1,13 @@
+:root{
+	--gray-text:#707070;
+	--dark-gray-text:#635d62;
+	--teal-bg:#26A3A6;
+	--hot-pink:#D1314F;
+	--baby-blue:#9DCEFF;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');  
+
+body{
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Roboto', sans-serif;
+}  
