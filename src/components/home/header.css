@@ -1,28 +1,62 @@
-.header__content {
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+.card {
+    border: none;
 }
 
 .header__content h1 {
     color: var(--redColor);
     font-family: var(--fontTitle);
-    font-size: 3.688rem;
 }
 
 .header input {
     border: 1px solid var(--tealColor);
-    z-index: 4;
+    width: 83.3333%;
 }
 
-.header__content .searchIco {
+.header input::placeholder {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.form-control {
+    width: unset;
+}
+
+.search_input {
+    width: fit-content;
     background-color: var(--tealColor);
-    padding: 0.5rem 1.5rem;
-    border: 1px solid transparent;
-    border-radius: 0 50rem 50rem 0;
-    margin-left: -.9rem;
+    border-radius: 50rem;
 }
 
-.header__img img {
-    object-fit: none;
+@media (max-width: 576px) {
+    .header__img img {
+        display: none;
+    }
+    .header__content h1 {
+        font-size: 3rem;
+        width: 70%;
+    }
+}
+
+@media (min-width: 576px) {
+    .card-body .header__logo {
+        width: 75% !important;
+    }
+    .header__content h1 {
+        font-size: 2rem;
+    }
+    .header input::placeholder {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header__content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header__content h1 {
+        font-size: 3.6rem;
+    }
 }

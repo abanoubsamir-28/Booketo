@@ -16,9 +16,9 @@ const Authors = () => {
                         <img src={author1} alt="author1" className="w-100" />
                     </div>
                     <div className="col-lg-2 col-md-4 col-sm-12">
-                        <img src={author2} alt="author2" className="w-100 mb-4" />
+                        <img src={author2} alt="author2" className="w-100 mb-4 " />
                     </div>
-                    <div className="focuse col-lg-2 col-md-4 col-sm-12 ">
+                    <div className="focuse col-lg-2 col-md-4 col-sm-12  ">
                         <img src={author3} alt="author3" className="w-100 p-2 " />
                         <h5 className=" text-center mt-5 ">J. K. Rowling</h5>
                     </div>

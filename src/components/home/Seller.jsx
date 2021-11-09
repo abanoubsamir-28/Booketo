@@ -11,8 +11,8 @@ const Seller = () => {
     return (
         <div className="seller p-5 my-5">
             <div className="container ">
-                <h2 className="ms-5 mb-4">Best seller</h2>
-                <div className="row align-items-around px-5">
+                <h2 className="ms-2 mb-4">Best seller</h2>
+                <div className="seller__item row align-items-between px-5">
                     {/* start */}
                     <div className=" col-sm-6 col-md-3 text-center">
                         <div className="seller__img position-relative">
