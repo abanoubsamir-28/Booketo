@@ -1,0 +1,103 @@
+import React from 'react'
+import { Form, Formik } from 'formik';
+import * as Yup from 'yup'
+import FormikControl from '../../Shared Components/FormsFields/FormikControl';
+function Signup() {
+    const initialValues = {
+        firstName: '',
+        lastName: '',
+        age: '',
+        gender: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        polices: false
+    }
+    const validationSchema = Yup.object({
+        firstName: Yup.string().required('First Name is a required field')
+            .min(5, "Minimum is 5 Characters")
+            .max(20, "you exceeded Maximum "),
+        lastName: Yup.string().required('Last Name is a required field')
+            .min(5, "Minimum is 5 Characters")
+            .max(20, "you exceeded Maximum "),
+        age: Yup
+            .number()
+            .positive()
+            .label('Age')
+            .required('Age is a Required Field')
+            .min(10, "Minimum 10 years old"),
+        gender: Yup.string().required("Gender is Required Field"),
+        email: Yup.string().required('E-mail is required field').email("Email is not Valid"),
+        password: Yup
+            .string()
+            .required("Password is Required")
+            .matches(
+                /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+                "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+            ),
+        confirmPassword: Yup
+            .string()
+            .oneOf([Yup.ref("password"), null], "Password Must Match")
+            .required("Confirm your password !"),
+        polices: Yup.string().required("You Must Accept our Polices").matches(true, "Must Accept our Polices")
+    })
+    const onSubmit = values => {
+        console.log('form data ', values);
+    }
+    return (
+        <Formik initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={onSubmit}
+        >
+            {formik => (
+                <div className="container">
+                    <div className="row py-5 justify-content-center">
+                        <div className="col-6 py-1 shadow rounded">
+                            <Form>
+                                <FormikControl control='input' type='text' label='First Name :' name='firstName' />
+                                <FormikControl control='input' type='text' label='Last Name :' name='lastName' />
+                                <FormikControl control='input' type='number' label='Age :' name='age' />
+                                <FormikControl
+                                    control='select'
+                                    name="gender"
+                                    as="select"
+                                    multiple={false}
+                                    className="form-control text-muted"
+                                >
+                                    <option value="" className="text-dark">Gender</option>
+                                    <option value="male" className="text-dark">Male</option>
+                                    <option value="female" className="text-dark">Female</option>
+                                </FormikControl>
+
+                                <FormikControl control='input' type='email' label='Email' name='email' />
+                                <FormikControl control='password' type='password' label='Password' name='password' />
+                                <FormikControl control='password' type='password' label='Confirm Password :' name='confirmPassword' />
+                                <div className="my-2 mx-3">
+                                    <input
+                                        className="form-check-input "
+                                        type="checkbox"
+                                        name="polices"
+                                        id="polices"
+                                        onChange={formik.handleChange}
+                                        defaultChecked={formik.values.polices}
+                                    />
+                                    <label htmlFor="polices" className="form-check-label mx-2">
+                                        Accept <span type="button" className=" btn-link ">Our Polices</span>
+                                    </label>
+                                    <div className="my-2">
+                                        {formik.touched.polices && formik.errors.polices && (
+                                            <div className="alert alert-danger">{formik.errors.polices}</div>
+                                        )}
+                                    </div>
+
+                                </div>
+                                <button type="submit" className="btn btn-primary my-3">Submit</button>
+                            </Form>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </Formik >
+    )
+}
+export default Signup
