@@ -3,7 +3,6 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../../Shared Components/FormsFields/FormikControl';
 import '../../../main-style.css'
-import background_sign_in from '../../../forms_assests/backgroundlibrary.jpg'
 import './signin.css'
 import { GrFacebook, GrTwitter, GrGoogle } from 'react-icons/gr'
 function Signin() {
@@ -23,7 +22,7 @@ function Signin() {
     return (
         <div className="sign_in form overflow-hidden">
             <div className="overlay w-100 py-5">
-                <h2 className="text-white">Login</h2>
+                <h2 className="text-white text-center">Login</h2>
                 <Formik initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={onSubmit}
