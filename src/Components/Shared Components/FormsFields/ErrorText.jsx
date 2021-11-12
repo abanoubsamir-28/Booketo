@@ -2,7 +2,7 @@ import React from 'react'
 
 function ErrorText(props) {
     return (
-        <div className="alert alert-danger my-3">
+        <div className="bg-danger p-2 text-white rounded-1">
             {props.children}
         </div>
     )

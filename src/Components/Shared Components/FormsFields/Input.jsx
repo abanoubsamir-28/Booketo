@@ -5,7 +5,7 @@ function Input(props) {
     const { name, label, ...rest } = props
     return (
         
-        <div className="form-group text-left m-3">
+        <div className="form-group text-left my-3">
             <Field
                 className="form-control"
                 id={name}

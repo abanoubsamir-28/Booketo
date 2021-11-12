@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
+
+:root {
+    --gray-text: #707070;
+    --dark-gray-text: #635d62;
+    --teal-bg: #26A3A6;
+    --hot-pink: #D1314F;
+    --baby-blue: #9DCEFF;
+    --roboto-font: 'Roboto', sans-serif;
+    --bebas-font: 'Bebas Neue', cursive;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.form h2 {
+    color: var(--hot-pink);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.form__content {
+    width: 100%;
+}
+
+.form__content__row {
+    justify-content: center;
+    align-items: center;
+}
+
+.form__content__row button {
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+.form__content__row button:hover {
+    border: 2px solid transparent;
+    background-color: var(--hot-pink);
+    color: white !important;
+}
+
+.form__content__row span a {
+    transition: .3s;
+    text-decoration: unset;
+    font-weight: bolder;
+}
+
+.form__content__row span a:hover {
+    color: var(--hot-pink);
+    cursor: pointer;
+}
