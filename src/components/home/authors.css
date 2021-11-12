@@ -1,0 +1,37 @@
+.focuse {
+    box-shadow: 0 9px 14px -8px rgb(0 0 0 / 50%);
+}
+
+.focuse img {
+    transform: scale(1.2)
+}
+
+.focuse h5 {
+    color: var(--redColor);
+    font-family: var(--fontTitle);
+}
+
+.author h2 {
+    color: var(--tealColor);
+    font-family: var(--fontTitle);
+}
+
+@media (max-width: 567px) {
+    .focuse img {
+        margin-top: 1.2rem;
+        transform: scale(1.05)
+    }
+}
+
+@media (min-width: 567px) {
+    .focuse img {
+        margin-top: 1.2rem;
+        transform: scale(1.05)
+    }
+}
+
+@media (min-width: 768px) {
+    .focuse img {
+        transform: scale(1.2)
+    }
+}
