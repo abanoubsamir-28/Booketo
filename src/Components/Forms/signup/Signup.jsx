@@ -62,8 +62,9 @@ function Signup() {
                                         <div className="row w-100 mx-3">
                                             <div className="col-12">
                                                 <FormikControl control='input' type='text' label='First Name ' name='firstName' />
-                                                <FormikControl control='input' type='text' label='Last Name ' name='lastName' />
-                                                <FormikControl control='input' type='number' label='Age ' name='age' />
+                                                <FormikControl control='input' type='email' label='Email' name='email' />
+                                                <FormikControl control='password' type='password' label='Password' name='password' />
+
                                                 <FormikControl
                                                     control='select'
                                                     name="gender"
@@ -79,8 +80,8 @@ function Signup() {
                                         </div>
                                         <div className="row w-100">
                                             <div className="col-12">
-                                                <FormikControl control='input' type='email' label='Email' name='email' />
-                                                <FormikControl control='password' type='password' label='Password' name='password' />
+                                                <FormikControl control='input' type='text' label='Last Name ' name='lastName' />
+                                                <FormikControl control='input' type='number' label='Age ' name='age' />
                                                 <FormikControl control='password' type='password' label='Confirm Password ' name='confirmPassword' />
                                                 <div className="my-2 mx-3">
                                                     <input
@@ -96,7 +97,7 @@ function Signup() {
                                                     </label>
                                                     <div className="my-2">
                                                         {formik.touched.polices && formik.errors.polices && (
-                                                            <div className="alert alert-danger">{formik.errors.polices}</div>
+                                                            <div className="bg-danger p-2 text-white rounded-1 w-100">{formik.errors.polices}</div>
                                                         )}
                                                     </div>
                                                 </div>
