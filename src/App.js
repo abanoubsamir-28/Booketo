@@ -1,12 +1,10 @@
 import './App.css';
-import Signin from './Components/Forms/Signin/Signin';
-// import Signup from './Components/Forms/signup/Signup';
+// import Signin from './Components/Forms/Signin/Signin';
+import Signup from './Components/Forms/signup/Signup';
 
 function App() {
   return (
-
-    <Signin/>
-
+    <Signup/>
   );
 }
 

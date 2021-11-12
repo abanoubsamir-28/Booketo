@@ -19,9 +19,9 @@
 }
 
 .form h2 {
-    color: var(--hot-pink);
+    color: white;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
 }
 
 .form__content {

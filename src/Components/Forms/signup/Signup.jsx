@@ -2,6 +2,8 @@ import React from 'react'
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../../Shared Components/FormsFields/FormikControl';
+import '../../../main-style.css'
+import './signup.css'
 function Signup() {
     const initialValues = {
         firstName: '',
@@ -50,53 +52,67 @@ function Signup() {
             onSubmit={onSubmit}
         >
             {formik => (
-                <div className="container">
-                    <div className="row py-5 justify-content-center">
-                        <div className="col-6 py-1 shadow rounded">
-                            <Form>
-                                <FormikControl control='input' type='text' label='First Name :' name='firstName' />
-                                <FormikControl control='input' type='text' label='Last Name :' name='lastName' />
-                                <FormikControl control='input' type='number' label='Age :' name='age' />
-                                <FormikControl
-                                    control='select'
-                                    name="gender"
-                                    as="select"
-                                    multiple={false}
-                                    className="form-control text-muted"
-                                >
-                                    <option value="" className="text-dark">Gender</option>
-                                    <option value="male" className="text-dark">Male</option>
-                                    <option value="female" className="text-dark">Female</option>
-                                </FormikControl>
+                <div className="sign_up form position-relative vh-100 ">
+                    <div className="overlay w-100 position-absolute w-100 h-100 d-flex justify-content-center align-items-center ">
+                        <div className="row py-2 justify-content-center w-100">
+                            <div className="col-11">
+                                <h2 className="mx-3">Register</h2>
+                                <Form className="w-100">
+                                    <div className="form__content d-flex">
+                                        <div className="row w-100 mx-3">
+                                            <div className="col-12">
+                                                <FormikControl control='input' type='text' label='First Name ' name='firstName' />
+                                                <FormikControl control='input' type='text' label='Last Name ' name='lastName' />
+                                                <FormikControl control='input' type='number' label='Age ' name='age' />
+                                                <FormikControl
+                                                    control='select'
+                                                    name="gender"
+                                                    as="select"
+                                                    multiple={false}
+                                                    className="form-control text-muted"
+                                                >
+                                                    <option value="" className="text-dark">Gender</option>
+                                                    <option value="male" className="text-dark">Male</option>
+                                                    <option value="female" className="text-dark">Female</option>
+                                                </FormikControl>
+                                            </div>
+                                        </div>
+                                        <div className="row w-100">
+                                            <div className="col-12">
+                                                <FormikControl control='input' type='email' label='Email' name='email' />
+                                                <FormikControl control='password' type='password' label='Password' name='password' />
+                                                <FormikControl control='password' type='password' label='Confirm Password ' name='confirmPassword' />
+                                                <div className="my-2 mx-3">
+                                                    <input
+                                                        className="form-check-input "
+                                                        type="checkbox"
+                                                        name="polices"
+                                                        id="polices"
+                                                        onChange={formik.handleChange}
+                                                        defaultChecked={formik.values.polices}
+                                                    />
+                                                    <label htmlFor="polices" className=" polices form-check-label mx-2 text-white">
+                                                        Accept <span type="button" className="text-primary">Our Polices</span>
+                                                    </label>
+                                                    <div className="my-2">
+                                                        {formik.touched.polices && formik.errors.polices && (
+                                                            <div className="alert alert-danger">{formik.errors.polices}</div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                <FormikControl control='input' type='email' label='Email' name='email' />
-                                <FormikControl control='password' type='password' label='Password' name='password' />
-                                <FormikControl control='password' type='password' label='Confirm Password :' name='confirmPassword' />
-                                <div className="my-2 mx-3">
-                                    <input
-                                        className="form-check-input "
-                                        type="checkbox"
-                                        name="polices"
-                                        id="polices"
-                                        onChange={formik.handleChange}
-                                        defaultChecked={formik.values.polices}
-                                    />
-                                    <label htmlFor="polices" className="form-check-label mx-2">
-                                        Accept <span type="button" className=" btn-link ">Our Polices</span>
-                                    </label>
-                                    <div className="my-2">
-                                        {formik.touched.polices && formik.errors.polices && (
-                                            <div className="alert alert-danger">{formik.errors.polices}</div>
-                                        )}
                                     </div>
-
-                                </div>
-                                <button type="submit" className="btn btn-primary my-3">Submit</button>
-                            </Form>
+                                    <button type="submit" className="btn btn-primary ms-4">Submit</button>
+                                    <button type="reset" className="btn btn-danger mx-3">Clear</button>
+                                </Form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                </div >
+            )
+            }
         </Formik >
     )
 }
