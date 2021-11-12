@@ -1,0 +1,62 @@
+.card {
+    border: none;
+}
+
+.header__content h1 {
+    color: var(--redColor);
+    font-family: var(--fontTitle);
+}
+
+.header input {
+    border: 1px solid var(--tealColor);
+    width: 83.3333%;
+}
+
+.header input::placeholder {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.form-control {
+    width: unset;
+}
+
+.search_input {
+    width: fit-content;
+    background-color: var(--tealColor);
+    border-radius: 50rem;
+}
+
+@media (max-width: 576px) {
+    .header__img img {
+        display: none;
+    }
+    .header__content h1 {
+        font-size: 3rem;
+        width: 70%;
+    }
+}
+
+@media (min-width: 576px) {
+    .card-body .header__logo {
+        width: 75% !important;
+    }
+    .header__content h1 {
+        font-size: 2rem;
+    }
+    .header input::placeholder {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header__content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header__content h1 {
+        font-size: 3.6rem;
+    }
+}
