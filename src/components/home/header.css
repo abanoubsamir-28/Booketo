@@ -17,7 +17,7 @@
     color: rgba(0, 0, 0, 0.5);
 }
 
-.form-control {
+.header .form-control {
     width: unset;
 }
 
@@ -31,6 +31,7 @@
     .header__img img {
         display: none;
     }
+
     .header__content h1 {
         font-size: 3rem;
         width: 70%;
@@ -41,9 +42,11 @@
     .card-body .header__logo {
         width: 75% !important;
     }
+
     .header__content h1 {
         font-size: 2rem;
     }
+
     .header input::placeholder {
         font-size: 13px;
     }

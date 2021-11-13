@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import '../../src/fonts.css'
-import logo from '../assets/svg (1).svg'
+import '../../fonts.css'
+import logo from '../../assets/navbarFooter/svg (1).svg'
 
 
 function NavBar() {
@@ -11,7 +11,7 @@ function NavBar() {
             {
                 logged === true
                     ?
-                    <div className="container-fluid ">
+                    <div>
                         <nav className="navbar navbar-expand-lg navbar-light navbar">
                             <div className="container-fluid">
                                 <img src={logo} className="logo" alt="" />

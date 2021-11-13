@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
-import FormikControl from '../../Shared Components/FormsFields/FormikControl';
+import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
 import './signin.css'
 import { GrFacebook, GrTwitter, GrGoogle } from 'react-icons/gr'

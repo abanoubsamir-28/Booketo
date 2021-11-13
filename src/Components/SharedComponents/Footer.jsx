@@ -1,8 +1,8 @@
 import React from 'react'
-import '../../src/fonts.css'
-import facebook from '../assets/facebook.svg'
-import twitter from '../assets/twitter.svg'
-import books from '../assets/books.svg'
+import '../../fonts.css'
+import facebook from '../../assets/navbarFooter/facebook.svg'
+import twitter from '../../assets/navbarFooter/twitter.svg'
+import books from '../../assets/navbarFooter/books.svg'
 function Footer() {
     return (
         <>

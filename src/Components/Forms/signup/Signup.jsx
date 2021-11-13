@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup'
-import FormikControl from '../../Shared Components/FormsFields/FormikControl';
+import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
 import './signup.css'
 function Signup() {
@@ -56,7 +56,7 @@ function Signup() {
                     <div className="overlay w-100 position-absolute w-100 h-100 d-flex justify-content-center align-items-center ">
                         <div className="row py-2 justify-content-center w-100">
                             <div className="col-11">
-                                <h2 className="mx-3">Register</h2>
+                                <h2 className="mx-3 fw-bold text-center">Register</h2>
                                 <Form className="w-100">
                                     <div className="form__content d-flex">
                                         <div className="row w-100 mx-3">

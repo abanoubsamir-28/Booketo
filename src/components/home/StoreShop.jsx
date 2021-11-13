@@ -11,7 +11,7 @@ const StoreShop = () => {
                     <div class="row g-0">
                         <div className="storeShop__content row align-items-center">
                             <div class="col-md-7 mt-5">
-                                <img src={logo} alt="logo" className="logo ms-sm-2" />
+                                <img src={logo} alt="logo" className="store__logo ms-sm-2" />
                                 <div class="card-body">
                                     <h2 className="text-uppercase mt-3">
                                         shop faster on your mobile
