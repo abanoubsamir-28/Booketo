@@ -1,0 +1,56 @@
+    .seller {
+        background-image: url(./../../assets/Landing/Path924.webp);
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .seller h2 {
+        color: var(--tealColor);
+        font-family: var(--fontTitle);
+    }
+    
+    .seller__contnent p {
+        color: var(--redColor);
+    }
+    
+    .seller__price {
+        color: var(--tealColor) !important;
+    }
+    
+    .plus {
+        padding: 5px 12px;
+        border-radius: 4px 7px 0 18px;
+        background-color: var(--tealColor);
+        cursor: pointer;
+    }
+    
+    @media (max-width: 576px) {
+        .plus {
+            right: 0.5rem;
+            top: 0.235rem;
+        }
+    }
+    
+    @media (min-width: 577px) {
+        .plus {
+            right: 0.55rem;
+            top: 0.2rem;
+        }
+    }
+    
+    @media (min-width: 767px) {
+        .plus {
+            right: 0.48rem;
+            top: 0.2rem;
+        }
+        .seller__item {
+            padding: 0 !important;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .plus {
+            right: 0.755rem;
+            top: 0.3rem;
+        }
+    }
