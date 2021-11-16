@@ -7,17 +7,19 @@ import Signin from './Components/Forms/Signin/Signin.jsx'
 import Signup from './Components/Forms/signup/Signup.jsx'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import GetBooks from './Components/BookSearch/GetBooks.jsx';
 function App() {
   return (
     <Router>
       <NavBar />
       <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route path='/login' component={Signin}/>
-        <Route path='/register' component={Signup}/>
+        <Route exact path='/' component={Home} />
+        <Route path='/login' component={Signin} />
+        <Route path='/register' component={Signup} />
+        <Route path='/getbooks' component={GetBooks} />
       </Switch>
       <Footer />
-     </Router>
+    </Router>
   );
 }
 
