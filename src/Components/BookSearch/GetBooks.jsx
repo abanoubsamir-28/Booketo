@@ -32,9 +32,12 @@ function GetBooks() {
                     <div className="col-12 col-md-3 col-xl-3">
                         <input onChange={handleChange} className="AutoFocus form-control" placeholder="Type something..." type="text" />
                     </div>
-                    <div className="text-center my-1 col-12 col-md-3 col-xl-3">
-                        <button type="submit" className="d-flex align-items-center justify-content-center btn btn-outline-info search-btn" >
+                    <div className="d-flex text-center my-1 col-12 col-md-3 col-xl-3">
+                        <button type="submit" className="mx-2 d-flex align-items-center justify-content-center btn btn-outline-info search-btn" >
                             <box-icon name='search' color='#26A3A6' ></box-icon> Search
+                        </button>
+                        <button type="submit" className="d-flex align-items-center justify-content-center btn btn-outline-info search-btn" >
+                            <box-icon name='filter-alt' color='#26A3A6' ></box-icon>Filter
                         </button>
                     </div>
 
