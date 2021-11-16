@@ -4,7 +4,7 @@ import logo from '../../assets/navbarFooter/svg (1).svg'
 
 
 function NavBar() {
-
+    // eslint-disable-next-line
     const [logged, setlogged] = useState(true);
     return (
         <>
