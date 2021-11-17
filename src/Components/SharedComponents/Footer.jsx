@@ -33,7 +33,7 @@ function Footer() {
                     </div>
                     <div className="col-sm-12 col-md-2">
                         <img src={facebook} alt="" />
-                        <img src={twitter} className="ms-5" alt="" />
+                        <img src={twitter} className="ms-2" alt="" />
                         <small className="footerelements pt-5">©Designed by"Bishoy Gadalla"</small>
                         <small className="footerelements pt-2">©Implemented by"Booketo Team"</small>
                     </div>
