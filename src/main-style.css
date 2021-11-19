@@ -66,6 +66,14 @@
     border-color: var(--teal-bg) !important;
 }
 .btn-outline-info:hover{
-    background-color: rgba(102, 51, 153, 0);
+    background-color: rgb(255, 255, 255) !important;
+    color: var(--teal-bg);
 }
 /* end book search styling */
+/* book placeholder page start*/
+.pink__header{
+    color: var(--teal-bg);
+    font-family: var(--bebas-font);
+    text-transform: capitalize;
+}
+/* book placeholder page end*/
