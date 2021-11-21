@@ -28,9 +28,14 @@ function NavBar() {
                                             <a className=" me-3 text-light nav-link" href="#">All Books</a>
                                         </li>
 
+
                                         <li className="nav-item">
                                             <Link to='/userprofile' className=" me-3 text-light nav-link" >User Profile</Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link to='/notfound' className=" me-3 text-light nav-link" >Page Not Found</Link>
+                                        </li>
+                                        
                                         <li className="nav-item">
                                             <a className=" me-3 text-light nav-link" href="#">Wish List</a>
                                         </li>

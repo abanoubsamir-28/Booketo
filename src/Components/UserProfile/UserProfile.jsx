@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import user from '../../assets/UserProfile/464-4641403_png-file-user-icon-circle-svg.png'
@@ -13,6 +14,9 @@ function UserProfile() {
     const [userstate, setuserstate] = useState([])
     // const [poststate, setpoststate] = useState([""])
     const [counterstate, setcounterstate] = useState(2)
+    // const[emailstate,setemailstate]=useState(userstate.email)
+    // console.log(emailstate)
+    // const [imagestate, setimagestate] = useState()
 
     function getsingleuser() {
         return fetch('https://fakestoreapi.com/users/1')
@@ -22,6 +26,11 @@ function UserProfile() {
     function submitpost(){
         setcounterstate(counterstate + 1)
     }
+
+    // function imagefunction  (event)  {
+    //      console.log(event.target.files[0])
+    //  }
+
     // function postcontent(e) {
     //     setpoststate(e.target.value)
     // }
@@ -36,10 +45,15 @@ function UserProfile() {
 
     return (
         <div className="container-fluid mt-5 pt-5 mainprofile">
-
+  
 
             <div className="row">
                 <img src={user} className="borderardius w-25 col-md-4 col-sm-12" />
+                {/* <form className=" w-25 col-md-4 col-sm-12">
+                    <input type="file" onChange={imagefunction}/>
+                    <p>{imagestate}</p>
+                 
+                </form> */}
                 <div className="mt-5 col-md-8 col-sm-12">
                     <h1 className=" ms-5  username">{userstate.username} </h1>
                     

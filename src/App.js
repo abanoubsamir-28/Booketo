@@ -6,8 +6,10 @@ import Home from './Components/home/Home';
 import Signin from './Components/Forms/Signin/Signin.jsx'
 import Signup from './Components/Forms/signup/Signup.jsx'
 import UserProfile from './Components/UserProfile/UserProfile.jsx';
+import NotFound from './Components/SharedComponents/PageNotFound/NotFound.jsx'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path='/login' component={Signin}/>
         <Route path='/register' component={Signup}/>
         <Route path='/userprofile' component={UserProfile}/>
+        <Route path='/notfound' component={NotFound}/>
       </Switch>
       <Footer />
      </Router>
