@@ -29,14 +29,7 @@ function GetBooks() {
         }
     }
 
-    function handleChange(event) {
-        if (event.target.value) {
-            const book = event.target.value;
-            setBook(book + "+");
-        } else {
-            alert('Write something in the search first.')
-        }
-    }
+
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -52,7 +45,7 @@ function GetBooks() {
             <div className="card-header main-search">
                 <div className="row justify-content-start align-items-center">
                     <div className="col-12 col-md-3 col-xl-3">
-                        <input className="AutoFocus form-control" placeholder="Type something..." type="text" placeholder="write" onChange={searchItem} />
+                        <input className="AutoFocus form-control" placeholder="Type something..." type="text" onChange={searchItem} />
 
                     </div>
                     <div className="d-flex text-center my-1 col-12 col-md-3 col-xl-3">
@@ -72,7 +65,7 @@ function GetBooks() {
             <div className="container">
                 <div className="row">
                     <BookCard result={result} />
-                    <BookPlaceHolder />
+                    {!book ? <BookPlaceHolder /> : null}
                 </div>
             </div>
         </form >
