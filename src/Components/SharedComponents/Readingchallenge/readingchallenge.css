@@ -1,0 +1,18 @@
+.reading-challenge {
+    background-image: url('../../../assets/readingchallenge/books.svg');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 15%;
+}
+
+.reading-challenge button {
+    transition: .5s;
+}
+
+.increase:hover {
+    color: #26A3A6 !important;
+}
+
+.decrease:hover {
+    color: #D1314F !important;
+}
