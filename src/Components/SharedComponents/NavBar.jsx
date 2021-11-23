@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 function NavBar() {
-
+    // eslint-disable-next-line
     const [logged, setlogged] = useState(true);
     return (
         <>
