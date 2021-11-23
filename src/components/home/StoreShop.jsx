@@ -7,12 +7,12 @@ const StoreShop = () => {
     return (
         <div className="storeShop my-5 p-5 ">
             <div className="container">
-                <div class="mb-3">
-                    <div class="row g-0">
+                <div className="mb-3">
+                    <div className="row g-0">
                         <div className="storeShop__content row align-items-center">
-                            <div class="col-md-7 mt-5">
+                            <div className="col-md-7 mt-5">
                                 <img src={logo} alt="logo" className="store__logo ms-sm-2" />
-                                <div class="card-body">
+                                <div className="card-body">
                                     <h2 className="text-uppercase mt-3">
                                         shop faster on your mobile
                                     </h2>
@@ -49,8 +49,8 @@ const StoreShop = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="storeShop__img col-md-5">
-                                <img src={mobile} class="img-fluid" alt="mobile" />
+                            <div className="storeShop__img col-md-5">
+                                <img src={mobile} className="img-fluid" alt="mobile" />
                             </div>
                         </div>
                     </div>

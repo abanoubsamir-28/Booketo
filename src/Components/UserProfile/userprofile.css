@@ -1,0 +1,28 @@
+*{
+    font-family: Roboto;
+}
+.username{
+    color: 
+    #d1314f;
+}
+.contentdata{
+    color: #26a3a6; 
+    font-weight: bold;
+}
+.Post{
+    border: 5px;
+    width: 70%;
+    border-color: darkgray;
+    border-style: solid;
+
+}
+.mypost{
+    text-align: center;
+}
+
+.borderardius{
+    border-radius: 100%;
+}
+.mainprofile{
+    background-image: url(../../assets/UserProfile/Path\ 924.png);
+}
