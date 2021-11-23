@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../fonts.css'
 import logo from '../../assets/navbarFooter/svg (1).svg'
+import { Link } from 'react-router-dom';
 
 
 function NavBar() {
@@ -27,17 +28,14 @@ function NavBar() {
                                             <a className=" me-3 text-light nav-link" href="#">All Books</a>
                                         </li>
 
-                                        <li className="nav-item dropdown">
-                                            <a className="  me-3 text-light nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                User Profile
-                                            </a>
-                                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                {/* <li><a className="dropdown-item" href="#">Action</a></li>
-                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                        <li><hr className="dropdown-divider"/></li>
-                        <li><a className="dropdown-item" href="#">Something else here</a></li> */}
-                                            </ul>
+
+                                        <li className="nav-item">
+                                            <Link to='/userprofile' className=" me-3 text-light nav-link" >User Profile</Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link to='/notfound' className=" me-3 text-light nav-link" >Page Not Found</Link>
+                                        </li>
+                                        
                                         <li className="nav-item">
                                             <a className=" me-3 text-light nav-link" href="#">Wish List</a>
                                         </li>
