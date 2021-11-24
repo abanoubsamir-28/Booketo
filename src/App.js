@@ -16,18 +16,17 @@ function App() {
   return (
     <Provider store={store}>
       <NavBar />
-      <Newsfeed />
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Signin} />
+          <Route path="/register" component={Signup} />
+        </Switch>
+        <Footer />
+      </Router>
       <Footer />
     </Provider>
-    // <Router>
-    //   <NavBar />
-    //   <Switch>
-    //     <Route exact path='/' component={Home}/>
-    //     <Route path='/login' component={Signin}/>
-    //     <Route path='/register' component={Signup}/>
-    //   </Switch>
-    //   <Footer />
-    //  </Router>
   );
 }
 
