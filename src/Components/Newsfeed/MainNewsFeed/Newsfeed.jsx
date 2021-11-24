@@ -5,9 +5,24 @@ import Postitem from "../../SharedComponents/Postitem/Postitem";
 import Readingchallenge from '../../SharedComponents/Readingchallenge/Readingchallenge'
 import Loader from "../../SharedComponents/Loader/Loader";
 import Createpost from '../../SharedComponents/createpost/Createpost'
+import { useSelector } from "react-redux";
 const Newsfeed = () => {
     const [posts, setposts] = useState(null);
-    const createPostRef = useRef("")
+    const UserPost = useSelector(state => {
+        const post = {
+            body: state.createPost.post,
+            id: "",
+            title: "",
+            userID: ""
+        }
+        return (
+            post.body == "" ? "" : <Postitem post={post} />
+        )
+    })
+
+
+
+
     useEffect(() => {
         axios
             .get("https://jsonplaceholder.typicode.com/posts")
@@ -23,22 +38,23 @@ const Newsfeed = () => {
             {posts === null ? (
                 <Loader />
             ) : (
+
                 <div className="container-fluid">
                     <div className="w-50 mx-auto my-5">
-                        <Createpost ref={createPostRef} />
+                        <Createpost />
                     </div>
-
                     <div className="row justify-content-center">
                         <Newfeedaside />
                         <div className="col-md-8 ms-auto">
+                            {UserPost}
                             {posts.map((postItem) => {
                                 return <Postitem post={postItem} />
                             })}
                         </div>
-
                     </div>
                 </div>
-            )}
+            )
+            }
         </>
     );
 };

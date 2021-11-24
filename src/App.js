@@ -10,13 +10,15 @@ import NavBar from "./Components/SharedComponents/NavBar.jsx";
 import Loader from "./Components/SharedComponents/Loader/Loader.jsx";
 import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
 import "./App.css";
+import { Provider } from "react-redux";
+import store from "./Store/store.jsx";
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <NavBar />
       <Newsfeed />
       <Footer />
-    </>
+    </Provider>
     // <Router>
     //   <NavBar />
     //   <Switch>

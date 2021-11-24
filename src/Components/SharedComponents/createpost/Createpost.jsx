@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import Picker from "emoji-picker-react";
+import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { createPost } from '../../../Store/createPost/createPostActions'
 import "./createpost.css";
 const Createpost = () => {
-    const [chosenEmoji, setChosenEmoji] = useState(null);
-
-    const onEmojiClick = (event, emojiObject) => {
-        setChosenEmoji(emojiObject);
-    };
+    const sharePost = useDispatch();
+    const postRef = useRef("");
+    const create_post = () => {
+        sharePost(createPost(postRef.current.value))
+    }
     return (
         <>
             <div class="input-group input-group-lg w-100">
@@ -14,9 +15,10 @@ const Createpost = () => {
                     type="text"
                     className="w-100 post-share-input p-3 shadow rounded-3"
                     placeholder="What's on your mind ? "
+                    ref={postRef}
                 />
             </div>
-            <button className="btn post-share-button">Share
+            <button className="btn post-share-button" onClick={create_post}>Share
             </button>
         </>
     );
