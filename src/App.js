@@ -12,6 +12,9 @@ import "./App.css";
 import GetBooks from "./Components/BookSearch/GetBooks.jsx";
 import DisplayCom from "./Components/BookSearch/DisplayCom.jsx";
 import BookCard from "./Components/BookSearch/BookCard.jsx";
+import PaymentMethods from "./Components/PaymentForms/PaymentMethods.jsx";
+
+
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
@@ -27,6 +30,7 @@ function App() {
         <Route path="/getbooks" component={GetBooks} />
         <Route path="/card" component={BookCard} />
         <Route path="/:details_id" component={DisplayCom} />
+        <Route path="/pay" component={PaymentMethods} />
       </Switch>
       <Footer />
     </Router>
