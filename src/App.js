@@ -16,6 +16,7 @@ import { Provider } from "react-redux";
 import store from "./Store/store.jsx";
 import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
 import QuoteMachine from "./Services/QuoteMachine.jsx";
+import User_profile from "./Components/user_profile/User_profile.jsx";
 
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
@@ -24,7 +25,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <NavBar />
-        <UserProfile />
+        <User_profile />
         {/* <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/newsfeed" component={Newsfeed} />

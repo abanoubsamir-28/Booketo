@@ -18,7 +18,7 @@ const Readingchallenge = () => {
         }
     }
     return (
-        <div className="card reading-challenge text-white bg-primary w-100">
+        <div className="card reading-challenge text-white bg-warning w-100">
             <div className="card-header text-center">Reading Challenge
                 {noReads && <p className="text-center text-danger fw-bold py-1">Time to Read More Books !
                     {/* <Link to="/login">Search Now</Link> */}
