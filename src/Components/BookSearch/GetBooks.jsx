@@ -33,7 +33,7 @@ function GetBooks() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        axios.get("https://www.googleapis.com/books/v1/volumes?q=" + book + cat + search + "&key=" + apiKey + "&maxResults=40")
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}${cat}${search}&key=${apiKey}&maxResults=40`)
             .then(data => {
                 setResult(data.data.items);
             }).catch((error) => {
