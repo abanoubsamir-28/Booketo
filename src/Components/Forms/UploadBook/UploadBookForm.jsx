@@ -8,7 +8,7 @@ function Signup() {
     const initialValues = {
         bookImage: '',
         bookTitle: '',
-        // bookDescription: '',
+        bookDescription: '',
         bookAuthor: '',
         bookPages: '',
         bookCategory: '',
@@ -17,7 +17,7 @@ function Signup() {
     const validationSchema = Yup.object({
         bookImage: Yup.mixed().required("image field is required"),
         bookTitle: Yup.string().required("title field is required").min(2, "can't be less than 2 charachters"),
-        // bookDescription: Yup.string().required("description field is required"),
+        bookDescription: Yup.string().required("description field is required"),
         bookAuthor: Yup.string().required("author field is required"),
         bookPages: Yup.number().required("pages field is required").positive(),
         bookCategory: Yup.string().required("category field is required"),
@@ -50,8 +50,8 @@ function Signup() {
                                         <div className="row w-100">
                                             <div className="col-12">
                                                 <FormikControl control='input' type='text' label='Book Title' name='bookTitle' />
-                                                {/* <FormikControl control='textarea' label='Book Description' name='bookDescription' /> */}
                                                 <FormikControl control='input' type='number' label='Book Pages' name='bookPages' />
+                                                <FormikControl control='input' as="textarea" label='Book Description' name='bookDescription' />
                                             </div>
                                         </div>
                                     </div>
