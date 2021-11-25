@@ -5,6 +5,9 @@ import Postitem from "../../SharedComponents/Postitem/Postitem";
 import Readingchallenge from '../../SharedComponents/Readingchallenge/Readingchallenge'
 import Loader from "../../SharedComponents/Loader/Loader";
 import Createpost from '../../SharedComponents/createpost/Createpost'
+import QuoteMachine from '../../../Services/QuoteMachine'
+import Wishlist from '../../SharedComponents/wishlist/Wishlist'
+// import Readingchallenge from '../../SharedComponents/Readingchallenge/Readingchallenge'
 import { useSelector } from "react-redux";
 const Newsfeed = () => {
     const [posts, setposts] = useState(null);
@@ -34,19 +37,27 @@ const Newsfeed = () => {
             {posts === null ? (
                 <Loader />
             ) : (
-
-                <div className="container-fluid">
-                    <div className="w-50 mx-auto my-5">
-                        <Createpost />
+                <div className="overflow-hidden container-fluid">
+                    <QuoteMachine />
+                    <div className="w-75 my-2 mx-auto">
+                        <div>
+                            <Createpost />
+                        </div>
                     </div>
-                    <div className="row justify-content-center">
-                        <Newfeedaside />
-                        <div className="col-md-8 ms-auto">
+                    <div className="row justify-content-center my-3">
+                        <div className="col-md-3">
+                            <Readingchallenge />
+                        </div>
+                        <div className="col-md-5">
                             {UserPost}
-                            {posts.map((postItem) => {
+                            {posts.slice(0, 3).map((postItem) => {
                                 return <Postitem post={postItem} />
                             })}
                         </div>
+                        <div className="col-md-3">
+                            <Wishlist />
+                        </div>
+
                     </div>
                 </div>
             )
@@ -57,12 +68,16 @@ const Newsfeed = () => {
 
 export default Newsfeed;
 
-{
-    /* <div>
-   {this.state.posts.map(postItem => (
-    <div key={postItem.id}>
-      <h1>{postItem.title}</h1>
+{/* <QuoteMachine />
+<div className="w-50 mx-auto my-5">
+    <Createpost />
+</div>
+<div className="row justify-content-center">
+    <Newfeedaside />
+    <div className="col-md-8 ms-auto">
+        {UserPost}
+        {posts.map((postItem) => {
+            return <Postitem post={postItem} />
+        })}
     </div>
-   )}
-  </div> */
-}
+</div> */}

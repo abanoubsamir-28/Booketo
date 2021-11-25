@@ -15,6 +15,7 @@ import BookCard from "./Components/BookSearch/BookCard.jsx";
 import { Provider } from "react-redux";
 import store from "./Store/store.jsx";
 import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
+import QuoteMachine from "./Services/QuoteMachine.jsx";
 
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
@@ -23,7 +24,8 @@ function App() {
     <Provider store={store}>
       <Router>
         <NavBar />
-        <Switch>
+        <UserProfile />
+        {/* <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/newsfeed" component={Newsfeed} />
           <Route path="/userprofile" component={UserProfile} />
@@ -33,7 +35,7 @@ function App() {
           <Route path="/getbooks" component={GetBooks} />
           <Route path="/card" component={BookCard} />
           <Route path="/:details_id" component={DisplayCom} />
-        </Switch>
+        </Switch> */}
         <Footer />
       </Router>
     </Provider>

@@ -1,5 +1,8 @@
 .post-item {
-    border: none !important;
+    border: 3px solid #26A3A6;
+    background: rgba(157, 206, 255 ,.4); 
+    color: black !important;
+
 }
 .post-item button {
     padding: 5px 20px ;
