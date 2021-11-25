@@ -19,10 +19,6 @@ const Newsfeed = () => {
             post.body == "" ? "" : <Postitem post={post} />
         )
     })
-
-
-
-
     useEffect(() => {
         axios
             .get("https://jsonplaceholder.typicode.com/posts")

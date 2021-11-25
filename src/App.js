@@ -14,26 +14,29 @@ import DisplayCom from "./Components/BookSearch/DisplayCom.jsx";
 import BookCard from "./Components/BookSearch/BookCard.jsx";
 import { Provider } from "react-redux";
 import store from "./Store/store.jsx";
+import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
+
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
   return (
-    <Router>
-      <NavBar />
-      <Provider store={store}>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/userprofile" component={UserProfile} />
-        <Route path="/notfound" component={NotFound} />
-        <Route path="/login" component={Signin} />
-        <Route path="/register" component={Signup} />
-        <Route path="/getbooks" component={GetBooks} />
-        <Route path="/card" component={BookCard} />
-        <Route path="/:details_id" component={DisplayCom} />
-      </Switch>
-      <Provider/>
-      <Footer />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/newsfeed" component={Newsfeed} />
+          <Route path="/userprofile" component={UserProfile} />
+          <Route path="/notfound" component={NotFound} />
+          <Route path="/login" component={Signin} />
+          <Route path="/register" component={Signup} />
+          <Route path="/getbooks" component={GetBooks} />
+          <Route path="/card" component={BookCard} />
+          <Route path="/:details_id" component={DisplayCom} />
+        </Switch>
+        <Footer />
+      </Router>
+    </Provider>
   );
 }
 
