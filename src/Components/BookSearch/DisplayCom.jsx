@@ -4,6 +4,7 @@ import { Spinner } from 'react-bootstrap';
 import ReactStars from 'react-rating-stars-component';
 import Reviews from '../bookProfile/Reviews';
 import { AiOutlineShoppingCart, AiOutlineHeart } from 'react-icons/ai';
+import Loader from '../SharedComponents/Loader/Loader';
 function DisplayCom({ match }) {
     const [res, setResult] = useState([]);
     useEffect(() => {
@@ -23,7 +24,7 @@ function DisplayCom({ match }) {
                         <div className="container mt-5">
                             <div className="row">
                                 <div className="bookProfile__img col-4">
-                                    {res.data?.volumeInfo !== undefined ?
+                                    {res.data?.volumeInfo.imageLinks !== undefined ?
                                         <img src={res.data.volumeInfo.imageLinks.thumbnail} alt="book img" className="mt-3 mb-3" />
                                         : <img src="https://via.placeholder.com/150" className="mb-3" alt="book img placeholder" />}
                                 </div>
@@ -69,10 +70,10 @@ function DisplayCom({ match }) {
                                     {res.data.volumeInfo !== undefined ?
                                         <p className="ms-3"><strong>Pages :</strong> {res.data.volumeInfo.pageCount} page</p>
                                         : ""}
-                                    {res.data.saleInfo.listPrice !== null ?
+                                    {/* {res.data.saleInfo.listPrice !== null ?
                                         <p className="ms-3"><strong>Price : </strong>{res.data.saleInfo.listPrice.amount} EGP</p>
                                         : <p><strong>Price</strong> 50 EGP</p>
-                                    }
+                                    } */}
                                     <button className="wishBtn btn mx-3" type="button">
                                         <span className="fs-5"></span> <AiOutlineShoppingCart /> Add to cart</button>
                                     <button className="cartBtn btn text-black" type="button"><span className="fs-5">
@@ -83,11 +84,7 @@ function DisplayCom({ match }) {
                         <Reviews />
                     </section >
                 )
-                : (<div className="d-flex justify-content-center mt-5">
-                    <Spinner animation="border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </Spinner>
-                </div>)}
+                : (<Loader/>)}
         </>
     )
 }

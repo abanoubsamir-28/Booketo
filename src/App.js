@@ -16,6 +16,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { Provider } from "react-redux";
 import store from "./Store/store.jsx";
+import Wishlist from "./Components/SharedComponents/wishlist/Wishlist.jsx";
+import ContactsUs from "./Components/Forms/contacUs/ContactsUs.jsx";
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
@@ -34,6 +36,8 @@ function App() {
           <Route path="/getbooks" component={GetBooks} />
           <Route path="/card" component={BookCard} />
           <Route path="/bookstore" component={BookStore} />
+          <Route path="/contactUs" component={ContactsUs}/>
+          <Route path="wishlist" component={Wishlist}/>
           <Route path="/:details_id" component={DisplayCom} />
         </Switch>
         <Footer />

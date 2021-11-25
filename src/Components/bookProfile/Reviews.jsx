@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import avatar from "./../../assets/bookProfile/Mask Group 1@2x.webp"
 import axios from "axios"
 import './reviews.css'
+import Loader from './../SharedComponents/Loader/Loader'
 const Reviews = () => {
     const [post, setPost] = useState('')
     const [review, setReview] = useState('')
@@ -51,7 +52,7 @@ const Reviews = () => {
                                     </div>
                                 </div>)
                         })}
-                        <h4 className="m-2 mt-5">Review this book</h4>
+                        <h4 className="m-2 mt-5">Add Your Review</h4>
                         <form onSubmit={handelsubmit}>
                             <input type="text" placeholder="write title" value={title} onChange={inputTitle}
                                 className="d-block mb-3 ms-2 form-control w-75" />
@@ -66,7 +67,7 @@ const Reviews = () => {
                         </form>
                     </div>
                 </div >)
-                : ''
+                : <Loader/>
             }
         </>
     )

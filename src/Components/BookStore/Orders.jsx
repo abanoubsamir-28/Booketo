@@ -6,31 +6,34 @@ import "./order.css"
 function Orders() {
     console.log(orders);
     return (
-        orders.map((order, index) => (
-            <div className="container">
-                <div className="row">
-                    <Card className="col-md-7 m-auto p-3 mt-4 border shadow">
-                        <Card.Header className="text-center fw-bold fs-3 order__title">
-                            Order {index + 1}</Card.Header>
-                        <Card.Body>
-                            <Card.Text className="h5 mb-3">
-                                <span className="hhh">Book Name : </span>
-                                {order.title}
-                            </Card.Text>
-                            <Card.Text className="h5 mb-3">
-                                <span className="hhh"> Price : </span>
-                                {order.price}</Card.Text>
-                            <Card.Text className="h5 mb-3">
-                                <span className="hhh">Quantity : </span>
-                                {order.quantity}</Card.Text>
-                            <Card.Text className="h5 ">
-                                <span className="hhh">Total: </span>
-                                {order.total}</Card.Text>
-                        </Card.Body>
-                    </Card>
-                </div>
+        <div className="container">
+            <div className="row">
+                {
+        orders.map((order, index) =>(
+            (
+                <Card key={index} className="col-md-7 m-auto p-3 mt-4 border shadow">
+                    <Card.Header className="text-center fw-bold fs-3 order__title">
+                        Order {index + 1}</Card.Header>
+                    <Card.Body>
+                        <Card.Text className="h5 mb-3">
+                            <span className="hhh">Book Name : </span>
+                            {order.title}
+                        </Card.Text>
+                        <Card.Text className="h5 mb-3">
+                            <span className="hhh"> Price : </span>
+                            {order.price}</Card.Text>
+                        <Card.Text className="h5 mb-3">
+                            <span className="hhh">Quantity : </span>
+                            {order.quantity}</Card.Text>
+                        <Card.Text className="h5 ">
+                            <span className="hhh">Total: </span>
+                            {order.total}</Card.Text>
+                    </Card.Body>
+                </Card>
+                )
+        ) )}
             </div>
-        ))
+        </div>
     )
 }
 // orders.map((order, index) => (

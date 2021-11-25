@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
-
 :root {
     --gray-text: #707070;
     --dark-gray-text: #635d62;
@@ -10,7 +9,9 @@
     --bebas-font: 'Bebas Neue', cursive;
 }
 
+
 /* Start Forms Styling */
+
 .form {
     display: flex;
     justify-content: center;
@@ -39,6 +40,7 @@
     color: white;
     text-transform: uppercase;
     margin: 0 auto;
+    transition: all 0.5s ease-in-out;
 }
 
 .form__content__row button:hover {
@@ -58,25 +60,38 @@
     cursor: pointer;
 }
 
+
 /* End Forms Styling */
+
+
 /* start book search styling */
-.btn-outline-info{
+
+.btn-outline-info {
     /* background-color: var(--teal-bg); */
     color: var(--teal-bg);
     border-color: var(--teal-bg) !important;
 }
-.btn-outline-info:hover{
+
+.btn-outline-info:hover {
     background-color: rgb(255, 255, 255) !important;
     color: var(--teal-bg);
 }
-.book__card__bookSearch{
+
+.book__card__bookSearch {
     flex: 0 !important;
 }
+
+
 /* end book search styling */
+
+
 /* book placeholder page start*/
-.pink__header{
+
+.pink__header {
     color: var(--teal-bg);
     font-family: var(--bebas-font);
     text-transform: capitalize;
 }
+
+
 /* book placeholder page end*/
