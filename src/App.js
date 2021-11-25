@@ -7,11 +7,13 @@ import Signin from "./Components/Forms/Signin/Signin.jsx";
 import Signup from "./Components/Forms/signup/Signup.jsx";
 import UserProfile from "./Components/UserProfile/UserProfile.jsx";
 import NotFound from "./Components/SharedComponents/PageNotFound/NotFound.jsx";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
 import GetBooks from "./Components/BookSearch/GetBooks.jsx";
 import DisplayCom from "./Components/BookSearch/DisplayCom.jsx";
 import BookCard from "./Components/BookSearch/BookCard.jsx";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import BookStore from "./Components/BookStore/BookStore.jsx";
+
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
@@ -26,6 +28,7 @@ function App() {
         <Route path="/register" component={Signup} />
         <Route path="/getbooks" component={GetBooks} />
         <Route path="/card" component={BookCard} />
+        <Route path="/bookstore" component={BookStore} />
         <Route path="/:details_id" component={DisplayCom} />
       </Switch>
       <Footer />

@@ -39,9 +39,9 @@ const Reviews = () => {
                         <h3 className="fs-2">Reviews</h3>
                         {post.map((ele, i) => {
                             return (
-                                <div key={i} className="row col-lg-6 col-9 mt-3">
+                                <div key={i} className="row col-lg-6 col-9 mt-4">
                                     <div className="col-sm-3">
-                                        <img src={avatar} alt="avatar" />
+                                        <img src={avatar} alt="avatar" className="w-75"/>
                                         <h5 className="mt-2 ms-3">user name</h5>
                                     </div>
                                     <div className="col-sm-9 ">
