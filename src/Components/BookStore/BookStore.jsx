@@ -5,6 +5,7 @@ import StoreBooks from './StoreBooks'
 function BookStore() {
     return (
         <div>
+            <StoreBooks/>
             <Reviews/>
             <Orders />
         </div>
