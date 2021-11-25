@@ -23,8 +23,10 @@ function Signup() {
         bookCategory: Yup.string().required("category field is required"),
         bookPrice: Yup.number().required("price field is required").min(5, "please add accurate price"),
     })
-    const onSubmit = values => {
+    const onSubmit = (values, onSubmitProps) => {
         console.log('form data ', values);
+        onSubmitProps.setSubmitting(false)
+        onSubmitProps.resetForm()
     }
     return (
         <Formik initialValues={initialValues}

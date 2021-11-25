@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import '../../fonts.css'
 import logo from '../../assets/navbarFooter/svg (1).svg'
 import { Link } from 'react-router-dom';
+import Button from '@restart/ui/esm/Button';
+import { Badge } from 'react-bootstrap';
+import { BsCart4 } from 'react-icons/bs';
 
 
 function NavBar() {
@@ -35,12 +38,17 @@ function NavBar() {
                                         <li className="nav-item">
                                             <Link to='/notfound' className=" me-3 text-light nav-link" >Page Not Found</Link>
                                         </li>
-                                        
+
                                         <li className="nav-item">
                                             <a className=" me-3 text-light nav-link" href="#">Wish List</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className=" me-3 text-light nav-link" href="#">Cart</a>
+                                            <Link to='/cart' className=" me-3 text-light nav-link" >
+                                                <span >
+                                                    <BsCart4 /> <Badge pill bg="danger">9</Badge>
+                                                    <span className="visually-hidden">unread messages</span>
+                                                </span>
+                                            </Link>
                                         </li>
                                     </ul>
                                     <form className="d-flex">
