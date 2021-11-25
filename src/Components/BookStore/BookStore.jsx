@@ -4,6 +4,7 @@ import Orders from './Orders'
 function BookStore() {
     return (
         <div>
+            <Reviews/>
             <Orders />
         </div>
     )
