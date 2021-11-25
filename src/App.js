@@ -29,8 +29,9 @@ function App() {
         <Route path="/register" component={Signup} />
         <Route path="/getbooks" component={GetBooks} />
         <Route path="/card" component={BookCard} />
-        <Route path="/:details_id" component={DisplayCom} />
         <Route path="/pay" component={PaymentMethods} />
+        <Route path="/:details_id" component={DisplayCom} />
+      
       </Switch>
       <Footer />
     </Router>
