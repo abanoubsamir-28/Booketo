@@ -14,6 +14,9 @@ import DisplayCom from "./Components/BookSearch/DisplayCom.jsx";
 import BookCard from "./Components/BookSearch/BookCard.jsx";
 import PaymentMethods from "./Components/PaymentForms/PaymentMethods.jsx";
 
+import { Provider } from "react-redux";
+import store from "./Store/store.jsx";
+import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
 
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
@@ -35,6 +38,7 @@ function App() {
       </Switch>
       <Footer />
     </Router>
+
   );
 }
 
