@@ -1,6 +1,8 @@
 import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
+import { Link } from 'react-router-dom';
+
 function Rate() {
     const initialValues = {
         quality: false,
@@ -145,7 +147,9 @@ function Rate() {
                                                             placeholder="Write Your Comment Here"
                                                         />
                                                     </div>
-                                                    <button type="submit" className="btn btn-primary mt-5 p-2 ">Submit</button>
+                                                    <button type="submit" className="btn btn-primary ms-4">
+                                                                        <Link to="/thanks"  className="text-light nav-link">Submit</Link>
+                                                                        </button>
                                                  
                                                 </Form>
                                 </div>

@@ -73,7 +73,7 @@ function Payment() {
                                         </div>
                                     </div>
                                     <button type="submit" className="btn btn-primary ms-4">
-                                        <Link to="/pay"  className=" me-3 text-light nav-link">Pay</Link>
+                                        <Link to="/pay"  className="text-light nav-link">Pay</Link>
                                     </button>
                                     <button type="reset" className="btn btn-danger mx-3">Clear</button>
                                 </Form>

@@ -17,6 +17,8 @@ import PaymentMethods from "./Components/PaymentForms/PaymentMethods.jsx";
 import { Provider } from "react-redux";
 import store from "./Store/store.jsx";
 import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
+import Rate from "./Components/PaymentForms/Rate.jsx";
+import Thanks from "./Components/PaymentForms/Thanks.jsx";
 
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
@@ -33,6 +35,8 @@ function App() {
         <Route path="/getbooks" component={GetBooks} />
         <Route path="/card" component={BookCard} />
         <Route path="/pay" component={PaymentMethods} />
+        <Route path="/rate" component={Rate}/>
+        <Route path="/thanks" component={Thanks}/>
         <Route path="/:details_id" component={DisplayCom} />
       
       </Switch>

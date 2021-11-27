@@ -8,7 +8,7 @@ import Rate from '../PaymentForms/Rate'
 export const Home = () => {
     return (
         <>
-           {/* <Payment/> */}
+           <Payment/>
            {/* <PaymentMethods/> */}
            {/* <Rate/> */}
             <Header/>

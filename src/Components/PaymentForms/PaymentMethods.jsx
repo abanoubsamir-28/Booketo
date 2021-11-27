@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../SharedComponents/FormsFields/FormikControl';
-
+import { Link } from 'react-router-dom';
 
 function PaymentMethods() {
     const initialValues = {
@@ -91,12 +91,16 @@ function PaymentMethods() {
                                                                     <FormikControl control='date' type='date' label='Expires at ' name='expire' />
                                                                     <FormikControl control='input' type='text' label=' Name On Credit Card ' name='name' />
                                                                     <FormikControl control='number' type='text' label='CVC ' name='cvc' />
-                                                                    <button type="submit" className="btn btn-primary ms-4">Completet Payment</button>
+                                                                    <button type="submit" className="btn btn-primary ms-4">
+                                                                        <Link to="/rate"  className="text-light nav-link">Completet Payment</Link>
+                                                                        </button>
                                                                 </div>
                                                             </div>
                                                             
                                                             :
-                                                            <button type="submit" className="btn btn-primary ms-4">Completet Payment</button>
+                                                            <button type="submit" className="btn btn-primary ms-4">
+                                                                        <Link to="/rate"  className="text-light nav-link">Completet Payment</Link>
+                                                                        </button>
                                                     }
 
                                                 </Form>
