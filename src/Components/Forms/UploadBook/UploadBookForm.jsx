@@ -58,7 +58,6 @@ function Signup() {
                                         </div>
                                     </div>
                                     <button type="submit" className="btn btn-primary ms-4">Submit</button>
-                                    <button type="reset" className="btn btn-danger mx-3">Clear</button>
                                 </Form>
                             </div>
                         </div>
