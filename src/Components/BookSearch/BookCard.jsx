@@ -48,11 +48,8 @@ function BookCard(props) {
                             <Link to={`/${book.id}`} className="btn btn btn-danger mt-2">More Details</Link>
                         </Card.Text>
                     </Card.Body>
-
-
                 </Card>
             </div>
-
         ))
     )
 }
