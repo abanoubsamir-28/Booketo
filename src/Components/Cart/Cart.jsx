@@ -6,7 +6,6 @@ import { Card, Table } from 'react-bootstrap'
 const Cart = (props) => {
     const result = useSelector(state => state.cartStore.cartItem)
     const res = useSelector(state => state.cartStore)
-    console.log(res.cartItem.data)
     return (
         <>
             <div className="container">
@@ -26,8 +25,8 @@ const Cart = (props) => {
                         {result.map((book, index) => (
                             <tr>
                                 <td>{index + 1}</td>
-                                <td><img src={book.data.volumeInfo?.imageLinks !== undefined ? book.data.volumeInfo?.imageLinks.thumbnail : "holder.js/100px160"} alt={book.data.title} /></td>
-                                <td>{book.data.volumeInfo?.title.length > 20 ? book.data.volumeInfo?.title.substring(0, 20) + "..." : book.data.volumeInfo?.title}</td>
+                                <td><img src={book.data?.volumeInfo?.imageLinks !== undefined ? book.data?.volumeInfo?.imageLinks?.thumbnail : "holder.js/100px160"} alt={book.data?.title} /></td>
+                                <td>{book.data?.volumeInfo?.title.length > 20 ? book.data?.volumeInfo?.title.substring(0, 20) + "..." : book.data?.volumeInfo?.title}</td>
                                 <td>
                                     <div className="btn btn-danger">
                                         +
@@ -38,7 +37,7 @@ const Cart = (props) => {
                                     </div>
                                 </td>
                                 <td>{book.data?.saleInfo.listPrice?.amount ?
-                                    res.CartQuantity * book.data?.saleInfo.listPrice?.amount :
+                                    res.CartQuantity * book.data?.saleInfo?.listPrice?.amount :
                                     res.CartQuantity * 30}</td>
                             </tr>
                         ))}
