@@ -13,7 +13,7 @@ import BookCard from "./Components/BookSearch/BookCard.jsx";
 import UploadBookForm from "./Components/Forms/UploadBook/UploadBookForm.jsx";
 import Newsfeed from './Components/Newsfeed/MainNewsFeed/Newsfeed'
 import store from './Store/store';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import "./App.css";
 import Wishlist from "./Components/SharedComponents/wishlist/Wishlist.jsx";
@@ -28,7 +28,6 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/newsfeed" component={Newsfeed} />
           <Route path="/userprofile" component={UserProfile} />
-          <Redirect path="/notfound" component={NotFound} />
           <Route path="/login" component={Signin} />
           <Route path="/register" component={Signup} />
           <Route path="/getbooks" component={GetBooks} />
@@ -36,6 +35,7 @@ function App() {
           <Route path="/uploadBook" component={UploadBookForm} />
           <Route path="/whishlist" component={Wishlist} />
           <Route path="/cart" component={Cart} />
+          <Router path="/notfound" component={NotFound} />
           <Route path="/:details_id" component={DisplayCom} />
         </Switch>
         <Footer />

@@ -4,6 +4,8 @@ import '../bookProfile/bookprofile.css'
 // eslint-disable-next-line
 import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
+import Button from '@restart/ui/esm/Button';
+import { BsCart4 } from 'react-icons/bs';
 
 function BookCard(props) {
     const result = props.result

@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import '../../fonts.css'
 import logo from '../../assets/navbarFooter/svg (1).svg'
 import { Link } from 'react-router-dom';
-import Button from '@restart/ui/esm/Button';
 import { Badge } from 'react-bootstrap';
 import { BsCart4 } from 'react-icons/bs';
-
+import { useSelector } from 'react-redux'
 
 function NavBar() {
     // eslint-disable-next-line
+    const res = useSelector(state => state.cartStore.CartQuantity)
     const [logged, setlogged] = useState(true);
     return (
         <>
@@ -45,7 +45,7 @@ function NavBar() {
                                         <li className="nav-item">
                                             <Link to='/cart' className=" me-3 text-light nav-link" >
                                                 <span >
-                                                    <BsCart4 /> <Badge pill bg="danger">9</Badge>
+                                                    <BsCart4 /> <Badge pill bg="danger">{res ? res : 0}</Badge>
                                                     <span className="visually-hidden">unread messages</span>
                                                 </span>
                                             </Link>
