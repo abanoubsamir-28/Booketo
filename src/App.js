@@ -17,14 +17,14 @@ import store from "./Store/store.jsx";
 import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
 import QuoteMachine from "./Services/QuoteMachine.jsx";
 import User_profile from "./Components/user_profile/User_profile.jsx";
-
+import New_post_item from "./Components/SharedComponents/posts/new_post_item/New_post_item.jsx";
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
   return (
     <Provider store={store}>
       <Router>
-        <NavBar />
+        {/* <NavBar /> */}
         <User_profile />
         {/* <Switch>
           <Route exact path="/" component={Home} />
@@ -37,7 +37,7 @@ function App() {
           <Route path="/card" component={BookCard} />
           <Route path="/:details_id" component={DisplayCom} />
         </Switch> */}
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </Provider>
   );

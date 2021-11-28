@@ -1,19 +1,20 @@
 
 
-.card {
+.user__profile .user_card {
     border: none;
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer ; 
     font-family: 'Bebas Neue', cursive;
-    background-image: url('../../assets/UserProfile/books.svg');
+    /* background-image: url('../../assets/UserProfile/books.svg');
     background-position: bottom right;
     background-size: 15%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
-.card:before {
+
+.user__profile .user_card:before {
     content: "";
     position: absolute;
     left: 0;
@@ -26,7 +27,8 @@
     transform-origin: bottom
 }
 
-.card:after {
+
+.user__profile .user_card:after {
     content: "";
     position: absolute;
     left: 0;
@@ -39,20 +41,26 @@
     transform-origin: bottom
 }
 
-.card:hover::after {
+
+.user__profile .user_card:hover::after {
     transform: scaleY(1)
 }
 
-.fonts {
+
+.user__profile .fonts {
     font-size: 11px
 }
 
-.contact_info h5 {
+
+.user__profile .contact_info h5 {
     color: #26A3A6;
+    text-align: left;
 }
-.contact_info h5 span {
+
+.user__profile .contact_info h5 span {
     color: #D1314F;
 }
-p {
+
+.user__profile p {
     color: #D1314F;
 }

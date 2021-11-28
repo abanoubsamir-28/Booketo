@@ -25,7 +25,7 @@
 }
 .mainprofile{
     background-image: url(../../assets/UserProfile/Path\ 924.png);
-} */
+}
 
 body{
     margin-top:20px;
@@ -669,4 +669,4 @@ select.form-control:not([size]):not([multiple]) {
 
 .text-danger, .text-red {
     color: #ff5b57!important;
-}
+} */
