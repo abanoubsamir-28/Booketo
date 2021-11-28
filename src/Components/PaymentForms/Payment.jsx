@@ -1,9 +1,7 @@
-import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../SharedComponents/FormsFields/FormikControl';
 import { Link } from 'react-router-dom';
-
 
 function Payment() {
     const initialValues = {
@@ -11,9 +9,10 @@ function Payment() {
         lastName: '',
         email: '',
         PhoneNumber: '',
-        address:'',
-        city:''
+        address: '',
+        city: ''
     }
+
     const validationSchema = Yup.object({
         firstName: Yup.string().required('First Name is a required field')
             .min(3, "Minimum is 5 Characters")
@@ -29,6 +28,7 @@ function Payment() {
         city: Yup.string().required('Address is a required field'),
     })
     const onSubmit = values => {
+        validationSchema(values);
         console.log('form data ', values);
     }
     return (
@@ -72,10 +72,15 @@ function Payment() {
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" className="btn btn-primary ms-4">
-                                        <Link to="/pay"  className="text-light nav-link">Pay</Link>
+
+
+
+                                    <button type="submit" value="submit" className="btn btn-primary ms-4"  >
+                                        <Link disabled={true} to="/pay" className="text-light nav-link p-0 m-0">Pay</Link>
                                     </button>
-                                    <button type="reset" className="btn btn-danger mx-3">Clear</button>
+
+                                    <button type="reset" className="btn btn-danger mx-3 ">Clear</button>
+
                                 </Form>
                             </div>
                         </div>

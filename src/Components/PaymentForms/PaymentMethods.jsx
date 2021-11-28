@@ -26,6 +26,7 @@ function PaymentMethods() {
         .max(3, "you exceeded Maximum "),
     })
     const onSubmit = values => {
+        validationSchema(values);
         console.log('form data ', values);
     }
 
@@ -59,7 +60,7 @@ function PaymentMethods() {
                                                             name="payment"
                                                             id="cash"
                                                             onChange={paywithcash}
-                                                            defaultChecked={formik.values.payment}
+                                                            defaultChecked={true}
                                                         />
                                                         <label htmlFor="rememberme" className="form-check-label mx-2 text-white">
                                                             Cash On Delivery
@@ -72,7 +73,7 @@ function PaymentMethods() {
                                                             name="payment"
                                                             id="credit"
                                                             onChange={paywithcredit}
-                                                            defaultChecked={formik.values.payment}
+                                                           
                                                         />
                                                         <label htmlFor="credit" className="form-check-label mx-2 text-white">
                                                             Credit Card
@@ -91,15 +92,15 @@ function PaymentMethods() {
                                                                     <FormikControl control='date' type='date' label='Expires at ' name='expire' />
                                                                     <FormikControl control='input' type='text' label=' Name On Credit Card ' name='name' />
                                                                     <FormikControl control='number' type='text' label='CVC ' name='cvc' />
-                                                                    <button type="submit" className="btn btn-primary ms-4">
+                                                                    <button type="submit" className="btn btn-primary ms-1 mt-4">
                                                                         <Link to="/rate"  className="text-light nav-link">Completet Payment</Link>
                                                                         </button>
                                                                 </div>
                                                             </div>
                                                             
                                                             :
-                                                            <button type="submit" className="btn btn-primary ms-4">
-                                                                        <Link to="/rate"  className="text-light nav-link">Completet Payment</Link>
+                                                            <button type="submit" className="btn btn-primary ms-1 mt-4">
+                                                                        <Link to="/rate"  className="text-light nav-link ">Completet Payment</Link>
                                                                         </button>
                                                     }
 
