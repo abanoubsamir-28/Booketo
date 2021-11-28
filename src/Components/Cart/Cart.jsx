@@ -1,16 +1,34 @@
 import React from 'react'
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight, FaTrashAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { Card, Table } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { Table } from 'react-bootstrap'
+import { cartActionDec, cartActionInc, cartStoreActionRemove } from '../../Store/CartStore/cartStoreAction'
 const Cart = (props) => {
-    const result = useSelector(state => state.cartStore.cartItem)
+    const ss = new Set(useSelector(state => state.cartStore.cartItem))
+    const result = Array.from(ss)
     const res = useSelector(state => state.cartStore)
+    const dispatch = useDispatch()
+    // const amountOfItems = (id) => {result.filter((item) => item.id === id).length);
+    function amountOfItems(id) {
+        var kalb;
+        console.log(kalb)
+        kalb = result.filter((item) => item.data.id === id).length
+        console.log(kalb)
+    }
+    function handleRemovetoCart(res) {
+        dispatch(cartStoreActionRemove(res))
+        console.log(res)
+    }
+    function handelIncrease(id) {
+        dispatch(cartActionInc(id))
+    }
+    function handelDecrease(id) {
+        dispatch(cartActionDec(id))
+    }
     return (
         <>
             <div className="container">
-                {/* {res.cartItem.map((ele) => {
-                    ele.data.id !== book.data.id ? ( */}
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -19,6 +37,7 @@ const Cart = (props) => {
                             <th>Title</th>
                             <th>Quantity</th>
                             <th>Price</th>
+                            <th>clear</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,17 +47,23 @@ const Cart = (props) => {
                                 <td><img src={book.data?.volumeInfo?.imageLinks !== undefined ? book.data?.volumeInfo?.imageLinks?.thumbnail : "holder.js/100px160"} alt={book.data?.title} /></td>
                                 <td>{book.data?.volumeInfo?.title.length > 20 ? book.data?.volumeInfo?.title.substring(0, 20) + "..." : book.data?.volumeInfo?.title}</td>
                                 <td>
-                                    <div className="btn btn-danger">
-                                        +
-                                    </div>
-                                    {res.CartQuantity}
-                                    <div className="btn btn-success">
-                                        -
-                                    </div>
+                                    {res.itemQuantity}
                                 </td>
                                 <td>{book.data?.saleInfo.listPrice?.amount ?
-                                    res.CartQuantity * book.data?.saleInfo?.listPrice?.amount :
-                                    res.CartQuantity * 30}</td>
+                                    res.itemQuantity * book.data?.saleInfo?.listPrice?.amount :
+                                    res.itemQuantity * 30}
+                                </td>
+                                <td>
+                                    <button type="button" onClick={() => handleRemovetoCart(book?.data?.id)} className="btn btn-danger">
+                                        <FaTrashAlt />
+                                    </button>
+                                    {/* <button onClick={() => amountOfItems(book?.data?.id)}>
+                                        decrease
+                                    </button> */}
+
+                                    <button onClick={() => handelIncrease(book?.data?.id)}>+</button>
+                                    <button onClick={() => handelDecrease(book?.data?.id)}>-</button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>

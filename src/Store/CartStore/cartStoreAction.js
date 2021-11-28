@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./cartStoreTypes"
+import { ADD_TO_CART, DECREASE, INCREASE, REMOVE_FROM_CART } from "./cartStoreTypes"
 // export const ADD_TO_CART = "ADD_TO_CART"
 export const cartStoreAction = (payload) => {
     return {
@@ -12,4 +12,17 @@ export const cartStoreActionRemove = (payload) => {
         payload,
     }
 }
+export const cartActionInc = (payload) => {
+    return {
+        type: INCREASE,
+        payload,
+    }
+}
+export const cartActionDec = (payload) => {
+    return {
+        type: DECREASE,
+        payload,
+    }
+}
+// UPDATE_QTY
 // export default cartStoreAction
