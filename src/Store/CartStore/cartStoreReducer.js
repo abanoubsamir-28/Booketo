@@ -16,8 +16,8 @@ export default function cartStoreReducer(state = initialState, action) {
                 ...state,
                 cartItem: [...state.cartItem, action.payload],
                 CartQuantity: state.CartQuantity += 1,
-                itemQuantity: state.cartItem.filter(
-                    (productId) => (action.payload !== productId.data.id) ? state.itemQuantity += 1 : state.itemQuantity),
+                // itemQuantity: state.cartItem.filter(
+                //     (productId) => (action.payload !== productId.data.id) ? state.itemQuantity += 1 : state.itemQuantity),
                 cartTotalAmount: state.cartTotalAmount,
             }
         case REMOVE_FROM_CART:
