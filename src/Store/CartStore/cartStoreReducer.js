@@ -12,12 +12,15 @@ export default function cartStoreReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_TO_CART:
             return {
-                itemIndex: state.cartItem.find((item) => console.log(item.id === action.payload.id)),
+                // itemIndex: state.cartItem.find((item) => console.log(item.id === action.payload.id)),
                 ...state,
                 cartItem: [...state.cartItem, action.payload],
-                CartQuantity: state.CartQuantity += 1,
+                CartQuantity: state.CartQuantity + 1,
+
+                // ************************** error below *********************************
+
                 // itemQuantity: state.cartItem.filter(
-                //     (productId) => (action.payload !== productId.data.id) ? state.itemQuantity += 1 : state.itemQuantity),
+                //     (productId) => (action.payload !== productId.data.id) ? state.itemQuantity : state.itemQuantity++),
                 cartTotalAmount: state.cartTotalAmount,
             }
         case REMOVE_FROM_CART:
@@ -28,46 +31,35 @@ export default function cartStoreReducer(state = initialState, action) {
             }
         case INCREASE:
             let tempcart = state.cartItem.map((item) => {
+                const arr = []
                 if (item.data.id === action.payload) {
-                    console.log("in if")
-                    // state.itemQuantity++
-                    return { itemQuantity: state.itemQuantity++ };
+                    arr.push(item.data)
+                    console.log(arr.length)
+                    return arr.length += 1
+                    // console.log("in if")
+                    // state.itemQuantity += 1
+                    // console.log("inc", state.itemQuantity)
+                    // return { ...state, itemQuantity: state.itemQuantity++ };
                 }
-                console.log(state.itemQuantity)
-                return state.itemQuantity
-                // console.log("after dec")
+
             });
-            console.log(tempcart);
             return {
-                ...state,
-                itemQuantity: state.itemQuantity
+                ...state
+                , tempcart
+                // ...state,
+                // itemQuantity: state.itemQuantity
+
             }
-        // case INCREASE:
-        //     // let tempcart = state.cartItem.map((item) => {
-        //     //     if (item.data.id === action.payload) {
-        //     //         state.itemQuantity += 1
-        //     //     }
-        //     //     console.log(item)
-        //     //     // return item;
-        //     // });
-        //     // console.log(tempcart.length);
-        //     return {
-        //         ...state,
-        //         // itemQuantity: tempcart.length
-        //         cartItem: [...state.cartItem.filter((productId) => action.payload !== productId.data.id)],
-        //         itemQuantity: state.itemQuantity += 1,
-        //         xx: console.log(state.itemQuantity)
-        //     }
 
         case DECREASE:
             let newtempcart = state.cartItem.map((item) => {
                 if (item.data.id === action.payload) {
                     console.log("in if")
-                    state.itemQuantity--
+                    state.itemQuantity -= 1
                     // return { ...state, itemQuantity: state.itemQuantity -= 1 };
+                    console.log("dec", state.itemQuantity)
                 }
-                // console.log("after dec")
-                console.log(state.itemQuantity)
+                console.log("item.data.id: ", item.data.id, "action.payload: ", action.payload)
                 return null;
             });
             return {

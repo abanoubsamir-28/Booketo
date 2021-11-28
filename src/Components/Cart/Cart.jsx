@@ -19,8 +19,8 @@ const Cart = () => {
     function handelIncrease(id) {
         dispatch(cartActionInc(id))
     }
-    function handelDecrease(id) {
-        dispatch(cartActionDec(id))
+    function handelDecrease(itemId) {
+        dispatch(cartActionDec(itemId))
     }
     return (
         <>
