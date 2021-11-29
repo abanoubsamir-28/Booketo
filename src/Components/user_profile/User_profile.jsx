@@ -189,7 +189,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
                       username={user.username}
                       postBody={post}
                       postReactions={0}
-                      postID={1}
+                      postID={131}
                     />
                   );
                 })}

@@ -25,7 +25,8 @@ function App() {
     <Provider store={store}>
       <Router>
         {/* <NavBar /> */}
-        <User_profile />
+        <Newsfeed/>
+        {/* <User_profile /> */}
         {/* <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/newsfeed" component={Newsfeed} />
