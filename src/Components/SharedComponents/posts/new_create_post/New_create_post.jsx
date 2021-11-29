@@ -50,3 +50,27 @@ const New_create_post = (props) => {
 };
 
 export default New_create_post;
+
+
+  // const post = useSelector((state) => {
+  //   console.log(state, "from create post in user profile");
+  //   const post = {
+  //     body: state.createPost.post,
+  //   };
+  //   if (post.body === "") {
+  //     return;
+  //   } else {
+  //     return (
+  //       <New_post_item
+  //         firstName={user.first_name}
+  //         lastName={user.last_name}
+  //         image={user.image}
+  //         username={user.username}
+  //         postBody={post.body}
+  //         postReactions={0}
+  //         postID={post.id}
+  //       />
+  //     );
+  //   }
+  // });
+  // const [user_posts, setuser_posts] = useState(null);
