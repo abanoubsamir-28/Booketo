@@ -74,7 +74,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
   const commentRef = useRef(null);
   const [user_posts, setuser_posts] = useState([])
   const addPost = () => {
-    setuser_posts([...user_posts , commentRef.current.value])
+    setuser_posts([commentRef.current.value , ...user_posts ])
   }
   return (
     <>
