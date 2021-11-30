@@ -8,16 +8,14 @@ import { MdAddCircleOutline } from 'react-icons/md';
 import { MdRemoveCircleOutline } from 'react-icons/md';
 
 const Cart = () => {
-    const ss = new Set(useSelector(state => state.cartStore.cartItem))
-    const result = Array.from(ss)
-    const res = useSelector(state => state.cartStore)
+    // we are using the cart array that used from the store directly.
+    const cart = useSelector(state => state.cartStore.cartItem)
     const dispatch = useDispatch()
     function handleRemovetoCart(res) {
         dispatch(cartStoreActionRemove(res))
     }
     function handelIncrease(id) {
         dispatch(cartActionInc(id))
-      
         // console.log(res.cartItem);
     }
     function handelDecrease(itemId) {
@@ -38,26 +36,26 @@ const Cart = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {result.map((book, index) => (
+                        {cart.map((book, index) => (
                             <tr>
                                 {/* <td>{console.log(book[index])}</td> */}
                                 <td>{index + 1}</td>
-                                <td><img src={book[index]?.data?.volumeInfo?.imageLinks !== undefined ? book[index]?.data?.volumeInfo?.imageLinks?.thumbnail : "holder.js/100px160"} alt={book[index]?.data?.title} /></td>
-                                <td>{book[index]?.data?.volumeInfo?.title.length > 20 ? book[index]?.data?.volumeInfo?.title.substring(0, 20) + "..." : book[index]?.data?.volumeInfo?.title}</td>
-                                <td><button className="btn mx-2 text-success" onClick={() => handelIncrease(book[index]?.data?.id)}>
+                                <td><img src={book.volumeInfo?.imageLinks !== undefined ? book.volumeInfo?.imageLinks?.thumbnail : "holder.js/100px160"} alt={book.title} /></td>
+                                <td>{book.volumeInfo?.title.length > 20 ? book.volumeInfo?.title.substring(0, 20) + "..." : book.volumeInfo?.title}</td>
+                                <td><button className="btn mx-2 text-success" onClick={() => handelIncrease(book.id)}>
                                     <MdAddCircleOutline />
-                                </button>book
-                                    {book[index]?.quant}
-                                    <button className="btn mx-2 text-danger" onClick={() => handelDecrease(index)}>
+                                </button>
+                                    {book.quantity} book
+                                    <button className="btn mx-2 text-danger" onClick={() => handelDecrease(book.id)}>
                                         <MdRemoveCircleOutline />
                                     </button>
                                 </td>
-                                <td>{book[index]?.data?.saleInfo.listPrice?.amount ?
-                                    res.itemQuantity * book[index]?.data?.saleInfo?.listPrice?.amount :
-                                    res.itemQuantity * 30}
+                                <td>{book.saleInfo.listPrice?.amount ?
+                                    book.quantity * book.saleInfo?.listPrice?.amount :
+                                    book.quantity * 30}
                                 </td>
                                 <td>
-                                    <button type="button" onClick={() => handleRemovetoCart(book[index]?.data?.id)} className="btn btn-danger">
+                                    <button type="button" onClick={() => handleRemovetoCart(book.id)} className="btn btn-danger">
                                         <FaTrashAlt />
                                     </button>
                                 </td>
