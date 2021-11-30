@@ -10,15 +10,24 @@ function NewestBooks() {
     };
     const key = "AIzaSyCM7I-qPZ4-QwXU4xupLOBKpTX2N4XWc0E"
     const [result, setResult] = useState("")
+    let arr = []
     useEffect(() => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=clovers&orderBy=newest&key=${key}`)
             .then(data => {
                 setResult(data?.data?.items);
-                console.log(result)
+                // data.data.items.map((el) => {
+                //     var q = Object.assign({}, el);
+                //     q.quant = 1;
+                //     // console.log(q);//one obj+quna
+                //     arr.push(q)
+                //     setResult(arr)
+                // })
             }).catch((error) => {
                 return error
             })
     }, [])
+    // console.log(arr)
+    // console.log(result);
     return (
         <>
             {result ?

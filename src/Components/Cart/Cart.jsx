@@ -14,10 +14,11 @@ const Cart = () => {
     const dispatch = useDispatch()
     function handleRemovetoCart(res) {
         dispatch(cartStoreActionRemove(res))
-        console.log(res)
     }
     function handelIncrease(id) {
         dispatch(cartActionInc(id))
+      
+        // console.log(res.cartItem);
     }
     function handelDecrease(itemId) {
         dispatch(cartActionDec(itemId))
@@ -39,23 +40,24 @@ const Cart = () => {
                     <tbody>
                         {result.map((book, index) => (
                             <tr>
+                                {/* <td>{console.log(book[index])}</td> */}
                                 <td>{index + 1}</td>
-                                <td><img src={book.data?.volumeInfo?.imageLinks !== undefined ? book.data?.volumeInfo?.imageLinks?.thumbnail : "holder.js/100px160"} alt={book.data?.title} /></td>
-                                <td>{book.data?.volumeInfo?.title.length > 20 ? book.data?.volumeInfo?.title.substring(0, 20) + "..." : book.data?.volumeInfo?.title}</td>
-                                <td><button className="btn mx-2 text-success" onClick={() => handelIncrease(book?.data?.id)}>
+                                <td><img src={book[index]?.data?.volumeInfo?.imageLinks !== undefined ? book[index]?.data?.volumeInfo?.imageLinks?.thumbnail : "holder.js/100px160"} alt={book[index]?.data?.title} /></td>
+                                <td>{book[index]?.data?.volumeInfo?.title.length > 20 ? book[index]?.data?.volumeInfo?.title.substring(0, 20) + "..." : book[index]?.data?.volumeInfo?.title}</td>
+                                <td><button className="btn mx-2 text-success" onClick={() => handelIncrease(book[index]?.data?.id)}>
                                     <MdAddCircleOutline />
-                                </button>
-                                    {res.itemQuantity}
-                                    <button className="btn mx-2 text-danger" onClick={() => handelDecrease(book?.data?.id)}>
+                                </button>book
+                                    {book[index]?.quant}
+                                    <button className="btn mx-2 text-danger" onClick={() => handelDecrease(index)}>
                                         <MdRemoveCircleOutline />
                                     </button>
                                 </td>
-                                <td>{book.data?.saleInfo.listPrice?.amount ?
-                                    res.itemQuantity * book.data?.saleInfo?.listPrice?.amount :
+                                <td>{book[index]?.data?.saleInfo.listPrice?.amount ?
+                                    res.itemQuantity * book[index]?.data?.saleInfo?.listPrice?.amount :
                                     res.itemQuantity * 30}
                                 </td>
                                 <td>
-                                    <button type="button" onClick={() => handleRemovetoCart(book?.data?.id)} className="btn btn-danger">
+                                    <button type="button" onClick={() => handleRemovetoCart(book[index]?.data?.id)} className="btn btn-danger">
                                         <FaTrashAlt />
                                     </button>
                                 </td>
