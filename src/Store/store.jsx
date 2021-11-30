@@ -1,6 +1,6 @@
-import { createStore } from 'redux'
-// import thunk from 'redux-thunk'
-// import bookReducer from './bookProfile/BookReducer'
-import rootReducer from './rootReducer'
-const store = createStore(rootReducer)
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import bookReducer from './bookProfile/BookReducer'
+
+const store = createStore(bookReducer, applyMiddleware(thunk))
 export default store
