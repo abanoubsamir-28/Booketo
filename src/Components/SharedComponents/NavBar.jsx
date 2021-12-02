@@ -13,67 +13,50 @@ function NavBar() {
                 logged === true
                     ?
                     <div>
-                        <nav className="navbar navbar-expand-lg navbar-light navbar">
-                            <div className="container-fluid">
+                        <nav className="grad navbar navbar-expand-lg navbar-light navbar">
+                            <div className="container-fluid ">
                                 <img src={logo} className="logo" alt="" />
-                                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span className="navbar-toggler-icon"></span>
-                                </button>
-                                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                        <li className="nav-item">
-                                            <a className="nav-link active text-light me-3" aria-current="page" href="#">News Feed</a>
+                                <div className="ms-5 ps-5 collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul className="navbar-nav me-auto ms-5 ps-5 mb-2 mb-lg-0">
+                                        <li className="nav-item ms-5 ps-5">
+                                            <Link to="/newsfeed" className="textt btn active ms-5 ps-5  me-3" >Home</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <a className=" me-3 text-light nav-link" href="#">All Books</a>
+                                        <Link to="/getbooks" className="textt btn active  me-3" >Books</Link>
+
                                         </li>
 
 
                                         <li className="nav-item">
-                                            <Link to='/userprofile' className=" me-3 text-light nav-link" >User Profile</Link>
+                                            <Link to='/contactus' className="textt btn active  me-3" >Contact Us </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link to='/notfound' className=" me-3 text-light nav-link" >Page Not Found</Link>
-                                        </li>
-                                        
-                                        <li className="nav-item">
-                                            <a className=" me-3 text-light nav-link" href="#">Wish List</a>
-                                        </li>
-                                        <li className="nav-item">
-                                            <a className=" me-3 text-light nav-link" href="#">Cart</a>
+                                            <Link to='/' className="textt btn active  me-3" >Logout</Link>
                                         </li>
                                     </ul>
-                                    <form className="d-flex">
-                                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                        <button className="btn btn-outline-dark text-light" type="submit">Search</button>
-                                    </form>
+                                   
                                 </div>
                             </div>
                         </nav>
                     </div>
                     :
-                    <div className="container-fluid ">
-                        <nav className="navbar navbar-expand-lg navbar-light navbar">
-                            <div className="container-fluid">
-                                <img src={logo} className="logo" alt="" />
-                                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span className="navbar-toggler-icon"></span>
-                                </button>
-                                <div className=" collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul className=" ms-5 ps-5 navbar-nav me-auto mb-2 mb-lg-0">
-                                        <li className=" nav-item">
-                                            <button className="ms-5 btn btn-outline-dark text-light" type="submit">Log In </button>
-                                        </li>
-                                        <li className=" nav-item">
-                                            <button className="ms-5 btn btn-outline-dark text-light" type="submit">Register</button>
-                                        </li>
+                    <nav className="navbar grad navbar-expand-lg navbar-light navbar">
+                        <div className="container-fluid">
+                            <img src={logo} className="logo ms-5" alt="" />
+                            <div className=" collapse navbar-collapse ms-5 ps-5" id="navbarSupportedContent">
+                                <ul className=" ms-5 ps-5 navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li className=" nav-item">
+                                        <Link to="/login" className="ms-5  btn textt" type="submit">Log In </Link>
+                                    </li>
+                                    <li className=" nav-item">
+                                        <Link to="/register" className="ms-3 btn textt" type="submit">Register</Link>
+                                    </li>
 
-                                    </ul>
-
-                                </div>
+                                </ul>
                             </div>
-                        </nav>
-                    </div>
+                        </div>
+                    </nav>
+
             }
 
         </>
