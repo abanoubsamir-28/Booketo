@@ -1,5 +1,4 @@
 import { ADD_TO_CART, DECREASE, INCREASE, REMOVE_FROM_CART } from "./cartStoreTypes"
-// export const ADD_TO_CART = "ADD_TO_CART"
 export const cartStoreAction = (payload) => {
     return {
         type: ADD_TO_CART,

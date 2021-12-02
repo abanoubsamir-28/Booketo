@@ -1,18 +1,21 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
 import Reviews from "../bookProfile/Reviews";
-import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { cartStoreAction } from "../../Store/CartStore/cartStoreAction";
+import Loader from "../SharedComponents/Loader/Loader";
+// import { addToWishList, removeFromWishList } from "../../Store/wishList/WishListAction";
+
 function DisplayCom({ match }) {
   const dispatch = useDispatch();
   const [data, setData] = useState(null);
+  const [found, setfound] = useState(true)
   useEffect(() => {
     getSingleProduct();
   }, []);
-  
+
   const getSingleProduct = () => {
     axios
       .get(
@@ -27,9 +30,19 @@ function DisplayCom({ match }) {
   };
 
   const handleAddtoCart = (bookItem) => {
-    console.log(bookItem);
     dispatch(cartStoreAction(bookItem));
   };
+  //add to wishList 
+  // const handleAddtowishList = (book) => {
+  //   dispatch(addToWishList(book))
+  //   setfound(false)
+
+  // }
+  // const handleRemoveFromWishlist = (book) => {
+  //   dispatch(removeFromWishList(book))
+  //   setfound(true)
+  //   console.log(found);
+  // }
   return (
     <>
       {data ? (
@@ -37,19 +50,8 @@ function DisplayCom({ match }) {
           <div className="container mt-5">
             <div className="row">
               <div className="bookProfile__img col-4">
-                {data.volumeInfo !== undefined ? (
-                  <img
-                    src={data.volumeInfo?.imageLinks.thumbnail}
-                    alt="book img"
-                    className="mt-3 mb-3"
-                  />
-                ) : (
-                  <img
-                    src="https://via.placeholder.com/150"
-                    className="mb-3"
-                    alt="book img placeholder"
-                  />
-                )}
+                <img src={data?.volumeInfo?.imageLinks !== undefined ? data?.volumeInfo?.imageLinks.thumbnail : "https://via.placeholder.com/150"} alt={data?.title} />
+
               </div>
               <div className="bookData.bookProfile__content col-md-6">
                 <h2 className="text-danger fw-bold">
@@ -128,22 +130,34 @@ function DisplayCom({ match }) {
                   <span className="fs-5"></span> <AiOutlineShoppingCart /> Add
                   to cart
                 </button>
-
-                <button className="cartBtn btn text-black" type="button">
-                  <span className="fs-5"></span> <AiOutlineHeart /> Add to
-                  wishlist
-                </button>
+{/* 
+                {found ?
+                  <button
+                    onClick={() => handleAddtowishList(data)}
+                    className="cartBtn btn text-black"
+                    type="button"
+                  >
+                    <span className="fs-5 ms-2"></span> <AiOutlineHeart />
+                    Add to wishlist
+                  </button>
+                  :
+                  <button
+                    onClick={() => handleRemoveFromWishlist(data)}
+                    className="cartBtn btn text-black"
+                    type="button"
+                  >
+                    <span className="fs-5 ms-2"></span> <AiFillHeart />
+                    Remove From
+                    wishlist
+                  </button>
+                } */}
               </div>
             </div>
           </div>
           <Reviews />
         </section>
       ) : (
-        <div className="d-flex justify-content-center mt-5">
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        </div>
+        <Loader />
       )}
     </>
   );

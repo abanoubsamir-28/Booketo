@@ -33,7 +33,7 @@ function App() {
           <Route path="/getbooks" component={GetBooks} />
           <Route path="/card" component={BookCard} />
           <Route path="/uploadBook" component={UploadBookForm} />
-          <Route path="/whishlist" component={Wishlist} />
+          <Route path="/wishlist" component={Wishlist} />
           <Route path="/cart" component={Cart} />
           <Router path="/notfound" component={NotFound} />
           <Route path="/:details_id" component={DisplayCom} />
