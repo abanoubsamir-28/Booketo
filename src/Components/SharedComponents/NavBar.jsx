@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../fonts.css'
 import logo from '../../assets/navbarFooter/svg (1).svg'
+import profile from '../../assets/UserProfile/464-4641403_png-file-user-icon-circle-svg.png'
 import { Link } from 'react-router-dom';
 
 
@@ -14,27 +15,36 @@ function NavBar() {
                     ?
                     <div>
                         <nav className="grad navbar navbar-expand-lg navbar-light navbar">
-                            <div className="container-fluid ">
-                                <img src={logo} className="logo" alt="" />
-                                <div className="ms-5 ps-5 collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul className="navbar-nav me-auto ms-5 ps-5 mb-2 mb-lg-0">
+                            <div className="container-fluid  ">
+                                <img src={logo} className="logo ms-5 me-5 " alt="" />
+                                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span className="navbar-toggler-icon "></span>
+                                </button>
+                                <div className=" ms-5 ps-5 collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul className="formargin navbar-nav me-auto ms-5 ps-5 mb-2 mb-lg-0">
                                         <li className="nav-item ms-5 ps-5">
-                                            <Link to="/newsfeed" className="textt btn active ms-5 ps-5  me-3" >Home</Link>
+                                            <Link to="/newsfeed" className="textt btn active pt-3 me-3 ms-5 ps-5" >Home</Link>
                                         </li>
                                         <li className="nav-item">
-                                        <Link to="/getbooks" className="textt btn active  me-3" >Books</Link>
+                                            <Link to="/getbooks" className="textt btn active pt-3 me-3" >Books</Link>
 
-                                        </li>
-
-
-                                        <li className="nav-item">
-                                            <Link to='/contactus' className="textt btn active  me-3" >Contact Us </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link to='/' className="textt btn active  me-3" >Logout</Link>
+                                            <Link to='/contactus' className="textt btn active pt-3  me-3 " >Contact Us </Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link to='/settings' className="textt btn active pt-3  me-3 " > Settings </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/' className="textt btn active pt-3 me-5" >Logout</Link>
+                                        </li>
+                                        <li className="nav-item w-25">
+                                            <Link to='/userprofile' className=" w-25 btn m-0 p-0 " >
+                                                <img src={profile} className="profilephoto" />
+                                            </Link>
+                                        </li>
+                                      
                                     </ul>
-                                   
                                 </div>
                             </div>
                         </nav>
@@ -43,6 +53,9 @@ function NavBar() {
                     <nav className="navbar grad navbar-expand-lg navbar-light navbar">
                         <div className="container-fluid">
                             <img src={logo} className="logo ms-5" alt="" />
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
                             <div className=" collapse navbar-collapse ms-5 ps-5" id="navbarSupportedContent">
                                 <ul className=" ms-5 ps-5 navbar-nav me-auto mb-2 mb-lg-0">
                                     <li className=" nav-item">

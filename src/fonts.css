@@ -12,6 +12,9 @@
     font-size: 100;
     display: block;
 }
+.formargin{
+    margin-left:50% ;
+}
 
 .booksimg{
     overflow: hidden;
@@ -22,4 +25,8 @@
 .logo{
     width: 3%;
     margin-right: 2%;
+}
+.profilephoto{
+    width: 70%;
+    border-radius: 50%;
 }
