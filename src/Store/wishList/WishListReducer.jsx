@@ -1,4 +1,8 @@
 import { ADD_TO_WISHLIST, DELETE_FROM_WISHLIST } from "./WishListTypes";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { RiInformationLine } from "react-icons/ri";
+
 
 const initialState = {
     wishList: [],
@@ -8,12 +12,12 @@ const initialState = {
 export const WishListReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_WISHLIST:
-
             const bookFound = state.wishList.filter(
                 (elem) => elem.id === action.payload.id
             );
             //found books in array
             if (bookFound.length > 0) {
+                toast.error('You already added this item',{position:'top-right'})
                 return {
                     ...state,
                     //same book
@@ -21,7 +25,6 @@ export const WishListReducer = (state = initialState, action) => {
                         if (item.id === action.payload.id) {
                             return {
                                 ...item,
-
                             };
                         }
                         //diffrent book
