@@ -10,7 +10,6 @@ function NewestBooks() {
     };
     const key = "AIzaSyCM7I-qPZ4-QwXU4xupLOBKpTX2N4XWc0E"
     const [result, setResult] = useState("")
-    let arr = []
     useEffect(() => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=clovers&orderBy=newest&key=${key}`)
             .then(data => {

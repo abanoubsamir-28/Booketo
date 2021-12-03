@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { FaArrowRight, FaTrashAlt } from 'react-icons/fa'
+import {  FaTrashAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Table } from 'react-bootstrap'
@@ -36,7 +36,6 @@ const Cart = () => {
     }
     function handelIncrease(id) {
         dispatch(cartActionInc(id))
-        console.log(cart);
     }
     function handelDecrease(itemId) {
         dispatch(cartActionDec(itemId))

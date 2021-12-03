@@ -37,12 +37,11 @@ function DisplayCom({ match }) {
   const handleAddtowishList = (book) => {
     dispatch(addToWishList(book))
     setfound(false)
-
   }
   const handleRemoveFromWishlist = (book) => {
     dispatch(removeFromWishList(book))
     setfound(true)
-    console.log(found);
+  
   }
   return (
     <>   {data ? (

@@ -18,6 +18,7 @@ import { Provider } from "react-redux";
 import "./App.css";
 import Wishlist from "./Components/SharedComponents/wishlist/Wishlist.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
+import SliderBook from "./Components/SharedComponents/slider/SliderBook.jsx";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/newsfeed" component={Newsfeed} />
           <Route path="/userprofile" component={UserProfile} />
           <Route path="/login" component={Signin} />
+          <Route path="/slider" component={SliderBook}/>
           <Route path="/register" component={Signup} />
           <Route path="/getbooks" component={GetBooks} />
           <Route path="/card" component={BookCard} />

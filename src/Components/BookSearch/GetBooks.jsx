@@ -10,7 +10,7 @@ function GetBooks() {
     const [cat, setcat] = useState('')
     const [result, setResult] = useState([]);
     // eslint-disable-next-line
-    const [apiKey, setApiKey] = useState("AIzaSyCM7I-qPZ4-QwXU4xupLOBKpTX2N4XWc0E")
+    const [apiKey] = useState("AIzaSyCM7I-qPZ4-QwXU4xupLOBKpTX2N4XWc0E")
     const change = () => {
         let select = document.getElementById('filter')
         let option = select.options[select.selectedIndex]
@@ -28,9 +28,6 @@ function GetBooks() {
             setsearch(newInp)
         }
     }
-
-
-
     function handleSubmit(event) {
         event.preventDefault();
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}${cat}${search}&key=${apiKey}&maxResults=40`)

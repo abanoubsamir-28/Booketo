@@ -29,7 +29,7 @@ function NavBar() {
                                             <a className="nav-link active text-light me-3" aria-current="page" href="#">News Feed</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className=" me-3 text-light nav-link" href="#">All Books</a>
+                                            <Link to="/slider" className=" me-3 text-light nav-link" href="#">slider</Link>
                                         </li>
 
 
