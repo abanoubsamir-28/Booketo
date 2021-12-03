@@ -23,6 +23,3 @@ export const cartActionDec = (payload) => {
         payload,
     }
 }
-
-// UPDATE_QTY
-// export default cartStoreAction

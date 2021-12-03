@@ -6,7 +6,8 @@ import { AiOutlineShoppingCart, AiOutlineHeart, AiFillHeart } from "react-icons/
 import { useDispatch } from "react-redux";
 import { cartStoreAction } from "../../Store/CartStore/cartStoreAction";
 import Loader from "../SharedComponents/Loader/Loader";
-// import { addToWishList, removeFromWishList } from "../../Store/wishList/WishListAction";
+import { addToWishList, removeFromWishList } from "../../Store/wishList/WishListAction";
+import Wishlist from "../SharedComponents/wishlist/Wishlist";
 
 function DisplayCom({ match }) {
   const dispatch = useDispatch();
@@ -32,20 +33,21 @@ function DisplayCom({ match }) {
   const handleAddtoCart = (bookItem) => {
     dispatch(cartStoreAction(bookItem));
   };
-  //add to wishList 
-  // const handleAddtowishList = (book) => {
-  //   dispatch(addToWishList(book))
-  //   setfound(false)
+  // add to wishList 
+  const handleAddtowishList = (book) => {
+    dispatch(addToWishList(book))
+    setfound(false)
 
-  // }
-  // const handleRemoveFromWishlist = (book) => {
-  //   dispatch(removeFromWishList(book))
-  //   setfound(true)
-  //   console.log(found);
-  // }
+  }
+  const handleRemoveFromWishlist = (book) => {
+    dispatch(removeFromWishList(book))
+    setfound(true)
+    console.log(found);
+  }
   return (
-    <>
-      {data ? (
+    <>   {data ? (
+      <>
+        <Wishlist />
         <section className="bookProfile">
           <div className="container mt-5">
             <div className="row">
@@ -106,20 +108,20 @@ function DisplayCom({ match }) {
                   </div>
                 )}
                 {data.volumeInfo !== undefined ? (
-                  <p className="ms-3">
+                  <p className="ms-3 mt-2">
                     <strong>Pages :</strong> {data.volumeInfo?.pageCount} page
                   </p>
                 ) : (
                   ""
                 )}
-                {data.saleInfo.listPrice !== null ? (
+                {data?.saleInfo?.listPrice !== undefined ? (
                   <p className="ms-3">
                     <strong>Price : </strong>
-                    {data.saleInfo.listPrice?.amount} EGP
+                    {data?.saleInfo?.listPrice?.amount} EGP
                   </p>
                 ) : (
-                  <p>
-                    <strong>Price</strong> 50 EGP
+                  <p className="ms-3">
+                    <strong>Price :</strong> 50 EGP
                   </p>
                 )}
                 <button
@@ -130,33 +132,35 @@ function DisplayCom({ match }) {
                   <span className="fs-5"></span> <AiOutlineShoppingCart /> Add
                   to cart
                 </button>
-{/* 
+
                 {found ?
                   <button
                     onClick={() => handleAddtowishList(data)}
-                    className="cartBtn btn text-black"
+                    className="cartBtn btn"
                     type="button"
                   >
-                    <span className="fs-5 ms-2"></span> <AiOutlineHeart />
+                    <span className="fs-5 "></span> <AiOutlineHeart className="me-2 fs-4" />
                     Add to wishlist
                   </button>
                   :
                   <button
                     onClick={() => handleRemoveFromWishlist(data)}
-                    className="cartBtn btn text-black"
+                    className="cartBtn btn "
                     type="button"
                   >
-                    <span className="fs-5 ms-2"></span> <AiFillHeart />
+                    <span className="fs-5 ms-2"></span> <AiFillHeart className="me-2 fs-4" />
                     Remove From
                     wishlist
                   </button>
-                } */}
+                }
               </div>
             </div>
           </div>
           <Reviews />
         </section>
-      ) : (
+      </>
+    )
+      : (
         <Loader />
       )}
     </>

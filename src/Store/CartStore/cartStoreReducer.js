@@ -42,14 +42,12 @@ export default function cartStoreReducer(state = initialState, action) {
                     ...state,
                     cartItem: [...state.cartItem, newBook],
                     CartQuantity: state.CartQuantity + 1,
-                    c: console.log(state.cartItem),
                 };
             }
         case REMOVE_FROM_CART:
             return {
                 ...state,
                 cartItem: [...state.cartItem.filter((item) => action.payload.id !== item.id)],
-                v: console.log(action.payload.quantity),
                 CartQuantity: state.CartQuantity - action.payload.quantity
             }
 
@@ -78,14 +76,14 @@ export default function cartStoreReducer(state = initialState, action) {
                     if (item.id === action.payload) {
                         return {
                             ...item,
-                            quantity: item.quantity > 0 ? item.quantity - 1 : 0,
+                            quantity: item.quantity > 1 ? item.quantity - 1 : 1,
                         };
                     } else {
                         return item;
                     }
                 }),
                 // updating the cart quantity also by 1 to be updated in navbar.
-                CartQuantity: state.CartQuantity > 0 ? state.CartQuantity - 1 : 0,
+                CartQuantity: state.CartQuantity > 1 ? state.CartQuantity - 1 : 1,
             };
         default:
             return state;
