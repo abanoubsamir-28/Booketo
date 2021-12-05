@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import '../../fonts.css'
 import logo from '../../assets/navbarFooter/svg (1).svg'
 import { Link } from 'react-router-dom';
+import { Badge } from 'react-bootstrap';
+import { BsCart4 } from 'react-icons/bs';
+import { useSelector } from 'react-redux'
 
 
 function NavBar() {
     // eslint-disable-next-line
+    const res = useSelector(state => state.cartStore.CartQuantity)
     const [logged, setlogged] = useState(true);
     return (
         <>
@@ -25,23 +29,30 @@ function NavBar() {
                                             <a className="nav-link active text-light me-3" aria-current="page" href="#">News Feed</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className=" me-3 text-light nav-link" href="#">All Books</a>
+                                            <Link to="/slider" className=" me-3 text-light nav-link" href="#">slider</Link>
                                         </li>
 
 
                                         <li className="nav-item">
-                                            <Link to='/userprofile' className=" me-3 text-light nav-link" >User Profile</Link>
+                                            <Link to='/getbooks' className=" me-3 text-light nav-link" >User Profile</Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link to='/notfound' className=" me-3 text-light nav-link" >Page Not Found</Link>
                                         </li>
-                                        
+
                                         <li className="nav-item">
-                                            <a className=" me-3 text-light nav-link" href="#">Wish List</a>
+                                            <Link to="/wishlist" className=" me-3 text-light nav-link" >Wish List</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <a className=" me-3 text-light nav-link" href="#">Cart</a>
+                                            <Link to='/cart' className=" me-3 text-light nav-link" >
+                                                <span >
+                                                    <BsCart4 /> <Badge pill bg="danger">{res ? res : 0}</Badge>
+                                                    <span className="visually-hidden">unread messages</span>
+                                                </span>
+                                            </Link>
                                         </li>
+                                     
+                                       
                                     </ul>
                                     <form className="d-flex">
                                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
