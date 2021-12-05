@@ -1,120 +1,59 @@
 import React from 'react'
-import { ImBooks } from 'react-icons/im'
+import { AiOutlineClose } from 'react-icons/ai'
+import { MdOutlineFavorite } from 'react-icons/md'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeFromWishList } from '../../../Store/wishList/WishListAction'
+import './wishlist.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const notify = () => toast("You already added this book.");
+
 const Wishlist = () => {
+    const list = useSelector(state => (state.wishList))
+    const dispatch = useDispatch()
+    console.log(list)
+    const handleRemoveFromWishlist = (book) => {
+        dispatch(removeFromWishList(book))
+    }
+
     return (
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed d-flex justify-content-center align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <h5>My Books Wishlist </h5>
-                        <ImBooks className="mx-3 fs-3 text-danger" />
+        <div>
+            {list ?
+                <p>
+                    {console.log(list.wishList)}
+                    <button className=" wishlistBtn shadow-lg rounded-pill position-fixed p-2 bottom-0 end-0 mb-3 me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <MdOutlineFavorite className="fs-2" />
                     </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={"..."} class="img-fluid rounded-start" alt="..." />
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                        <div className="offcanvas-header">
+                            <h5 className="offcanvas-title fw-bold m-auto" id="offcanvasExampleLabel">WishList</h5>
+                            <button type="button" className="btn-close text-reset " data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={"..."} class="img-fluid rounded-start" alt="..." />
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={"..."} class="img-fluid rounded-start" alt="..." />
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={"..."} class="img-fluid rounded-start" alt="..." />
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={"..."} class="img-fluid rounded-start" alt="..." />
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={"..."} class="img-fluid rounded-start" alt="..." />
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src={"..."} class="img-fluid rounded-start" alt="..." />
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="offcanvas-body">
+                            {list?.wishList.map((book, index) => (
+                                <tr className="fw-bold">
+                                    <td className="fs-5">{index + 1}</td>
+                                    <td>
+                                        <img className="mx-2 mb-3" src={book.volumeInfo?.imageLinks !== undefined ? book.volumeInfo?.imageLinks?.thumbnail : "https://via.placeholder.com/150"} alt={book.title} />
+                                    </td>
+                                    <td>
+                                        {book.volumeInfo?.title.length > 25 ? book.volumeInfo?.title.substring(0, 25) + "..." : book.volumeInfo?.title}
+                                    </td>
+                                    <td>
+                                        <AiOutlineClose
+                                            onClick={() => { handleRemoveFromWishlist(book) }}
+                                            className=" btn-danger ms-2 fs-4 rounded " />
+                                    </td>
+
+                                </tr>
+                            ))}
                         </div>
                     </div>
-                </div>
-            </div>
+                </p>
+                : ''}
+                
         </div>
     )
 }
-
 export default Wishlist
+

@@ -5,7 +5,9 @@ import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
 import './signin.css'
 import { GrFacebook, GrTwitter, GrGoogle } from 'react-icons/gr'
+// import {signInWithGoogle} from './../../../config/Firebase.config'
 function Signin() {
+    // console.log(children);
     const initialValues = {
         email: '',
         password: '',
@@ -60,7 +62,7 @@ function Signin() {
                 <h5 className="text-white text-center py-4">More Sign in Options</h5>
                 <div className="sing_in_options d-flex justify-content-center align-items-center">
 
-                    <GrFacebook className="icon text-white fs-3 mx-3" />
+                    <GrFacebook className="icon text-white fs-3 mx-3"  />
                     <GrTwitter className="icon text-white fs-3 mx-3" />
                     <GrGoogle className="icon text-white fs-3 mx-3" />
                 </div>

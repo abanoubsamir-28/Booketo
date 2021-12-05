@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import 'boxicons';
 import BookCard from "./BookCard";
-import BookPlaceHolder from "./BookPlaceHolder";
+import NewestBooks from "../NewestBooks/NewestBooks";
 function GetBooks() {
     const [book, setBook] = useState('');
     const [search, setsearch] = useState('')
@@ -33,7 +33,7 @@ function GetBooks() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        axios.get("https://www.googleapis.com/books/v1/volumes?q=" + book + cat + search + "&key=" + apiKey + "&maxResults=40")
+        axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}${cat}${search}&key=${apiKey}&maxResults=40`)
             .then(data => {
                 setResult(data.data.items);
             }).catch((error) => {
@@ -65,7 +65,7 @@ function GetBooks() {
             <div className="container">
                 <div className="row">
                     <BookCard result={result} />
-                    {!book ? <BookPlaceHolder /> : null}
+                    {!book ? <NewestBooks /> : null}
                 </div>
             </div>
         </form >
