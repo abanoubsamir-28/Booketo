@@ -14,7 +14,7 @@ function Footer() {
                             <h2 ><a className="ms-4 text-light text-decoration-none" href="google.com/">Booketo.com</a></h2>
                             <p className="menu my-3">
                                 <Link className="mx-3  text-light text-decoration-none" to="/">Home</Link>
-                                <Link className="mx-3  text-light text-decoration-none" to="/contactForm">Contact</Link>
+                                <Link className="mx-3  text-light text-decoration-none" to="/contactUs">Contact</Link>
                                 <Link className="mx-3  text-light text-decoration-none" to="/getbooks">Books</Link>
                                 <Link className="mx-3  text-light text-decoration-none" to="/register">Resister</Link>
 

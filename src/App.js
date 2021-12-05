@@ -46,6 +46,7 @@ function App() {
           <Route path="/wishlist" component={Wishlist} />
           <Route path="/cart" component={Cart} />
           <Route path="/notfound" component={NotFound} />
+          {/* <Route path="/contactUs" component={ContactsUs}/> */}
           <Route path="/:details_id" component={DisplayCom} />
         </Switch>
         <Footer />
