@@ -11,7 +11,7 @@ const Readingchallenge = () => {
         setnoReads(false)
     }
     const decreaseReads = () => {
-        if (books == 0) {
+        if (books === 0) {
             setnoReads(false);
         } else {
             setbooks(books - 1);

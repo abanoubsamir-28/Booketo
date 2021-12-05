@@ -3,12 +3,16 @@ import avatar from "./../../assets/bookProfile/Mask Group 1@2x.webp"
 import axios from "axios"
 import './reviews.css'
 import Loader from './../SharedComponents/Loader/Loader'
-const Reviews = () => {
+import AddReview from '../Forms/addReviews/AddReview'
+
+const Reviews = ({ values }) => {
     const [post, setPost] = useState('')
     const [review, setReview] = useState('')
     const [title, setTitle] = useState('')
     useEffect(() => {
         getOnePost()
+        console.log(values);
+
     }, [])
     const getOnePost = () => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -28,8 +32,9 @@ const Reviews = () => {
         setReview("")
         setTitle('')
     }
-    const addReview = (oneReview) => {
-        setPost([...post, oneReview])
+    const addReview = (values) => {
+        setPost([...post, values])
+        console.log(values);
     }
 
     return (
@@ -42,7 +47,7 @@ const Reviews = () => {
                             return (
                                 <div key={i} className="row col-lg-6 col-9 mt-4">
                                     <div className="col-sm-3">
-                                        <img src={avatar} alt="avatar" className="w-75"/>
+                                        <img src={avatar} alt="avatar" className="w-75" />
                                         <h5 className="mt-2 ms-3">user name</h5>
                                     </div>
                                     <div className="col-sm-9 ">
@@ -65,9 +70,10 @@ const Reviews = () => {
                             </textarea>
                             <button type="submit" className="reviewBtn btn ms-2 mt-3" >Add Review</button>
                         </form>
+                        {/* <AddReview post={post} /> */}
                     </div>
                 </div >)
-                : <Loader/>
+                : <Loader />
             }
         </>
     )

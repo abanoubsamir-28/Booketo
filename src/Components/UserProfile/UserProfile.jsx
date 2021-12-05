@@ -77,9 +77,9 @@ function UserProfile() {
 
             </div>
 
-            <div class="ps-5 input-group mb-3 mt-5 w-50">
-                <input  type="text" name="post" class="form-control" placeholder="Write New Post " aria-label="Recipient's username" aria-describedby="button-addon2" />
-                <button onClick={submitpost} class=" username btn btn-outline-secondary" type="button" id="button-addon2">Post</button>
+            <div className="ps-5 input-group mb-3 mt-5 w-50">
+                <input  type="text" name="post" className="form-control" placeholder="Write New Post " aria-label="Recipient's username" aria-describedby="button-addon2" />
+                <button onClick={submitpost} className=" username btn btn-outline-secondary" type="button" id="button-addon2">Post</button>
             </div>
             {/* <p>{poststate}</p> */}
 

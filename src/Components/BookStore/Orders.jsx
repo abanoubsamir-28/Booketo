@@ -4,7 +4,6 @@ import orders from './../../orders.json'
 import "./order.css"
 
 function Orders() {
-    console.log(orders);
     return (
         <div className="container">
             <div className="row">

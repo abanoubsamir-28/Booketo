@@ -1,0 +1,11 @@
+.addRevierw button {
+    background-color: var(--teal-bg);
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.addRevierw button:hover {
+    background-color: #fff;
+    color: var(--teal-bg);
+    border: 2px solid var(--teal-bg);
+}

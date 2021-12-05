@@ -9,15 +9,15 @@ import UserProfile from "./Components/UserProfile/UserProfile.jsx";
 import NotFound from "./Components/SharedComponents/PageNotFound/NotFound.jsx";
 import GetBooks from "./Components/BookSearch/GetBooks.jsx";
 import DisplayCom from "./Components/BookSearch/DisplayCom.jsx";
-import BookStore from "./Components/BookStore/BookStore.jsx";
 import BookCard from "./Components/BookSearch/BookCard.jsx";
 import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
-import { Provider } from "react-redux";
-import store from "./Store/store.jsx";
 import Wishlist from "./Components/SharedComponents/wishlist/Wishlist.jsx";
 import ContactsUs from "./Components/Forms/contacUs/ContactsUs.jsx";
+import BasicTabs from "./Components/BookStore/BookStore.jsx";
+import store from "./Store/store.jsx";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import "./App.css";
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
@@ -35,7 +35,7 @@ function App() {
           <Route path="/register" component={Signup} />
           <Route path="/getbooks" component={GetBooks} />
           <Route path="/card" component={BookCard} />
-          <Route path="/bookstore" component={BookStore} />
+          <Route path="/bookstore" component={BasicTabs} exact />
           <Route path="/contactUs" component={ContactsUs}/>
           <Route path="wishlist" component={Wishlist}/>
           <Route path="/:details_id" component={DisplayCom} />

@@ -1,0 +1,32 @@
+.css-heg063-MuiTabs-flexContainer {
+    justify-content: center;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    color: var(--hot-pink)!important;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+    background-color: var(--hot-pink)!important;
+}
+
+.pagination .page-link {
+    background-color: #f1f1f1;
+    color: var(--teal-bg);
+    border: 1px solid var(--teal-bg);
+}
+
+.pagination .page-link:hover {
+    background-color: var(--teal-bg);
+    color: white;
+    border: 1px solid #f1f1f1;
+}
+
+.page-item:last-child .page-link {
+    border-radius: 5px;
+}
+
+.pagination .page-item .page-link {
+    border-radius: 50%;
+    margin-right: 3px;
+}

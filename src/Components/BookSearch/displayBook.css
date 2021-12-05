@@ -1,0 +1,4 @@
+.bookProfile .category {
+    border: 1px solid var(--teal-bg);
+    padding: 10px;
+}
