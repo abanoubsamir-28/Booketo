@@ -45,7 +45,7 @@ function App() {
           <Route path="/uploadBook" component={UploadBookForm} />
           <Route path="/wishlist" component={Wishlist} />
           <Route path="/cart" component={Cart} />
-          <Router path="/notfound" component={NotFound} />
+          <Route path="/notfound" component={NotFound} />
           <Route path="/:details_id" component={DisplayCom} />
         </Switch>
         <Footer />
