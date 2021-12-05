@@ -4,7 +4,7 @@
     font-weight: 700;
 }
 .textt{
-    color: #d1314f;
+    color: black;
     font-weight: bold;
 }
 .footerelements{
@@ -13,15 +13,15 @@
     display: block;
 }
 .formargin{
-    margin-left:50% ;
+    margin-left:12% ;
 }
 
 .booksimg{
     overflow: hidden;
 }
-.grad {
+/* .grad {
     background-image: linear-gradient(to right,white, #d3d3d3,#9DCEFF,#26a3a6,#26A3A6);
-  }
+  } */
 .logo{
     width: 3%;
     margin-right: 2%;
