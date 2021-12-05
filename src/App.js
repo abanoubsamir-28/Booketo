@@ -10,6 +10,7 @@ import NotFound from "./Components/SharedComponents/PageNotFound/NotFound.jsx";
 import GetBooks from "./Components/BookSearch/GetBooks.jsx";
 import DisplayCom from "./Components/BookSearch/DisplayCom.jsx";
 import BookCard from "./Components/BookSearch/BookCard.jsx";
+import PaymentMethods from "./Components/PaymentForms/PaymentMethods.jsx";
 import UploadBookForm from "./Components/Forms/UploadBook/UploadBookForm.jsx";
 import Newsfeed from './Components/Newsfeed/MainNewsFeed/Newsfeed'
 import store from './Store/store';
@@ -20,6 +21,8 @@ import Wishlist from "./Components/SharedComponents/wishlist/Wishlist.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
 import store from "./Store/store.jsx";
 import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
+import Rate from "./Components/PaymentForms/Rate.jsx";
+import Thanks from "./Components/PaymentForms/Thanks.jsx";
 import QuoteMachine from "./Services/QuoteMachine.jsx";
 import User_profile from "./Components/user_profile/User_profile.jsx";
 import New_post_item from "./Components/SharedComponents/posts/new_post_item/New_post_item.jsx";
@@ -31,7 +34,6 @@ function App() {
     <Provider store={store}>
       <Router>
         <NavBar />
-        
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/newsfeed" component={Newsfeed} />
