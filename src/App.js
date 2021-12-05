@@ -19,8 +19,7 @@ import { Provider } from "react-redux";
 import "./App.css";
 import Wishlist from "./Components/SharedComponents/wishlist/Wishlist.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
-import store from "./Store/store.jsx";
-import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
+// import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed";
 import Rate from "./Components/PaymentForms/Rate.jsx";
 import Thanks from "./Components/PaymentForms/Thanks.jsx";
 import QuoteMachine from "./Services/QuoteMachine.jsx";
@@ -39,7 +38,7 @@ function App() {
           <Route path="/newsfeed" component={Newsfeed} />
           <Route path="/userprofile" component={UserProfile} />
           <Route path="/login" component={Signin} />
-          <Route path="/slider" component={SliderBook}/>
+          {/* <Route path="/slider" component={SliderBook} /> */}
           <Route path="/register" component={Signup} />
           <Route path="/getbooks" component={GetBooks} />
           <Route path="/card" component={BookCard} />
