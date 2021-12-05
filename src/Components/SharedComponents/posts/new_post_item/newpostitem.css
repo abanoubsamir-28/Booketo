@@ -1,0 +1,21 @@
+.new_post_item_card {
+    border: 2px solid #D1314F !important;
+    
+    
+}
+.new_post_item_card p {
+    color: black !important;
+}
+.post-icon {
+    transition: .3s;
+}
+.post-icon:hover {
+    color:#D1314F!important;
+    cursor: pointer !important;
+}
+.filled {
+    color: #D1314F !important;
+}
+.comment_card {
+    background-color: rgba(0, 0, 0, 0.02);
+}
