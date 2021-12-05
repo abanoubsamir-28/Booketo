@@ -18,13 +18,23 @@ import { Provider } from "react-redux";
 import "./App.css";
 import Wishlist from "./Components/SharedComponents/wishlist/Wishlist.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
-
+import store from "./Store/store.jsx";
+import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
+import QuoteMachine from "./Services/QuoteMachine.jsx";
+import User_profile from "./Components/user_profile/User_profile.jsx";
+import New_post_item from "./Components/SharedComponents/posts/new_post_item/New_post_item.jsx";
+import UserSettings from "./Components/SharedComponents/user_setings/UserSettings.jsx";
+// import getData, { BookAction } from './Store/bookProfile/BookAction'
+// import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
   return (
     <Provider store={store}>
       <Router>
         <NavBar />
-        <Switch>
+        <UserSettings/>
+        {/* <Newsfeed/> */}
+        {/* <User_profile /> */}
+        {/* <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/newsfeed" component={Newsfeed} />
           <Route path="/userprofile" component={UserProfile} />
@@ -37,7 +47,7 @@ function App() {
           <Route path="/cart" component={Cart} />
           <Router path="/notfound" component={NotFound} />
           <Route path="/:details_id" component={DisplayCom} />
-        </Switch>
+        </Switch> */}
         <Footer />
       </Router>
     </Provider>
