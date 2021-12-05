@@ -1,4 +1,4 @@
-.bookProfile__content h2 {
+/* .bookProfile__content h2 {
     font-family: var(--bebas-font);
 }
 
@@ -22,9 +22,10 @@
     background-color: var(--baby-blue);
     opacity: 0.8;
     transform: scale(1.1);
-}
+} */
 
-@media (max-width:576px) {
+
+/* @media (max-width:576px) {
     .bookProfile img {
         width: 100% !important;
     }
@@ -40,4 +41,4 @@
     .bookProfile img {
         width: 75% !important;
     }
-}
+} */

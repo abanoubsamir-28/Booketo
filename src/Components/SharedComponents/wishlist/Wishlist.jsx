@@ -1,6 +1,5 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
-import { FaTrashAlt } from 'react-icons/fa'
 import { MdOutlineFavorite } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromWishList } from '../../../Store/wishList/WishListAction'

@@ -39,10 +39,16 @@
     .reviews form {
         width: 100% !important;
     }
+    .reviews img {
+        width: 40% !important;
+    }
 }
 
 @media (min-width:576px) {
     .reviews form {
+        width: 100% !important;
+    }
+    .reviews img {
         width: 100% !important;
     }
 }
@@ -51,4 +57,7 @@
     .reviews form {
         width: 50% !important;
     }
+    /* .bookprofile.reviews img {
+        width: 50% !important;
+    } */
 }
