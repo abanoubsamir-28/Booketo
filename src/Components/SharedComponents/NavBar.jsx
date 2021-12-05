@@ -3,10 +3,14 @@ import '../../fonts.css'
 import logo from '../../assets/navbarFooter/svg (1).svg'
 import profile from '../../assets/UserProfile/464-4641403_png-file-user-icon-circle-svg.png'
 import { Link } from 'react-router-dom';
+import { Badge } from 'react-bootstrap';
+import { BsCart4 } from 'react-icons/bs';
+import { useSelector } from 'react-redux'
 
 
 function NavBar() {
     // eslint-disable-next-line
+    const res = useSelector(state => state.cartStore.CartQuantity)
     const [logged, setlogged] = useState(true);
     return (
         <>
@@ -28,10 +32,16 @@ function NavBar() {
                                         <li className="nav-item">
                                             <Link to="/getbooks" className="textt btn active pt-3 me-3" >Books</Link>
 
+
+                                        
                                         </li>
+
+
+             
                                         <li className="nav-item">
                                             <Link to='/contactus' className="textt btn active pt-3  me-3 " >Contact Us </Link>
                                         </li>
+
                                         <li className="nav-item">
                                             <Link to='/settings' className="textt btn active pt-3  me-3 " > Settings </Link>
                                         </li>
@@ -44,6 +54,20 @@ function NavBar() {
                                             </Link>
                                         </li>
                                       
+
+                                        <li className="nav-item">
+                                            <Link to="/wishlist" className=" me-3 text-light nav-link" >Wish List</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/cart' className=" me-3 text-light nav-link" >
+                                                <span >
+                                                    <BsCart4 /> <Badge pill bg="danger">{res ? res : 0}</Badge>
+                                                    <span className="visually-hidden">unread messages</span>
+                                                </span>
+                                            </Link>
+                                        </li>
+                                     
+                                       
                                     </ul>
                                 </div>
                             </div>

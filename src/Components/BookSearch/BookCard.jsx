@@ -5,6 +5,7 @@ import '../bookProfile/bookprofile.css'
 import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
 
+
 function BookCard(props) {
     const result = props.result
     const ratingChanged = (newRating) => {
@@ -47,11 +48,8 @@ function BookCard(props) {
                             <Link to={`/${book.id}`} className="btn btn btn-danger mt-2">More Details</Link>
                         </Card.Text>
                     </Card.Body>
-
-
                 </Card>
             </div>
-
         ))
     )
 }

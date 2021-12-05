@@ -39,7 +39,7 @@ const Postitem = (props) => {
         setShareCounter(shareCounter + 1);
     }
     return (
-        <div class="card py-3 my-3 col-md-7 align-self-center post-item shadow">
+        <div class="card py-3 align-self-center post-item shadow my-2">
             <div class="card-header">
                 <BsFilePerson className="fs-2 mx-2 text-primary" />
                 <h6 className="d-inline">User Name</h6>
