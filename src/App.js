@@ -26,6 +26,7 @@ import QuoteMachine from "./Services/QuoteMachine.jsx";
 import User_profile from "./Components/user_profile/User_profile.jsx";
 import New_post_item from "./Components/SharedComponents/posts/new_post_item/New_post_item.jsx";
 import UserSettings from "./Components/SharedComponents/user_setings/UserSettings.jsx";
+import Publisher from "./Components/publishers/Publisher.jsx";
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
@@ -47,6 +48,8 @@ function App() {
           <Route path="/cart" component={Cart} />
           <Route path="/notfound" component={NotFound} />
           {/* <Route path="/contactUs" component={ContactsUs}/> */}
+          {/* <Route path="/bookstore" component={BasicTabs} exact /> */}
+          <Route path="/publishers" component={Publisher}/>
           <Route path="/:details_id" component={DisplayCom} />
         </Switch>
         <Footer />
