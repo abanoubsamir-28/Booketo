@@ -1,40 +1,25 @@
-.card {
-    border: none;
+.header .carousel-indicators [data-bs-target] {
+    background-color: #000 !important;
 }
 
-.header__content h1 {
-    color: var(--redColor);
-    font-family: var(--fontTitle);
-}
-
-.header input {
-    border: 1px solid var(--tealColor);
-    width: 83.3333%;
-}
-
-.header input::placeholder {
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.header .form-control {
-    width: unset;
-}
-
-.search_input {
-    width: fit-content;
-    background-color: var(--tealColor);
-    border-radius: 50rem;
+.header .carousel-caption {
+    bottom: 30% !important;
 }
 
 @media (max-width: 576px) {
-    .header__img img {
+    .header .carousel-caption {
+        bottom: 11% !important;
+        left: 4%;
+    }
+    .header .carousel-caption .center {
+        position: absolute;
+        right: 0 !important;
+    }
+    .header .carousel-control-next div {
         display: none;
     }
-
-    .header__content h1 {
-        font-size: 3rem;
-        width: 70%;
+    .header .carousel-control-prev div {
+        display: none;
     }
 }
 
@@ -42,24 +27,22 @@
     .card-body .header__logo {
         width: 75% !important;
     }
-
-    .header__content h1 {
+    .header h1 {
         font-size: 2rem;
     }
-
     .header input::placeholder {
         font-size: 13px;
     }
 }
 
 @media (min-width: 768px) {
-    .header__content h1 {
+    .header h1 {
         font-size: 2.5rem;
     }
 }
 
 @media (min-width: 1200px) {
-    .header__content h1 {
+    .header h1 {
         font-size: 3.6rem;
     }
 }

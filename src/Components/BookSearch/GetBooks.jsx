@@ -45,7 +45,6 @@ function GetBooks() {
                 <div className="row justify-content-start align-items-center">
                     <div className="col-12 col-md-3 col-xl-3">
                         <input className="AutoFocus form-control" placeholder="Type something..." type="text" onChange={searchItem} />
-
                     </div>
                     <div className="d-flex text-center my-1 col-12 col-md-3 col-xl-3">
                         <button type="submit" className="mx-2 d-flex align-items-center btn btn-outline-info search-btn" >

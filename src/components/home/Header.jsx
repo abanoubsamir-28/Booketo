@@ -1,31 +1,60 @@
-import logo from "./../../assets/Landing/svg (1).svg"
-import bgImg from './../../assets/Landing/1733 [Converted].webp';
-import searchIcon from "./../../assets/Landing/search (1).svg"
 import "./header.css"
-import "./home.css"
+import { Link } from "react-router-dom";
 const Header = () => {
     return (
-        <header className="header">
-            <div class="card mb-3" >
-                <div class="row g-0 align-items-center justify-content-between">
-                    <div class="header__content col-sm-3 ">
-                        <div class="card-body  position-relative">
-                            <img src={logo} alt="logo" className="header__logo img-fluid" />
-                            <h1 className="card-text text-uppercase my-3"> Find your favorite books</h1>
-                            <div className=" search_input row align-items-baseline justify-content-center ">
-                                <input type="text" placeholder="Search your book" className="col-10 form-control rounded-pill d-inline" />
-                                <div className="col-2">
-                                    <img src={searchIcon} alt="search icon" />
+        <header>
+            <div className="header ">
+                <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://cdn.shopify.com/s/files/1/0265/8933/1530/files/Home-2-Slider-1.jpg?v=1569215594" class="d-block w-100" alt="..." />
+                            <div class="carousel-caption d-md-block text-black">
+                                <h1 className='text-uppercase mb-2'>best book shop</h1>
+                                <p className="ms-1 m-0 p-0 d-md-block">Get Newest And All Books.</p>
+                                <Link to="/register" className="btn border-danger ms-1 mt-2 rounded-pill" > GET STARTED ...</Link>
+                            </div>
+                        </div>
+                        <div class="carousel-item " data-bs-interval="1000000">
+                            <img src="https://cdn.shopify.com/s/files/1/0265/8933/1530/files/Home-2-Slider-2.png?v=1569062675" class="d-block w-100" alt="..." />
+                            <div class="carousel-caption center text-end d-md-block text-black ">
+                                <div className="d-flex align-items-end flex-column">
+                                    <h1 className='text-uppercase mb-2 '>best book shop</h1>
+                                    <p className=" m-0 p-0 d-md-block">Get Newest And All Books.</p>
+                                        <Link to="/register" className="btn border-danger mt-2 rounded-pill" >
+                                            GET STARTED ...</Link>
                                 </div>
                             </div>
                         </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.shopify.com/s/files/1/0265/8933/1530/files/Home-2-Slider-3.jpg?v=1569215841" class="d-block w-100" alt="..." />
+                            <div class="carousel-caption text-start d-md-block text-black">
+                                <h1 className='text-uppercase mb-md-2'>best book shop</h1>
+                                <p className="ms-1 m-0 p-0 d-md-block">Get Newest And All Books.</p>
+                                <Link to="/register" className="btn border-danger ms-1 mt-2 rounded-pill">GET STARTED ..</Link>
+                            </div>
+                        </div>
                     </div>
-                    <div class="header__img col-sm-9">
-                        <img src={bgImg} class="img-fluid rounded-start" alt="background" />
-                    </div>
+                    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <div className="bg-md-info text-black p-3">
+                            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </div>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <div  className="bg-md-info text-black p-3">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </div>
+                    </button>
                 </div>
             </div>
         </header>
+
     )
 }
 

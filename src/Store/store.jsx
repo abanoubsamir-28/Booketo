@@ -1,6 +1,5 @@
 import { createStore } from "redux";
-// import thunk from 'redux-thunk'
-// import bookReducer from './bookProfile/BookReducer'
+
 import rootReducer from "./rootReducer";
 
 // Please setup the redux devtools to track the redux store from the extesion and this code added just to link store of the app with the chrome extension that called 'redux devtools'
