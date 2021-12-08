@@ -8,7 +8,7 @@ import Signup from "./Components/Forms/signup/Signup.jsx";
 import UserProfile from "./Components/UserProfile/UserProfile.jsx";
 import NotFound from "./Components/SharedComponents/PageNotFound/NotFound.jsx";
 import GetBooks from "./Components/BookSearch/GetBooks.jsx";
-import DisplayCom from "./Components/BookSearch/DisplayCom.jsx";
+import DisplayBooks from "./Components/BookSearch/DisplayBooks.jsx";
 import BookCard from "./Components/BookSearch/BookCard.jsx";
 import PaymentMethods from "./Components/PaymentForms/PaymentMethods.jsx";
 import UploadBookForm from "./Components/Forms/UploadBook/UploadBookForm.jsx";
@@ -49,8 +49,8 @@ function App() {
           <Route path="/notfound" component={NotFound} />
           {/* <Route path="/contactUs" component={ContactsUs}/> */}
           {/* <Route path="/bookstore" component={BasicTabs} exact /> */}
-          <Route path="/publishers" component={Publisher}/>
-          <Route path="/:details_id" component={DisplayCom} />
+          <Route path="/publishers" component={Publisher} />
+          <Route path="/:details_id" component={DisplayBooks} />
         </Switch>
         <Footer />
       </Router>

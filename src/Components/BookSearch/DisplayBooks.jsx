@@ -9,7 +9,6 @@ import Loader from "../SharedComponents/Loader/Loader";
 import { addToWishList, removeFromWishList } from "../../Store/wishList/WishListAction";
 import Wishlist from "../SharedComponents/wishlist/Wishlist";
 import { ToastContainer } from "react-toastify";
-
 function DisplayCom({ match }) {
   const dispatch = useDispatch();
   const [data, setData] = useState(null);
@@ -17,7 +16,6 @@ function DisplayCom({ match }) {
   useEffect(() => {
     getSingleProduct();
   }, []);
-
   const getSingleProduct = () => {
     axios
       .get(
@@ -30,22 +28,17 @@ function DisplayCom({ match }) {
         return error;
       });
   };
-
   const handleAddtoCart = (bookItem) => {
     dispatch(cartStoreAction(bookItem));
   };
   // add to wishList 
   const handleAddtowishList = (book) => {
-    const bookTitle = localStorage.setItem('title', book.volumeInfo.title)
-    const bookImage = localStorage.setItem('image', book.volumeInfo.imageLinks.thumbnail)
     dispatch(addToWishList(book))
     setfound(false)
-    console.log("add=book: ", book.volumeInfo.title, book.volumeInfo.imageLinks.thumbnail);
   }
   const handleRemoveFromWishlist = (book) => {
     dispatch(removeFromWishList(book))
     setfound(true)
-  
   }
   return (
     <>   {data ? (
@@ -56,7 +49,6 @@ function DisplayCom({ match }) {
             <div className="row">
               <div className="bookProfile__img col-4">
                 <img src={data?.volumeInfo?.imageLinks !== undefined ? data?.volumeInfo?.imageLinks.thumbnail : "https://via.placeholder.com/150"} alt={data?.title} />
-
               </div>
               <div className="bookData.bookProfile__content col-md-6">
                 <h2 className="text-danger fw-bold">
@@ -160,11 +152,11 @@ function DisplayCom({ match }) {
             </div>
           </div>
           <Reviews />
-        
-        
-                
+
+
+
         </section>
-          <ToastContainer autoClose={2000} />
+        <ToastContainer autoClose={2000} />
       </>
     )
       : (
