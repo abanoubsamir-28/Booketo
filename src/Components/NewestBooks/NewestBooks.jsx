@@ -19,8 +19,7 @@ function NewestBooks() {
                 return error
             })
     }, [])
-    // console.log(arr)
-    // console.log(result);
+    
     return (
         <>
             {result ?
