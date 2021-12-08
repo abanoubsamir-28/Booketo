@@ -2,7 +2,6 @@
     background-image: url("../../../assets/forms_assests/SignupBackground.jpg");
     background-position: center center;
     background-size: cover;
-
 }
 
 .sign_up .overlay {
@@ -14,5 +13,5 @@
 }
 
 .polices span:hover {
-    color: var(--hot-pink) !important;
+    color: var(--light-brown) !important;
 }

@@ -39,13 +39,13 @@ const Reviews = () => {
                         <h3 className="fs-2">Reviews</h3>
                         {post.map((ele, i) => {
                             return (
-                                <div key={i} className="row col-lg-6 col-9 mt-3">
+                                <div key={i} className="row col-lg-6 col-9 mt-3 border border-2 p-3 shadow">
                                     <div className="col-sm-3">
                                         <img src={avatar} alt="avatar" />
-                                        <h5 className="mt-2 ms-3">user name</h5>
+                                        <h5 className="mt-2 ms-2 fw-bold text-capitalize">user name</h5>
                                     </div>
                                     <div className="col-sm-9 ">
-                                        <h5>{ele.title}</h5>
+                                        <h5 className="fw-bold text-capitalize">{ele.title}</h5>
                                         <p className="">{ele.body}</p>
                                         <p className=" input_text">{ele.review}</p>
                                     </div>

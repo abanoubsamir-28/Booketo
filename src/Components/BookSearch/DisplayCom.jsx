@@ -57,7 +57,7 @@ function DisplayCom({ match }) {
                 <img src={data?.volumeInfo?.imageLinks !== undefined ? data?.volumeInfo?.imageLinks.thumbnail : "https://via.placeholder.com/150"} alt={data?.title} />
               </div>
               <div className="bookData.bookProfile__content col-md-8 col-lg-6">
-                <h2 className="text-danger fw-bold ms-1">
+                <h2 className=" fw-bold ms-1">
                   {data.volumeInfo?.title}
                 </h2>
                 {data.volumeInfo?.authors !== undefined ? (
@@ -127,8 +127,9 @@ function DisplayCom({ match }) {
                 )}
                 <button
                   onClick={() => handleAddtoCart(data)}
-                  className="wishBtn btn mx-3"
+                  className="wishBtn btn mx-3 "
                   type="button"
+                  
                 >
                   <span className="fs-5"></span> <AiOutlineShoppingCart /> Add
                   to cart

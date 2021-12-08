@@ -6,9 +6,19 @@
     bottom: 30% !important;
 }
 
+.header h1 {
+    font-weight: 700;
+    color: #9f4431;
+}
+
+.header .btn {
+    background-color: #9f4431 !important;
+    color: #fff;
+}
+
 @media (max-width: 576px) {
     .header .carousel-caption {
-        bottom: 11% !important;
+        bottom: 5% !important;
         left: 4%;
     }
     .header .carousel-caption .center {
@@ -20,6 +30,9 @@
         display: none;
     }
     .header .carousel-control-prev div {
+        display: none;
+    }
+    .header .carousel-indicators [data-bs-target] {
         display: none;
     }
 }

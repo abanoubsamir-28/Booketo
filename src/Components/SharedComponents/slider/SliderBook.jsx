@@ -56,8 +56,8 @@ function SliderBook() {
             {result ?
                 <div className="slider container px-5 my-5">
                     <div className="slider__header">
-                        <h2 className='text-center mb-3 '> Newest Book </h2>
-                        <p className="text-center text-muted mb-5">Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas. </p>
+                        <h2 className='text-center mb-4 fw-bold h1'> Newest Book </h2>
+                      
                     </div>
                     <Slider {...settings}>
                         {result.map((book, index) => (

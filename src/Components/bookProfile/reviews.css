@@ -1,27 +1,20 @@
-.reviews {
-    background-image: url(./../../assets/bookProfile/Path\ 924@2x.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 .reviews h3 {
-    color: var(--hot-pink);
-    font-family: var(--bebas-font);
+    color: var(--light-brown);
+    font-family: var(--nunito-font);
 }
 
 .reviews h4 {
-    color: var(--hot-pink);
-    font-family: var(--bebas-font);
+    color: var(--light-brown);
+    font-family: var(--nunito-font);
 }
 
 .reviews h5 {
-    color: var(--hot-pink);
-    font-family: var(--bebas-font);
+    color: var(--light-brown);
+    font-family: var(--nunito-font);
 }
 
 .reviews .reviewBtn {
-    background-color: var(--teal-bg);
+    background-color: var(--secondary-bg);
     transition: all ease-in-out 0.5s;
 }
 

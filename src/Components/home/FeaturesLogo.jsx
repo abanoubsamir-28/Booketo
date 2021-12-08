@@ -4,9 +4,9 @@ import { BsHeadset } from 'react-icons/bs'
 import {  GiCash } from 'react-icons/gi'
 const FeaturesLogo = () => {
     return (
-        <div className='featureLogo my-5 p-xl-5 p-3'  style={{background:"#fbf8f3"}} >
+        <div className='featureLogo my-5 p-xl-5 p-3' >
             <div className="container">
-                <h2 className="text-center my-5">OUR FEATURES</h2>
+                <h2 className="text-center my-5 fw-bolder h1">Our Features</h2>
                 <div className="row">
                     {/* start */}
                     <div className="col-md-6 col-lg-4">

@@ -23,7 +23,7 @@ function UserProfile() {
             .then(res => res.json())
             .then(json => setuserstate(json))
     }
-    function submitpost(){
+    function submitpost() {
         setcounterstate(counterstate + 1)
     }
 
@@ -40,13 +40,21 @@ function UserProfile() {
     // }
     // function submitpost() {
     //     addpost()
-     
+
     // }
 
     return (
         <div className="container-fluid mt-5 pt-5 mainprofile">
-  
 
+            <div className="text-center">
+                <button className=" ms-5 mb-5 btn-border rounded-pill btn shadow">test1</button>
+            </div>
+            <div className="text-center">
+                <button className="btn mt-5 mb-5 btn-trans rounded-pill">test 2frefrfre</button>
+            </div>
+            <div className="text-center">
+                <button className="btn mt-5 mb-5 btn-borde rounded-pill">test 2frefrfre</button>
+            </div>
             <div className="row">
                 <img src={user} className="borderardius w-25 col-md-4 col-sm-12" />
                 {/* <form className=" w-25 col-md-4 col-sm-12">
@@ -56,7 +64,7 @@ function UserProfile() {
                 </form> */}
                 <div className="mt-5 col-md-8 col-sm-12">
                     <h1 className=" ms-5  username">{userstate.username} </h1>
-                    
+
                     <div className="row container-fluid  mt-3">
                         <h5 className="col-md-4 col-sm-12 ps-5 ">Followers </h5>
                         <h5 className="col-md-4 col-sm-12 contentdata">250</h5>
@@ -78,7 +86,7 @@ function UserProfile() {
             </div>
 
             <div class="ps-5 input-group mb-3 mt-5 w-50">
-                <input  type="text" name="post" class="form-control" placeholder="Write New Post " aria-label="Recipient's username" aria-describedby="button-addon2" />
+                <input type="text" name="post" class="form-control" placeholder="Write New Post " aria-label="Recipient's username" aria-describedby="button-addon2" />
                 <button onClick={submitpost} class=" username btn btn-outline-secondary" type="button" id="button-addon2">Post</button>
             </div>
             {/* <p>{poststate}</p> */}
@@ -95,7 +103,7 @@ function UserProfile() {
             <div className="container-fluid mt-3 p-1 Post">
                 <p className="p-2 contentdata">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nisi, cumque voluptatibus tenetur aliquam nesciunt porro illum assumenda ad recusandae nemo esse laborum. Quia aspernatur deleniti, vel repellendus sit ad.</p>
             </div>
-            
+
 
 
         </div>
