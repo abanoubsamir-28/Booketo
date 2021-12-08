@@ -17,7 +17,7 @@ function DisplayCom({ match }) {
 
   useEffect(() => {
     getSingleProduct();
-  }, []);
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   const getSingleProduct = () => {
     axios
