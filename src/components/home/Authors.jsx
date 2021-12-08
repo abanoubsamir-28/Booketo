@@ -7,7 +7,7 @@ const Authors = () => {
         <div className="author mt-5">
             <div className="container p-5">
                 <div className="author__title">
-                    <h2 className=" ms-4 mb-5">AUTHORS</h2>
+                    <h2 className=" ms-4 mb-5 text-center">AUTHORS</h2>
                 </div>
                 <div className="row justify-content-center">
                     {/* start */}

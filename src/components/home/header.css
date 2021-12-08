@@ -13,7 +13,8 @@
     }
     .header .carousel-caption .center {
         position: absolute;
-        right: 0 !important;
+        right: -10% !important;
+        bottom: 40%;
     }
     .header .carousel-control-next div {
         display: none;
@@ -24,14 +25,8 @@
 }
 
 @media (min-width: 576px) {
-    .card-body .header__logo {
-        width: 75% !important;
-    }
     .header h1 {
         font-size: 2rem;
-    }
-    .header input::placeholder {
-        font-size: 13px;
     }
 }
 
