@@ -39,6 +39,7 @@ const Reviews = () => {
                         <h3 className="fs-2">Reviews</h3>
                         {post.map((ele, i) => {
                             return (
+
                                 <div key={i} className="row col-lg-6 col-9 mt-3 border border-2 p-3 shadow">
                                     <div className="col-sm-3">
                                         <img src={avatar} alt="avatar" />

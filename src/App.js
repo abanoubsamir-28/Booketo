@@ -7,6 +7,7 @@ import Signin from "./Components/Forms/Signin/Signin.jsx";
 import Signup from "./Components/Forms/signup/Signup.jsx";
 import NotFound from "./Components/SharedComponents/PageNotFound/NotFound.jsx";
 import GetBooks from "./Components/BookSearch/GetBooks.jsx";
+import BookStore from "./Components/BookStore/BookStore.jsx";
 import DisplayBooks from "./Components/BookSearch/DisplayBooks.jsx";
 import BookCard from "./Components/BookSearch/BookCard.jsx";
 import PaymentMethods from "./Components/PaymentForms/PaymentMethods.jsx";
@@ -31,6 +32,7 @@ import store from './Store/store'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
   return (
+
     <Provider store={store}>
       <Router>
         <NavBar />
@@ -43,6 +45,7 @@ function App() {
           <Route path="/register" component={Signup} />
           <Route path="/getbooks" component={GetBooks} />
           <Route path="/card" component={BookCard} />
+            <Route path="/bookstore" component={BookStore} />
           <Route path="/uploadBook" component={UploadBookForm} />
           <Route path="/wishlist" component={Wishlist} />
           <Route path="/cart" component={Cart} />
