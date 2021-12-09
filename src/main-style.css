@@ -14,6 +14,9 @@
     background-color: var(--dark-brown);
     border: var(--dark-brown);
 }
+.bg-brown{
+    background-color: var(--dark-brown) !important;
+}
 
 /* Start Forms Styling */
 

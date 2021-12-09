@@ -49,14 +49,14 @@ function NavBar() {
                                             <Link onClick={makefalse} to='/' className="textt btn active pt-3 me-3" >Logout</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link to='/cart' className="textt btn active pt-3 me-3" ><span >
-                                                <BsCart4 /> <Badge pill bg="danger">{res ? res : 0}</Badge>
+                                            <Link to='/cart' className=" btn active pt-3 me-3" ><span >
+                                                <BsCart4 /> <Badge pill className="bg-brown">{res ? res : 0}</Badge>
                                                 <span className="visually-hidden">unread messages</span>
                                             </span></Link>
                                         </li>
                                         <li className="nav-item w-25">
                                             <Link to='/userprofile' className=" w-25 btn m-0 p-0 " >
-                                                <img src={profile} className="profilephoto" />
+                                                <img src={profile} className="profilephoto" alt=""/>
                                             </Link>
                                         </li>
                                         

@@ -42,7 +42,7 @@ const Wishlist = () => {
                                     <td>
                                         <AiOutlineClose
                                             onClick={() => { handleRemoveFromWishlist(book) }}
-                                            className=" btn-danger ms-2 fs-4 rounded " />
+                                            className=" btn-trans  ms-2 fs-4 rounded " />
                                     </td>
 
                                 </tr>
