@@ -1,5 +1,5 @@
 .new_post_item_card {
-    border: 2px solid #D1314F !important;
+    border: 2px solid var(--dark-brown) !important;
     
     
 }
@@ -10,11 +10,11 @@
     transition: .3s;
 }
 .post-icon:hover {
-    color:#D1314F!important;
+    color:var(--light-brown) !important;
     cursor: pointer !important;
 }
 .filled {
-    color: #D1314F !important;
+    color: var(--light-brown) !important;
 }
 .comment_card {
     background-color: rgba(0, 0, 0, 0.02);

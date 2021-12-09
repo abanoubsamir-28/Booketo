@@ -11,7 +11,9 @@
     --nunito-font: 'Nunito', sans-serif;
 }
 
-
+body {
+    overflow-x: hidden;
+}
 /* Start Forms Styling */
 
 .form {

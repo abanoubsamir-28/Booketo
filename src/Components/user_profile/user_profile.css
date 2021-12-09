@@ -1,11 +1,9 @@
-
-
 .user__profile .user_card {
     border: none;
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    cursor: pointer ; 
+    cursor: pointer;
     font-family: 'Bebas Neue', cursive;
     /* background-image: url('../../assets/UserProfile/books.svg');
     background-position: bottom right;
@@ -63,4 +61,53 @@
 
 .user__profile p {
     color: #D1314F;
+}
+
+.user__card {
+    border-left: 1px solid var(--dark-brown);
+}
+.user__card p {
+    color: #EFEFEF !important;
+}
+
+.user__profile__image img {
+    background-color: #707070;
+    transition: .5s all;
+    cursor: pointer;
+}
+
+.user__profile__image img:hover {
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+}
+
+.user_profile_edit_button {
+    border: 1px solid transparent;
+    width: 40%;
+    color: rgba(255, 255, 255, .5);
+    background-color: black;
+}
+
+.user_profile_edit_button:hover {
+    border: 1px solid white;
+    color: white;
+    color: rgba(255, 255, 255, 1);
+}
+
+.user_profile_post_button {
+    border: 1px solid transparent;
+    width: 40%;
+    color: white;
+    background-color: var(--baby-blue);
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+.user_profile_post_button:hover {
+    border: 1px solid black;
 }
