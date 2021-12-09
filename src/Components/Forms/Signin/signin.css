@@ -6,11 +6,7 @@
     font-family: var(--);
 }
 
-.sign_in .overlay {
-    background-color: rgba(0, 0, 0, .8);
-}
-
-.sing_in_options .icon {
+.sign_in .sing_in_options .icon {
     cursor: pointer;
     transition: .3s;
     -webkit-transition: .3s;

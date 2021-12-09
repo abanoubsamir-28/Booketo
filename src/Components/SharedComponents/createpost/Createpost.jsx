@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { createPost } from '../../../Store/createPost/createPostActions'
 import "./createpost.css";
@@ -10,7 +10,7 @@ const Createpost = () => {
     }
     return (
         <>
-            <div class="input-group input-group-lg w-100">
+            <div className="input-group input-group-lg w-100">
                 <textarea
                     type="text"
                     className="w-100 post-share-input p-3 shadow rounded-3"
