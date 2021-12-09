@@ -3,14 +3,16 @@ import Header from './Header'
 import Seller from './Seller'
 import FeaturesLogo from './FeaturesLogo'
 import SliderBook from './../SharedComponents/slider/SliderBook'
+import LogInNavbar from '../SharedComponents/navbarHome/logInNavbar'
 
 export const Home = () => {
     return (
         <div className="landing" >
+            <LogInNavbar/>
             <Header/>
             <Seller/>
-            <SliderBook/>
             <FeaturesLogo/>
+            <SliderBook/>
             <Authors/>
         </div>
     )

@@ -47,7 +47,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <NavBar />
+        {/* <NavBar /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/newsfeed" component={Newsfeed} />
