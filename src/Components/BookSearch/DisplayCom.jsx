@@ -9,6 +9,8 @@ import Loader from "../SharedComponents/Loader/Loader";
 import { addToWishList, removeFromWishList } from "../../Store/wishList/WishListAction";
 import Wishlist from "../SharedComponents/wishlist/Wishlist";
 import './bookdetailes.css'
+import { ToastContainer } from "react-toastify";
+
 
 function DisplayCom({ match }) {
   const dispatch = useDispatch();
@@ -38,8 +40,11 @@ function DisplayCom({ match }) {
   };
   // add to wishList 
   const handleAddtowishList = (book) => {
+    const bookTitle = localStorage.setItem('title', book.volumeInfo.title)
+    const bookImage = localStorage.setItem('image', book.volumeInfo.imageLinks.thumbnail)
     dispatch(addToWishList(book))
     setfound(false)
+    console.log("add=book: ", book.volumeInfo.title, book.volumeInfo.imageLinks.thumbnail);
   }
   const handleRemoveFromWishlist = (book) => {
     dispatch(removeFromWishList(book))
@@ -159,7 +164,11 @@ function DisplayCom({ match }) {
             </div>
           </div>
           <Reviews />
+        
+        
+                
         </section>
+          <ToastContainer autoClose={2000} />
       </>
     )
       : (

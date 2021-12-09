@@ -3,21 +3,30 @@
     color: #d3d3d3;
     font-weight: 700;
 }
-
+.textt{
+    color: black;
+    font-weight: bold;
+}
 .footerelements{
     color:  #9b9b9b;
     font-size: 100;
     display: block;
 }
+.formargin{
+    margin-left:12% ;
+}
 
 .booksimg{
     overflow: hidden;
 }
-
-.navbar{
-    background-color: #26a3a6;
-}
+/* .grad {
+    background-image: linear-gradient(to right,white, #d3d3d3,#9DCEFF,#26a3a6,#26A3A6);
+  } */
 .logo{
-    width: 5%;
+    width: 3%;
     margin-right: 2%;
+}
+.profilephoto{
+    width: 70%;
+    border-radius: 50%;
 }
