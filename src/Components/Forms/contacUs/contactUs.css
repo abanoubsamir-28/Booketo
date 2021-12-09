@@ -1,0 +1,10 @@
+.contactUs {
+    background-image: url("../../../assets/forms_assests/SigninBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.contactUs .overlay {
+    background-color: rgba(0, 0, 0, .8);
+}
