@@ -26,8 +26,8 @@ import { Provider } from "react-redux";
 // import Wishlist from "./Components/SharedComponents/wishlist/Wishlist.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
 // import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed";
-// import Rate from "./Components/PaymentForms/Rate.jsx";
-// import Thanks from "./Components/PaymentForms/Thanks.jsx";
+import Rate from "./Components/PaymentForms/Rate.jsx";
+import Thanks from "./Components/PaymentForms/Thanks.jsx";
 // import QuoteMachine from "./Services/QuoteMachine.jsx";
 import User_profile from "./Components/user_profile/User_profile.jsx";
 // import New_post_item from "./Components/SharedComponents/posts/new_post_item/New_post_item.jsx";
@@ -36,11 +36,11 @@ import Publisher from "./Components/publishers/Publisher.jsx";
 // import store from './Store/store'
 // ||||||| e346519
 import "./App.css";
+import Payment from "./Components/PaymentForms/Payment.jsx";
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
   return (
-
     <Provider store={store}>
       <Router>
         {/* <NavBar /> */}
@@ -49,7 +49,7 @@ function App() {
           <Route path="/newsfeed" component={Newsfeed} />
           <Route path="/userprofile" component={User_profile} />
           <Route path="/login" component={Signin} />
-          <Route path="/settings" component={UserSettings}/>
+          <Route path="/settings" component={UserSettings} />
           <Route path="/register" component={Signup} />
           <Route path="/getbooks" component={GetBooks} />
           <Route path="/cart" component={Cart} />
@@ -58,6 +58,10 @@ function App() {
           <Route path="/wishlist" component={Wishlist} />
           <Route path="/notfound" component={NotFound} />
           <Route path="/publishers" component={Publisher} />
+          <Route path="/payment" component={Payment} />
+          <Route path="/paymentMethod" component={PaymentMethods} />
+          <Route path="/rate" component={Rate} />
+          <Route path="/thanks" component={Thanks} />
           <Route path="/bookstore" component={BasicTabs} exact />
           <Route path="/contactUs" component={ContactsUs}/>
           <Route component={NotFound} />

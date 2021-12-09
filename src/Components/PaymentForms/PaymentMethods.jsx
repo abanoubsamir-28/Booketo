@@ -10,7 +10,7 @@ function PaymentMethods() {
         cardnumber: '',
         name: '',
         expire: '',
-        svc:'',
+        svc: '',
     }
     const validationSchema = Yup.object({
         payment: Yup.string(),
@@ -22,8 +22,8 @@ function PaymentMethods() {
             .max(25, "you exceeded Maximum "),
         expire: Yup.string().required('expiration date is required'),
         cvc: Yup.string().required('CVC is a required field')
-        .min(3, "Minimum is 3 Numbers")
-        .max(3, "you exceeded Maximum "),
+            .min(3, "Minimum is 3 Numbers")
+            .max(3, "you exceeded Maximum "),
     })
     const onSubmit = values => {
         validationSchema(values);
@@ -73,7 +73,7 @@ function PaymentMethods() {
                                                             name="payment"
                                                             id="credit"
                                                             onChange={paywithcredit}
-                                                           
+
                                                         />
                                                         <label htmlFor="credit" className="form-check-label mx-2 text-white">
                                                             Credit Card
@@ -92,16 +92,16 @@ function PaymentMethods() {
                                                                     <FormikControl control='date' type='date' label='Expires at ' name='expire' />
                                                                     <FormikControl control='input' type='text' label=' Name On Credit Card ' name='name' />
                                                                     <FormikControl control='number' type='text' label='CVC ' name='cvc' />
-                                                                    <button type="submit" className="btn btn-primary ms-1 mt-4">
-                                                                        <Link to="/rate"  className="text-light nav-link">Completet Payment</Link>
-                                                                        </button>
+                                                                    <div type="submit" className="ms-1 mt-4">
+                                                                        <Link to="/rate" className="btn btn-trans rounded-pill">Completet Payment</Link>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            
+
                                                             :
-                                                            <button type="submit" className="btn btn-primary ms-1 mt-4">
-                                                                        <Link to="/rate"  className="text-light nav-link ">Completet Payment</Link>
-                                                                        </button>
+                                                            <div type="submit" className="ms-1 mt-4">
+                                                                <Link to="/rate" className="btn btn-trans rounded-pill ">Completet Payment</Link>
+                                                            </div>
                                                     }
 
                                                 </Form>

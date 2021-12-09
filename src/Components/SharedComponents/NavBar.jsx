@@ -19,12 +19,44 @@ function NavBar() {
         <>
             {
 
+
                 <div>
                     <nav className="grad navbar navbar-expand-lg navbar-light navbar">
                         <div className="container  ">
                             <img src={logo} className="logo ms-5 me-5 " alt="" />
                             <button className="me-5 pe-5 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon "></span>
+                                        <li className="nav-item">
+                                            <Link to='/settings' className="textt btn active pt-3  me-3 " > Settings </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to="/wishlist" className="textt btn active pt-3 me-3" >Wish List</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link onClick={makefalse} to='/' className="textt btn active pt-3 me-3" >Logout</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to='/cart' className=" btn active pt-3 me-3" ><span >
+                                                <BsCart4 /> <Badge pill className="bg-brown">{res ? res : 0}</Badge>
+                                                <span className="visually-hidden">unread messages</span>
+                                            </span></Link>
+                                        </li>
+                                        <li className="nav-item w-25">
+                                            <Link to='/userprofile' className=" w-25 btn m-0 p-0 " >
+                                                <img src={profile} className="profilephoto" alt=""/>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    :
+                    <nav className="navbar grad navbar-expand-lg navbar-light navbar">
+                        <div className="container-fluid">
+                            <img src={logo} className="logo ms-5" alt="" />
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
                             </button>
                             <div className="ms-5 ps-5 collapse navbar-collapse ps-5 " id="navbarSupportedContent">
                                 <ul className=" ms-5 ps-5 navbar-nav mb-2 mb-lg-0">

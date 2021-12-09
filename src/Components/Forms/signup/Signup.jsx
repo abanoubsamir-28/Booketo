@@ -140,6 +140,7 @@ function Signup() {
 
                                         </div>
                                     </div>
+
                                     <div className="mt-3">
                                     {
                                         typeofuser === true ?
@@ -155,6 +156,9 @@ function Signup() {
                                             </div>
                                     }
                                     </div>
+
+                                    <button type="submit" className="btn btn-trans rounded-pill ms-4">Submit</button>
+                                  
 
                                 </Form>
                             </div>
