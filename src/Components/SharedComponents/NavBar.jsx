@@ -21,14 +21,14 @@ function NavBar() {
 
                 <div>
                     <nav className="grad navbar navbar-expand-lg navbar-light navbar">
-                        <div className="container-fluid  ">
+                        <div className="container  ">
                             <img src={logo} className="logo ms-5 me-5 " alt="" />
                             <button className="me-5 pe-5 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon "></span>
                             </button>
-                            <div className="collapse navbar-collapse ps-5 " id="navbarSupportedContent">
-                                <ul className="navbar-nav mb-2 mb-lg-0">
-                                    <li className="ms-auto nav-item ">
+                            <div className="ms-5 ps-5 collapse navbar-collapse ps-5 " id="navbarSupportedContent">
+                                <ul className=" ms-5 ps-5 navbar-nav mb-2 mb-lg-0">
+                                    <li className="nav-item ">
                                         <Link to="/newsfeed" className="textt btn active pt-3 me-3 " >Home</Link>
                                     </li>
                                     <li className="nav-item">
@@ -37,12 +37,8 @@ function NavBar() {
                                     <li className="nav-item">
                                         <Link to='/contactus' className="textt btn active pt-3  me-3 " > Contact Us </Link>
                                     </li>
-                                    <li className="nav-item">
-                                        <Link to="/wishlist" className="textt btn active pt-3 me-3" >Wish List</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link onClick={makefalse} to='/' className="textt btn active pt-3 me-3" >Logout</Link>
-                                    </li>
+                                    
+                                   
                                     <li className="nav-item">
                                         <Link to='/cart' className="textt btn active pt-3 me-3" ><span >
                                             <BsCart4 /> <Badge pill bg="danger">{res ? res : 0}</Badge>
@@ -50,11 +46,13 @@ function NavBar() {
                                         </span></Link>
                                     </li>
                                     <li className="nav-item w-25">
-                                        <Link to='/userprofile' className=" w-25 btn m-0 p-0 " >
+                                        <Link to='/userprofile' className=" w-25 btn mt-2 p-0 " >
                                             <img src={profile} className="profilephoto " />
                                         </Link>
                                     </li>
-
+                                    <li className="nav-item">
+                                        <Link onClick={makefalse} to='/'className=" btn btn-borde rounded-pill mt-2" >Logout</Link>
+                                    </li>
 
                                 </ul>
                             </div>
