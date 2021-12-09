@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
 import './signin.css'
+import { Link } from 'react-router-dom';
 import { GrFacebook, GrTwitter, GrGoogle } from 'react-icons/gr'
 function Signin() {
     const initialValues = {
@@ -47,7 +48,10 @@ function Signin() {
                                                 Remember Me
                                             </label>
                                         </div>
-                                        <button type="submit" className="btn me-3">Login</button>
+                                        
+                                        <button type="submit" >
+                                        <Link to="/newsfeed"  className="btn me-1 " >Login</Link>
+                                        </button>
                                         <span className="text-white mx-1">
                                             <a href="#google"> Register?</a>
                                         </span>

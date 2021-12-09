@@ -7,17 +7,13 @@ import Signin from "./Components/Forms/Signin/Signin.jsx";
 import Signup from "./Components/Forms/signup/Signup.jsx";
 import NotFound from "./Components/SharedComponents/PageNotFound/NotFound.jsx";
 import GetBooks from "./Components/BookSearch/GetBooks.jsx";
-
 import BookStore from "./Components/BookStore/BookStore.jsx";
 import DisplayBooks from "./Components/BookSearch/DisplayBooks.jsx";
 // import DisplayCom from "./Components/BookSearch/DisplayCom.jsx";
 // import BookStore from "./Components/BookStore/BookStore.jsx";
-
 import BookCard from "./Components/BookSearch/BookCard.jsx";
 import PaymentMethods from "./Components/PaymentForms/PaymentMethods.jsx";
 import UploadBookForm from "./Components/Forms/UploadBook/UploadBookForm.jsx";
-
-
 import Newsfeed from "./Components/Newsfeed/MainNewsFeed/Newsfeed.jsx";
 import Wishlist from "./Components/SharedComponents/wishlist/Wishlist.jsx";
 import ContactsUs from "./Components/Forms/contacUs/ContactsUs.jsx";
@@ -47,7 +43,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <NavBar />
+        {/* <NavBar /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/newsfeed" component={Newsfeed} />
@@ -67,7 +63,8 @@ function App() {
           <Route path="/rate" component={Rate} />
           <Route path="/thanks" component={Thanks} />
           <Route path="/bookstore" component={BasicTabs} exact />
-          <Route path="/contactUs" component={ContactsUs} />
+          <Route path="/contactUs" component={ContactsUs}/>
+          <Route component={NotFound} />
           <Route path="/:details_id" component={DisplayBooks} />
         </Switch>
         <Footer />

@@ -7,6 +7,7 @@ import { cartActionDec, cartActionInc, cartStoreActionRemove } from '../../Store
 import { MdAddCircleOutline, MdAddShoppingCart } from 'react-icons/md';
 import { MdRemoveCircleOutline } from 'react-icons/md';
 import EmptyCart from './EmptyCart'
+import NavBar from '../SharedComponents/NavBar'
 
 const Cart = () => {
     const cart = useSelector(state => state.cartStore.cartItem)
@@ -41,6 +42,7 @@ const Cart = () => {
     }
     return (
         <>
+        <NavBar/>
             {cart.length ?
                 <div className="container table-responsive">
                     <Table striped bordered hover className="text-center fw-bold">

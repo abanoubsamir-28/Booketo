@@ -1,15 +1,17 @@
 import React from 'react'
+import { useState } from 'react'
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
 import './signup.css'
+import { Link } from 'react-router-dom';
 function Signup() {
     const initialValues = {
         firstName: '',
         lastName: '',
-        age: '',
-        gender: '',
+        // age: '',
+        // gender: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -22,13 +24,13 @@ function Signup() {
         lastName: Yup.string().required('Last Name is a required field')
             .min(5, "Minimum is 5 Characters")
             .max(20, "you exceeded Maximum "),
-        age: Yup
-            .number()
-            .positive()
-            .label('Age')
-            .required('Age is a Required Field')
-            .min(10, "Minimum 10 years old"),
-        gender: Yup.string().required("Gender is Required Field"),
+        // age: Yup
+        //     .number()
+        //     .positive()
+        //     .label('Age')
+        //     .required('Age is a Required Field')
+        //     .min(10, "Minimum 10 years old"),
+        // gender: Yup.string().required("Gender is Required Field"),
         email: Yup.string().required('E-mail is required field').email("Email is not Valid"),
         password: Yup
             .string()
@@ -45,6 +47,13 @@ function Signup() {
     })
     const onSubmit = values => {
         console.log('form data ', values);
+    }
+    const [typeofuser, settype] = useState()
+    function bookstoreuser() {
+        settype(true)
+    }
+    function normaluser() {
+        settype(false)
     }
     return (
         <Formik initialValues={initialValues}
@@ -65,7 +74,7 @@ function Signup() {
                                                 <FormikControl control='input' type='email' label='Email' name='email' />
                                                 <FormikControl control='password' type='password' label='Password' name='password' />
 
-                                                <FormikControl
+                                                {/* <FormikControl
                                                     control='select'
                                                     name="gender"
                                                     as="select"
@@ -75,14 +84,39 @@ function Signup() {
                                                     <option value="" className="text-dark">Gender</option>
                                                     <option value="male" className="text-dark">Male</option>
                                                     <option value="female" className="text-dark">Female</option>
-                                                </FormikControl>
+                                                </FormikControl> */}
+                                                <div>
+                                                    <input
+                                                        className="form-check-input"
+                                                        type="radio"
+                                                        name="payment"
+                                                        id="cash"
+                                                        onChange={normaluser}
+                                                        defaultChecked={true}
+                                                    />
+                                                    <label htmlFor="rememberme" className="me-5 form-check-label mx-2 text-white">
+                                                        sign Up as user
+                                                    </label>
+                                                    <input
+                                                        className="form-check-input ms-5"
+                                                        type="radio"
+                                                        name="payment"
+                                                        id="credit"
+                                                        onChange={bookstoreuser}
+
+                                                    />
+                                                    <label htmlFor="rememberme" className="form-check-label mx-2 text-white">
+                                                        sign Up as bookstore
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="row w-100">
                                             <div className="col-12">
                                                 <FormikControl control='input' type='text' label='Last Name ' name='lastName' />
-                                                <FormikControl control='input' type='number' label='Age ' name='age' />
+                                                {/* <FormikControl control='input' type='number' label='Age ' name='age' /> */}
                                                 <FormikControl control='password' type='password' label='Confirm Password ' name='confirmPassword' />
+
                                                 <div className="my-2 mx-3">
                                                     <input
                                                         className="form-check-input "
@@ -101,11 +135,31 @@ function Signup() {
                                                         )}
                                                     </div>
                                                 </div>
+
                                             </div>
+
                                         </div>
                                     </div>
+
+                                    <div className="mt-3">
+                                    {
+                                        typeofuser === true ?
+                                            <div>
+                                                    <Link to="/bookstore"  className="btn btn-primary ms-4 ">Submit</Link>
+                                                <button type="reset" className="btn btn-danger mx-3">Clear</button>
+                                            </div>
+                                            :
+                                            <div>
+                                             
+                                                <Link to="/login" className="btn btn-primary ms-4 ">Submit</Link>
+                                                <button type="reset" className="btn btn-danger mx-3">Clear</button>
+                                            </div>
+                                    }
+                                    </div>
+
                                     <button type="submit" className="btn btn-trans rounded-pill ms-4">Submit</button>
                                   
+
                                 </Form>
                             </div>
                         </div>

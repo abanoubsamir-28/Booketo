@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
+import NavBar from "../../SharedComponents/NavBar.jsx";
 import Newfeedaside from "../NewsfeedAside/Newfeedaside";
 import Postitem from "../../SharedComponents/Postitem/Postitem";
 import Readingchallenge from '../../SharedComponents/Readingchallenge/Readingchallenge'
@@ -10,6 +11,7 @@ import Wishlist from '../../SharedComponents/wishlist/Wishlist'
 import New_post_item from "../../SharedComponents/posts/new_post_item/New_post_item"
 // import Readingchallenge from '../../SharedComponents/Readingchallenge/Readingchallenge'
 import { useSelector } from "react-redux";
+
 
 const Newsfeed = () => {
     const [isFree , setIsFree] = useState(false) ; 
@@ -42,6 +44,7 @@ const Newsfeed = () => {
       }
     return (
         <>
+        <NavBar />
             {posts === null ? (
                 <Loader />
             ) : ( isFree &&
