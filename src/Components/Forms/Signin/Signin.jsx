@@ -18,6 +18,7 @@ function Signin() {
     })
     const onSubmit = values => {
         // console.log('form data ', values);
+        sessionStorage.setItem("isLogged","true")
     }
     return (
         <div className="sign_in form overflow-hidden">
