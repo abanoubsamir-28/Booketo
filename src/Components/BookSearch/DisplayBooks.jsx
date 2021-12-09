@@ -127,7 +127,7 @@ function DisplayCom({ match }) {
                 )}
                 <button
                   onClick={() => handleAddtoCart(data)}
-                  className="wishBtn btn mx-3 "
+                  className="btn-borde rounded-pill btn mx-3 "
                   type="button"
                   
                 >
@@ -138,7 +138,7 @@ function DisplayCom({ match }) {
                 {found ?
                   <button
                     onClick={() => handleAddtowishList(data)}
-                    className="cartBtn btn"
+                    className="btn-borde btn rounded-pill"
                     type="button"
                   >
                     <span className="fs-5 "></span> <AiOutlineHeart className="me-2 fs-4" />
@@ -147,7 +147,7 @@ function DisplayCom({ match }) {
                   :
                   <button
                     onClick={() => handleRemoveFromWishlist(data)}
-                    className="cartBtn btn "
+                    className="btn-borde btn "
                     type="button"
                   >
                     <span className="fs-5 ms-2"></span> <AiFillHeart className="me-2 fs-4" />

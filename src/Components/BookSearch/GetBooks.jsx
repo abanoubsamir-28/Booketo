@@ -42,13 +42,13 @@ function GetBooks() {
             <div className="card-header main-search bg-transparent border-secondary">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-12 col-md-3 col-xl-3">
-                        <input className="AutoFocus form-control" placeholder="Type something..." type="text" onChange={searchItem} />
+                        <input className="AutoFocus form-control rounded-pill" placeholder="Type something..." type="text" onChange={searchItem} />
                     </div>
                     <div className="d-flex text-center my-1 col-12 col-md-3 col-xl-3">
-                        <button type="submit" className="mx-4 btn px-4 call-to-action rounded-pill" >
+                        <button type="submit" className="mx-4 btn px-4 btn-trans rounded-pill" >
                             <BsSearch/> Search
                         </button>
-                        <select id="filter" onChange={change} className="btn px-4 call-to-action rounded-pill">
+                        <select id="filter" onChange={change} className="btn px-4 btn-trans rounded-pill">
                             <option value=""> choose</option>
                             <option value="intitle">Title</option>
                             <option value="inauthor">Author</option>

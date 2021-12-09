@@ -21,7 +21,7 @@ function Signin() {
     }
     return (
         <div className="sign_in form overflow-hidden">
-            <div className="overlay w-100 py-5">
+            <div className="overlay  w-100 py-5">
                 <h2 className="text-white text-center">Login</h2>
                 <Formik initialValues={initialValues}
                     validationSchema={validationSchema}
@@ -31,7 +31,7 @@ function Signin() {
                         <div className="form__content container">
                             <div className="row form__content__row">
                                 <div className="col-6">
-                                    <Form>
+                                    <Form className="p-2">
                                         <FormikControl control='input' type='email' label='Email' name='email' />
                                         <FormikControl control='password' type='password' label='Password' name='password' />
                                         <div className="my-2 ">
@@ -59,7 +59,7 @@ function Signin() {
                 </Formik >
                 <h5 className="text-white text-center py-4">More Sign in Options</h5>
                 <div className="sing_in_options d-flex justify-content-center align-items-center">
-                    <GrFacebook className="icon text-white fs-3 mx-3"  />
+                    <GrFacebook className="icon text-white fs-3 mx-3" />
                     <GrTwitter className="icon text-white fs-3 mx-3" />
                     <GrGoogle className="icon text-white fs-3 mx-3" />
                 </div>

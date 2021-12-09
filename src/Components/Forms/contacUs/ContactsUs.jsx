@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik'
 import * as yup from 'yup'
 import FormikControl from '../../SharedComponents/FormsFields/FormikControl'
 import './contactUs.css'
+import { Button } from 'react-bootstrap'
 
 const initialValues = {
     name: '',
@@ -21,7 +22,7 @@ const onSubmit = (values, submitProps) => {
 function ContactsUs() {
     return (
         <section className="contactUs form" >
-            <div className="overlay py-5 w-100">
+            <div className=" py-5 w-100">
                 <h2 className="text-center">Contact Us</h2>
                 <Formik
                     initialValues={initialValues}
@@ -40,7 +41,7 @@ function ContactsUs() {
                                             name='name' />
                                         <FormikControl control='input' type='email' label='Your Email' name='email' />
                                         <FormikControl control='input' as="textarea" label='Your Message ....' name='message' />
-                                        <button type="submit" className="btn">Send</button>
+                                        <Button type="submit" className="border-0 btn btn-trans rounded-pill">Send</Button>
                                     </Form>
                                 </div>
                             </div>
