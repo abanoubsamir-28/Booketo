@@ -10,7 +10,7 @@ const initState = {
   error: "",
 };
 
-const getPostsReducer = (state = initState, action) => {
+export const getPostsReducer = (state = initState, action) => {
   switch (action.type) {
     case FETCH_POSTS_REQUEST:
       return {
