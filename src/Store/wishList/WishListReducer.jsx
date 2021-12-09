@@ -6,7 +6,6 @@ import { RiInformationLine } from "react-icons/ri";
 
 const initialState = {
     wishList: [],
-    // isFound: false
 }
 
 export const WishListReducer = (state = initialState, action) => {
@@ -32,7 +31,6 @@ export const WishListReducer = (state = initialState, action) => {
                             return item;
                         }
                     }),
-                    // CartQuantity: state.CartQuantity + 1,
                 };
             }
             //no books in array 
@@ -42,10 +40,6 @@ export const WishListReducer = (state = initialState, action) => {
                 return {
                     ...state,
                     wishList: [...state.wishList, newBook],
-                    // CartQuantity: state.CartQuantity + 1,
-                    // l: console.log(state.isFound),
-                    // isFound:state.isFound === true ? state.isFound = false : state.isFound = true,
-                    c: console.log(state.wishList),
                 };
             }
         case DELETE_FROM_WISHLIST:
@@ -53,7 +47,6 @@ export const WishListReducer = (state = initialState, action) => {
                 ...state,
                 wishList: [...state.wishList.filter((item) => action.payload.id !== item.id)],
             }
-
         default:
             return state
     }

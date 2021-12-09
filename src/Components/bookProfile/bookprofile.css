@@ -1,9 +1,9 @@
-.bookProfile__content h2 {
-    font-family: var(--bebas-font);
+/* .bookProfile__content h2 {
+    font-family: var(--nunito-font);
 }
 
 .bookProfile .wishBtn {
-    background-color: var(--teal-bg);
+    background-color: var(--secondary-bg);
     transition: all ease-in-out 0.5s;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .bookProfile .cartBtn {
-    background-color: var( --hot-pink);
+    background-color: var( --light-brown);
     transition: all ease-in-out 0.5s;
 }
 
@@ -22,9 +22,10 @@
     background-color: var(--baby-blue);
     opacity: 0.8;
     transform: scale(1.1);
-}
+} */
 
-@media (max-width:576px) {
+
+/* @media (max-width:576px) {
     .bookProfile img {
         width: 100% !important;
     }
@@ -40,4 +41,4 @@
     .bookProfile img {
         width: 75% !important;
     }
-}
+} */
