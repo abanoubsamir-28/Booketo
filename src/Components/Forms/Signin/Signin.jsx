@@ -5,9 +5,7 @@ import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
 import './signin.css'
 import { GrFacebook, GrTwitter, GrGoogle } from 'react-icons/gr'
-// import {signInWithGoogle} from './../../../config/Firebase.config'
 function Signin() {
-    // console.log(children);
     const initialValues = {
         email: '',
         password: '',
@@ -19,7 +17,7 @@ function Signin() {
         rememberme: Yup.string()
     })
     const onSubmit = values => {
-        console.log('form data ', values);
+        // console.log('form data ', values);
     }
     return (
         <div className="sign_in form overflow-hidden">
@@ -49,7 +47,7 @@ function Signin() {
                                                 Remember Me
                                             </label>
                                         </div>
-                                        <button type="submit" className="btn">Login</button>
+                                        <button type="submit" className="btn me-3">Login</button>
                                         <span className="text-white mx-1">
                                             <a href="#google"> Register?</a>
                                         </span>
@@ -61,7 +59,6 @@ function Signin() {
                 </Formik >
                 <h5 className="text-white text-center py-4">More Sign in Options</h5>
                 <div className="sing_in_options d-flex justify-content-center align-items-center">
-
                     <GrFacebook className="icon text-white fs-3 mx-3"  />
                     <GrTwitter className="icon text-white fs-3 mx-3" />
                     <GrGoogle className="icon text-white fs-3 mx-3" />

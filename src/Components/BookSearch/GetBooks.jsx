@@ -4,6 +4,7 @@ import axios from 'axios';
 import 'boxicons';
 import BookCard from "./BookCard";
 import NewestBooks from "../NewestBooks/NewestBooks";
+
 function GetBooks() {
     const [book, setBook] = useState('');
     const [search, setsearch] = useState('')
@@ -11,6 +12,7 @@ function GetBooks() {
     const [result, setResult] = useState([]);
     // eslint-disable-next-line
     const [apiKey] = useState("AIzaSyCM7I-qPZ4-QwXU4xupLOBKpTX2N4XWc0E")
+
     const change = () => {
         let select = document.getElementById('filter')
         let option = select.options[select.selectedIndex]
@@ -20,12 +22,12 @@ function GetBooks() {
     }
 
     function searchItem(e) {
-        var newInp = e.target.value
+        // var newInp = 
         if (cat === "") {
-            setBook(newInp)
+            setBook(e.target.value)
         } else {
-            setBook(newInp + "+")
-            setsearch(newInp)
+            setBook(e.target.value + "+")
+            setsearch(e.target.value)
         }
     }
     function handleSubmit(event) {
@@ -43,7 +45,6 @@ function GetBooks() {
                 <div className="row justify-content-start align-items-center">
                     <div className="col-12 col-md-3 col-xl-3">
                         <input className="AutoFocus form-control" placeholder="Type something..." type="text" onChange={searchItem} />
-
                     </div>
                     <div className="d-flex text-center my-1 col-12 col-md-3 col-xl-3">
                         <button type="submit" className="mx-2 d-flex align-items-center btn btn-outline-info search-btn" >
