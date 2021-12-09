@@ -37,10 +37,6 @@ function NavBar() {
                                     <li className="nav-item">
                                         <Link to='/contactus' className="textt btn active pt-3  me-3 " > Contact Us </Link>
                                     </li>
-
-                                    <li className="nav-item">
-                                        <Link to='/settings' className="textt btn active pt-3  me-3 " > Settings </Link>
-                                    </li>
                                     <li className="nav-item">
                                         <Link to="/wishlist" className="textt btn active pt-3 me-3" >Wish List</Link>
                                     </li>
