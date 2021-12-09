@@ -43,11 +43,8 @@ function NewestBooks() {
                     <div className="row justify-content-center">
                         {result.map((book, index) => (
                             <div className=" col-xl-2 col-md-3 col-sm-6 py-4" key={index}>
-                                <Card className="h-100 book__card__bookSearch text-center">
+                                <Card className="h-100 book__card__bookSearch text-center border-0">
                                     <Card.Img variant="top" className="h-75" src={book?.volumeInfo?.imageLinks !== undefined ? book?.volumeInfo?.imageLinks.thumbnail : "https://via.placeholder.com/150"} alt={book?.title} />
-                                    <div className="card-button-hov d-grid gap-2">
-                                        <Link to={`/${book?.id}`} className="btn btn-danger stretched-link mt-2">More Details <AiOutlineArrowRight /></Link>
-                                    </div>
                                     <Card.Body className="book__card__bookSearch">
                                         <Card.Title>{book?.volumeInfo?.title.length > 10 ? book?.volumeInfo?.title.substring(0, 10) + "..." : book?.volumeInfo?.title}</Card.Title>
                                         <Card.Text className="text-center">
@@ -76,6 +73,7 @@ function NewestBooks() {
                                                 }
                                             </div>
                                         </Card.Text>
+                                        <Link to={`/${book?.id}`} className="btn btn-trans stretched-link mt-2">More Details <AiOutlineArrowRight /></Link>
                                     </Card.Body>
                                 </Card>
                             </div>
