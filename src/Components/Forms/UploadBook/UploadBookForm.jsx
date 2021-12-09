@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
-// import './signup.css'
+
 function Signup() {
     const initialValues = {
         bookImage: '',
@@ -24,7 +24,6 @@ function Signup() {
         bookPrice: Yup.number().required("price field is required").min(5, "please add accurate price"),
     })
     const onSubmit = (values, onSubmitProps) => {
-        console.log('form data ', values);
         onSubmitProps.setSubmitting(false)
         onSubmitProps.resetForm()
     }

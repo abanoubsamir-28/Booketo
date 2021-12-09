@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import { BsFileEarmarkArrowDownFill, BsFileEarmarkArrowUpFill } from 'react-icons/bs'
-// import { Link } from 'react-router-dom'
 import './readingchallenge.css'
 const Readingchallenge = () => {
     const [noReads, setnoReads] = useState(true)
@@ -11,7 +10,7 @@ const Readingchallenge = () => {
         setnoReads(false)
     }
     const decreaseReads = () => {
-        if (books == 0) {
+        if (books === 0) {
             setnoReads(false);
         } else {
             setbooks(books - 1);
@@ -21,7 +20,6 @@ const Readingchallenge = () => {
         <div className="card reading-challenge text-white bg-warning w-100">
             <div className="card-header text-center">Reading Challenge
                 {noReads && <p className="text-center text-danger fw-bold py-1">Time to Read More Books !
-                    {/* <Link to="/login">Search Now</Link> */}
                 </p>}</div>
             <div className="card-body row justify-content-center">
                 <button className="text-white increase btn fs-1 col-md-2 p-1" onClick={increaseReads}><BsFileEarmarkArrowUpFill /></button>

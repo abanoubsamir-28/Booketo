@@ -9,14 +9,13 @@ import { MdRemoveCircleOutline } from 'react-icons/md';
 import EmptyCart from './EmptyCart'
 
 const Cart = () => {
-    // we are using the cart array that used from the store directly.
-    const cart = useSelector(state => state.cartStore.cartItem)
+    const cart =useSelector(state=>state.cartStore.cartItem)
     const dispatch = useDispatch()
   
-
     useEffect(() => {
         totalPrice()
-    }, [])
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
+
     const totalPrice = () => {
         if (cart.length) {
             const yy = cart.map((ele) => {

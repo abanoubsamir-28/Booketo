@@ -1,65 +1,56 @@
-.card {
-    border: none;
+.header .carousel-indicators [data-bs-target] {
+    background-color: #000 !important;
 }
 
-.header__content h1 {
-    color: var(--redColor);
-    font-family: var(--fontTitle);
+.header .carousel-caption {
+    bottom: 30% !important;
 }
 
-.header input {
-    border: 1px solid var(--tealColor);
-    width: 83.3333%;
+.header h1 {
+    font-weight: 700;
+    color: #9f4431;
 }
 
-.header input::placeholder {
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.header .form-control {
-    width: unset;
-}
-
-.search_input {
-    width: fit-content;
-    background-color: var(--tealColor);
-    border-radius: 50rem;
+.header .btn {
+    background-color: #9f4431 !important;
+    color: #fff;
 }
 
 @media (max-width: 576px) {
-    .header__img img {
+    .header .carousel-caption {
+        bottom: 5% !important;
+        left: 4%;
+    }
+    .header .carousel-caption .center {
+        position: absolute;
+        right: -10% !important;
+        bottom: 40%;
+    }
+    .header .carousel-control-next div {
         display: none;
     }
-
-    .header__content h1 {
-        font-size: 3rem;
-        width: 70%;
+    .header .carousel-control-prev div {
+        display: none;
+    }
+    .header .carousel-indicators [data-bs-target] {
+        display: none;
     }
 }
 
 @media (min-width: 576px) {
-    .card-body .header__logo {
-        width: 75% !important;
-    }
-
-    .header__content h1 {
+    .header h1 {
         font-size: 2rem;
-    }
-
-    .header input::placeholder {
-        font-size: 13px;
     }
 }
 
 @media (min-width: 768px) {
-    .header__content h1 {
+    .header h1 {
         font-size: 2.5rem;
     }
 }
 
 @media (min-width: 1200px) {
-    .header__content h1 {
+    .header h1 {
         font-size: 3.6rem;
     }
 }
