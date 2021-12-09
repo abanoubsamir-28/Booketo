@@ -3,12 +3,20 @@ import axios from 'axios';
 import BookCard from "./BookCard";
 import { BsSearch } from "react-icons/bs";
 import NewestBooks from "../NewestBooks/NewestBooks";
+import Pagination from "../BookStore/Pagination";
 
 function GetBooks() {
     const [book, setBook] = useState('');
     const [search, setsearch] = useState('')
     const [cat, setcat] = useState('')
     const [result, setResult] = useState([]);
+    const [books, setbooks] = useState([])
+    const [publisher] = useState('Bloomsbury Publishing')
+    const [currentPage, setcurrentPage] = useState(1)
+    const [booksPerPage] = useState(10)
+      //Get cuurent books
+      //Change page
+   
     // eslint-disable-next-line
     const [apiKey] = useState("AIzaSyCM7I-qPZ4-QwXU4xupLOBKpTX2N4XWc0E")
 
@@ -28,17 +36,23 @@ function GetBooks() {
             setsearch(e.target.value)
         }
     }
+    const paginate = (pageNumber) => {
+        setcurrentPage(pageNumber)
+    }
     function handleSubmit(event) {
         event.preventDefault();
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${book}${cat}${search}&key=${apiKey}&maxResults=40`)
-            .then(data => {
+        .then(data => {
                 setResult(data.data.items);
             }).catch((error) => {
                 return error
             })
-    }
-    return (
-        <form onSubmit={handleSubmit}>
+        }
+        const indexOfLastBook = currentPage * booksPerPage
+        const indexOfFirstBook = indexOfLastBook - booksPerPage
+        const currentPost = result.slice(indexOfFirstBook, indexOfLastBook)
+        return (
+            <form onSubmit={handleSubmit}>
             <div className="card-header main-search bg-transparent border-secondary">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-12 col-md-3 col-xl-3">
@@ -60,7 +74,8 @@ function GetBooks() {
             </div>
             <div className="container">
                 <div className="row">
-                    <BookCard result={result} />
+                    <BookCard  books={currentPost}/>
+                    <Pagination booksPerPage={booksPerPage} totalBooks={result.length} paginate={paginate} />
                     {!book ? <NewestBooks /> : null}
                 </div>
             </div>
