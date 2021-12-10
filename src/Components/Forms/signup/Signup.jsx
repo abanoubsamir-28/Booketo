@@ -45,8 +45,9 @@ function Signup() {
             .required("Confirm your password !"),
         polices: Yup.string().required("You Must Accept our Polices").matches(true, "Must Accept our Polices")
     })
-    const onSubmit = values => {
-        console.log('form data ', values);
+    const onSubmit = (values, submitProps) => {
+        submitProps.resetForm()
+        console.log(values)
     }
 
     const [typeofuser, settype] = useState(true)
@@ -58,6 +59,7 @@ function Signup() {
         settype(false)
     }
     return (
+
        <>
        <LogInNavbar/>
        <Formik initialValues={initialValues}
@@ -146,6 +148,7 @@ function Signup() {
                                             </div>
                                         </div>
                                     </div>
+
                                     {
                                         typeofuser===true
                                         ?
@@ -164,7 +167,9 @@ function Signup() {
             )
             }
         </Formik >
+
        </>
+
     )
 }
 export default Signup

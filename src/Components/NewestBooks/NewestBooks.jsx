@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { nodeName } from 'jquery';
 import React, { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap';
 import { AiOutlineArrowRight } from 'react-icons/ai';
@@ -34,7 +33,7 @@ function NewestBooks() {
                                         <p className="py-2">
                                             Featuring the first three Novellas in the series this is perfect for lovers of Detectives.
                                         </p>
-                                        <button className="btn px-4 call-to-action rounded-pill">find more</button>
+                                        <Link to="/newsfeed" className="btn px-4 call-to-action rounded-pill">find more</Link>
                                     </div>
                                 </div>
                             </div>

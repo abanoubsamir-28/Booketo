@@ -11,9 +11,11 @@ import New_create_post from "../SharedComponents/posts/new_create_post/New_creat
 import { useSelector } from "react-redux";
 import Postitem from "../SharedComponents/Postitem/Postitem";
 import New_post_item from "../SharedComponents/posts/new_post_item/New_post_item";
+
 import Wishlist from "../SharedComponents/wishlist/Wishlist";
 import { Link } from "react-router-dom";
 import SliderBook from '../SharedComponents/slider/SliderBook'
+
 import NavBar from "../SharedComponents/NavBar";
 const User_profile = ({ postsData, fetchPosts }) => {
   const [busy, setbusy] = useState(false);

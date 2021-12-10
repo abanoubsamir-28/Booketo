@@ -5,11 +5,13 @@ import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 function BookCard(props) {
-    const result = props.result
+    const result = props.books
+console.log(result);
     const ratingChanged = (newRating) => {
         return newRating;
     };
     return (
+       
         result.map((book, index) => (
             <div className=" col-xl-2 col-md-3 col-sm-6 py-4" key={index}>
                 <Card className="h-100 book__card__bookSearch text-center border-0">

@@ -85,13 +85,14 @@ function PaymentMethods() {
                                                     {
                                                         credit === true
                                                             ?
-                                                            <div className="row w-100">
+                                                            <div div className="row w-100">
                                                                 <div className="col-12">
 
                                                                     <FormikControl control='number' type='text' label='Credit Card Number' name='cardnumber' />
-                                                                    <label htmlFor="credit" className="form-check-label mx-2 text-white">
+                                                                    {/* <label htmlFor="credit" className="form-check-label mx-2 text-white">
                                                                         Expires At:
-                                                                    </label>
+                                                                    </label> */}
+                                                                    <FormikControl control="date" type="date" lable="dhghdgfd" name="expire" className="text-danger bg-danger" />
                                                                     <FormikControl control='date' type='date' label='Expires at ' name='expire' />
                                                                     <FormikControl control='input' type='text' label=' Name On Credit Card ' name='name' />
                                                                     <FormikControl control='number' type='text' label='CVC ' name='cvc' />
@@ -116,10 +117,12 @@ function PaymentMethods() {
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
        </>
+
     )
 }
 

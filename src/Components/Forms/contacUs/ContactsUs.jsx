@@ -22,38 +22,38 @@ const onSubmit = (values, submitProps) => {
 }
 function ContactsUs() {
     return (
-      <>
-      <NavBar/>
-        <section className="contactUs form" >
-            <div className=" py-5 w-100">
-                <h2 className="text-center">Contact Us</h2>
-                <Formik
-                    initialValues={initialValues}
-                    validationSchema={validationSchema}
-                    onSubmit={onSubmit}
-                >
-                    {formik => (
-                        <div className="form__content container">
-                            <div className="row form__content__row ">
-                                <div className="col-6">
-                                    <Form>
-                                        <FormikControl
-                                            control='input'
-                                            type='text'
-                                            label='Your Name '
-                                            name='name' />
-                                        <FormikControl control='input' type='email' label='Your Email' name='email' />
-                                        <FormikControl control='input' as="textarea" label='Your Message ....' name='message' />
-                                        <Button type="submit" className="border-0 btn btn-trans rounded-pill">Send</Button>
-                                    </Form>
+
+        <div>  <NavBar />
+            <section className="contactUs form" >
+                <div className=" py-5 w-100">
+                    <h2 className="text-center">Contact Us</h2>
+                    <Formik
+                        initialValues={initialValues}
+                        validationSchema={validationSchema}
+                        onSubmit={onSubmit}
+                    >
+                        {formik => (
+                            <div className="form__content container">
+                                <div className="row form__content__row ">
+                                    <div className="col-6">
+                                        <Form>
+                                            <FormikControl
+                                                control='input'
+                                                type='text'
+                                                label='Your Name '
+                                                name='name' />
+                                            <FormikControl control='input' type='email' label='Your Email' name='email' />
+                                            <FormikControl control='input' as="textarea" label='Your Message ....' name='message' />
+                                            <Button type="submit" className="border-0 btn btn-trans rounded-pill">Send</Button>
+                                        </Form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    )}
-                </Formik>
-            </div>
-        </section>
-      </>
+                        )}
+                    </Formik>
+                </div>
+            </section></div>
+
     )
 }
 

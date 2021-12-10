@@ -40,6 +40,10 @@ function NavBar() {
                                             <Link to='/settings' className="textt btn active pt-3  me-3 " > Settings </Link>
                                         </li>
                                         <li className="nav-item">
+                                            <Link to="/publishers" className="textt btn active pt-3 me-3" >Book Stores</Link>
+                                        </li>
+                                        <li className="nav-item">
+
                                             <Link onClick={makefalse} to='/' className="textt btn active pt-3 me-3" >Logout</Link>
                                         </li>
                                         <li className="nav-item">
