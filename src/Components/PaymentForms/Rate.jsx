@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom';
+import NavBar from '../SharedComponents/NavBar';
 
 function Rate() {
     const initialValues = {
@@ -22,7 +23,9 @@ function Rate() {
         console.log('form data ', values);
     }
     return (
-        <div className="sign_in form overflow-hidden">
+       <>
+       <NavBar/>
+       <div className="sign_in form overflow-hidden">
             <div className="overlay w-100 py-5">
                 <h2 className="text-center"> Tell Us Your Feedback </h2>
                 <Formik initialValues={initialValues}
@@ -159,6 +162,7 @@ function Rate() {
                 </Formik >
             </div>
         </div>
+       </>
     )
 }
 

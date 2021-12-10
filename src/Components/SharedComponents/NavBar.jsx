@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux'
 function NavBar() {
     const res = useSelector(state => state.cartStore.CartQuantity)
     const [logged, setlogged] = useState(true);
-    function makefalse(){
+    function makefalse() {
         setlogged(false)
     }
     return (
@@ -27,10 +27,10 @@ function NavBar() {
                                 <div className="ms-5 ps-4 collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul className="ps-5 ms-5 navbar-nav me-auto mb-2 mb-lg-0">
                                         <li className="nav-item ">
-                                            <Link to="/newsfeed" className="textt btn active pt-3 me-3 ms-5 ps-5" >Home</Link>
+                                            <Link to="/newsfeed" className="textt btn active pt-3 me-3 ms-5 ps-5" >News feed</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link to="/getbooks" className="textt btn active pt-3 me-3" >Books</Link>
+                                            <Link to="/getbooks" className="textt btn active pt-3 me-3" >All Books</Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link to='/contactus' className="textt btn active pt-3  me-3 " > Contact Us </Link>
@@ -43,6 +43,7 @@ function NavBar() {
                                             <Link to="/publishers" className="textt btn active pt-3 me-3" >Book Stores</Link>
                                         </li>
                                         <li className="nav-item">
+
                                             <Link onClick={makefalse} to='/' className="textt btn active pt-3 me-3" >Logout</Link>
                                         </li>
                                         <li className="nav-item">
@@ -52,8 +53,8 @@ function NavBar() {
                                             </span></Link>
                                         </li>
                                         <li className="nav-item w-25">
-                                            <Link to='/userprofile' className=" w-25 btn m-0 p-0 " >
-                                                <img src={profile} className="profilephoto" alt=""/>
+                                            <Link to='/userprofile' className="ms-auto w-25 btn m-0 p-0 " >
+                                                <img src={profile} className=" profilephoto" alt=""/>
                                             </Link>
                                         </li>
                                         
@@ -61,10 +62,10 @@ function NavBar() {
                                     </ul>
                                 </div>
                             </div>
-                        </nav>
-                    </div>
+                        </div>
+                    </nav>
+                </div>
             }
-
         </>
     )
 }

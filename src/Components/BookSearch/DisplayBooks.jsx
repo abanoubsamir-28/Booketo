@@ -10,6 +10,7 @@ import { addToWishList, removeFromWishList } from "../../Store/wishList/WishList
 import Wishlist from "../SharedComponents/wishlist/Wishlist";
 import './bookdetailes.css'
 import { ToastContainer } from "react-toastify";
+import NavBar from "../SharedComponents/NavBar";
 function DisplayCom({ match }) {
   const dispatch = useDispatch();
   const [data, setData] = useState(null);
@@ -49,6 +50,7 @@ function DisplayCom({ match }) {
   return (
     <>   {data ? (
       <>
+      <NavBar/>
         <Wishlist />
         <section className="bookProfile">
           <div className="container mt-5">

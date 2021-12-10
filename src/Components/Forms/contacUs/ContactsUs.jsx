@@ -22,6 +22,7 @@ const onSubmit = (values, submitProps) => {
 }
 function ContactsUs() {
     return (
+
         <div>  <NavBar />
             <section className="contactUs form" >
                 <div className=" py-5 w-100">
@@ -52,6 +53,7 @@ function ContactsUs() {
                     </Formik>
                 </div>
             </section></div>
+
     )
 }
 

@@ -6,6 +6,9 @@ import '../../../main-style.css'
 import './signin.css'
 import { GrFacebook, GrTwitter, GrGoogle } from 'react-icons/gr'
 import { Link } from 'react-router-dom';
+
+import LogInNavbar from '../../SharedComponents/navbarHome/logInNavbar';
+
 function Signin() {
     const initialValues = {
         email: '',
@@ -17,11 +20,15 @@ function Signin() {
         password: Yup.string().required('Password is required field'),
         rememberme: Yup.string()
     })
+
    const onSubmit = (values, submitProps) => {
         submitProps.resetForm()
         console.log(values)
+
     }
     return (
+        <>
+        <LogInNavbar/>
         <div className="sign_in form overflow-hidden">
             <div className="overlay  w-100 py-5">
                 <h2 className="text-white text-center">Login</h2>
@@ -49,8 +56,9 @@ function Signin() {
                                                 Remember Me
                                             </label>
                                         </div>
-                                        <button type="submit" className="btn me-3">Login</button>
+                                        <Link to="/newsfeed" className="btn btn-trans rounded-pill ms-3 nmt-3">Log in </Link>
                                             <Link to="/register" className='text-decoration-none fw-bold'>Register?</Link>
+
                                     </Form>
                                 </div>
                             </div>
@@ -66,6 +74,7 @@ function Signin() {
             </div>
         </div>
 
+        </>
     )
 }
 export default Signin

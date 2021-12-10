@@ -10,6 +10,12 @@
     --roboto-font: 'Roboto', sans-serif;
     --nunito-font: 'Nunito', sans-serif;
 }
+
+
+body {
+    overflow-x: hidden;
+}
+
 .form-check-input:checked{
     background-color: var(--dark-brown);
     border: var(--dark-brown);

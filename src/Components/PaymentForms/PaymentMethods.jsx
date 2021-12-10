@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../SharedComponents/FormsFields/FormikControl';
 import { Link } from 'react-router-dom';
+import NavBar from '../SharedComponents/NavBar';
 
 function PaymentMethods() {
     const initialValues = {
@@ -38,6 +39,8 @@ function PaymentMethods() {
         setcredit(false)
     }
     return (
+       <>
+       <NavBar/>
         <div>
             <div className="sign_up form position-relative vh-100 ">
                 <div className="overlay w-100 position-absolute w-100 h-100 d-flex justify-content-center align-items-center ">
@@ -114,9 +117,12 @@ function PaymentMethods() {
 
                         </div>
                     </div>
-                </div >
-            </div >
-        </div >
+
+                </div>
+            </div>
+        </div>
+       </>
+
     )
 }
 
