@@ -7,6 +7,7 @@ import { cartActionDec, cartActionInc, cartStoreActionRemove } from '../../Store
 import { MdAddCircleOutline, MdAddShoppingCart } from 'react-icons/md';
 import { MdRemoveCircleOutline } from 'react-icons/md';
 import EmptyCart from './EmptyCart'
+import NavBar from '../SharedComponents/NavBar'
 
 const Cart = () => {
     const cart = useSelector(state => state.cartStore.cartItem)
@@ -41,8 +42,9 @@ const Cart = () => {
     }
     return (
         <>
+            <NavBar />
             {cart.length ?
-                <div className="container table-responsive">
+                <div className="container table-responsive mt-5">
                     <Table striped bordered hover className="text-center fw-bold">
                         <thead>
                             <tr>
@@ -81,11 +83,14 @@ const Cart = () => {
                             ))}
                         </tbody>
                     </Table>
-                    <div className=" fw-bold p-1 mb-3  d-inline-block  border"
-                        style={{ "color": "var(--dark-brown" }}>Total Price : {totalPrice()} EGP </div>
-                    <Link to='/getbooks' className="btn btn-outline-info d-inline-block ms-3"> Countinue shopping
-                        <MdAddShoppingCart className="fs-4" />
-                    </Link>
+                    <div className='d-flex justify-content-between mb-5'>
+                        <div className=" fw-bold p-1 mb-3 mt-3  d-inline-block  border"
+                            style={{ "color": "var(--dark-brown" }}>Total Price : {totalPrice()} EGP </div>
+                        <Link to='/getbooks' className="btn btn-outline-info mt-3 d-inline-block ms-3"> Countinue shopping
+                            <MdAddShoppingCart className="fs-4" />
+                        </Link>
+                        <Link to="/payment" className="btn btn-trans rounded-pill ms-4 mt-4">Checkout</Link>
+                    </div>
                 </div>
                 :
                 <EmptyCart />

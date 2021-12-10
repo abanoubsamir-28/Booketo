@@ -4,6 +4,7 @@ import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import FormikControl from "../FormsFields/FormikControl";
 import axios from "axios";
+import NavBar from "../NavBar";
 const UserSettings = () => {
   const updateUser = () => {
     const body = JSON.stringify({
@@ -68,6 +69,8 @@ const UserSettings = () => {
     console.log("form data ", values);
   };
   return (
+   <>
+   <NavBar/>
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
@@ -256,6 +259,7 @@ const UserSettings = () => {
         </div>
       )}
     </Formik>
+   </>
   );
 };
 

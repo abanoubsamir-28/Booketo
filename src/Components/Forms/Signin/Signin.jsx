@@ -5,6 +5,8 @@ import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
 import './signin.css'
 import { GrFacebook, GrTwitter, GrGoogle } from 'react-icons/gr'
+import { Link } from 'react-router-dom';
+import LogInNavbar from '../../SharedComponents/navbarHome/logInNavbar';
 function Signin() {
     const initialValues = {
         email: '',
@@ -17,10 +19,11 @@ function Signin() {
         rememberme: Yup.string()
     })
     const onSubmit = values => {
-        // console.log('form data ', values);
         sessionStorage.setItem("isLogged","true")
     }
     return (
+        <>
+        <LogInNavbar/>
         <div className="sign_in form overflow-hidden">
             <div className="overlay  w-100 py-5">
                 <h2 className="text-white text-center">Login</h2>
@@ -48,7 +51,8 @@ function Signin() {
                                                 Remember Me
                                             </label>
                                         </div>
-                                        <button type="submit" className="btn me-3">Login</button>
+                                   
+                                        <Link to="/newsfeed" className="btn btn-trans rounded-pill ms-3 nmt-3">Log in </Link>
                                         <span className="text-white mx-1">
                                             <a href="#google"> Register?</a>
                                         </span>
@@ -67,6 +71,7 @@ function Signin() {
             </div>
         </div>
 
+        </>
     )
 }
 export default Signin

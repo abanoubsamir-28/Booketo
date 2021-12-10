@@ -14,6 +14,7 @@ import New_post_item from "../SharedComponents/posts/new_post_item/New_post_item
 import Wishlist from "../SharedComponents/wishlist/Wishlist";
 import { Link } from "react-router-dom";
 import SliderBook from '../SharedComponents/slider/SliderBook'
+import NavBar from "../SharedComponents/NavBar";
 const User_profile = ({ postsData, fetchPosts }) => {
   const [busy, setbusy] = useState(false);
   const [user, setuser] = useState({
@@ -87,7 +88,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
   }
   return (
     <>
-
+    <NavBar/>
       {postsData.loading === true ? (
         <Loader />
       ) : (
