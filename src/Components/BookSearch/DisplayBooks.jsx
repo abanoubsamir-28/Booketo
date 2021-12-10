@@ -76,7 +76,7 @@ function DisplayCom({ match }) {
                   ""
                 )}
                 {data.volumeInfo?.description !== undefined ? (
-                  <p className="ms-2">{data.volumeInfo?.description}</p>
+                  <p className="ms-2">{data.volumeInfo?.description.substring(0, 350) }</p>
                 ) : (
                   ""
                 )}

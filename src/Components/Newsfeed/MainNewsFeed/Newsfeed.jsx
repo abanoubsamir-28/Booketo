@@ -10,16 +10,17 @@ import Wishlist from '../../SharedComponents/wishlist/Wishlist'
 import New_post_item from "../../SharedComponents/posts/new_post_item/New_post_item"
 // import Readingchallenge from '../../SharedComponents/Readingchallenge/Readingchallenge'
 import { useSelector } from "react-redux";
+import NavBar from "../../SharedComponents/NavBar";
 
 const Newsfeed = () => {
-    const [isFree , setIsFree] = useState(false) ; 
-    const [isFreeUser , setIsFreeUser] = useState(false) ; 
+    const [isFree, setIsFree] = useState(false);
+    const [isFreeUser, setIsFreeUser] = useState(false);
     useEffect(() => {
         axios
             .get("https://dummyjson.com/posts")
             .then((incomingPosts) => {
                 setposts(incomingPosts.data.posts);
-                setIsFree(true) ; 
+                setIsFree(true);
                 console.log(incomingPosts.data.posts);
             })
             .catch((err) => {
@@ -28,41 +29,42 @@ const Newsfeed = () => {
     }, []);
     const [user_posts, setuser_posts] = useState([])
     const [posts, setposts] = useState(null);
-    const [userData , setUserDta] = useState(null)
+    const [userData, setUserDta] = useState(null)
     const addPost = () => {
-        setuser_posts([commentRef.current.value , ...user_posts ])
-      }
-      const commentRef = useRef(null);
+        setuser_posts([commentRef.current.value, ...user_posts])
+    }
+    const commentRef = useRef(null);
 
-      const getUser = (id) => {
-          axios.get(`https://dummyjson.com/users/${id}`).then(user => {
-              setUserDta(user.data)
-              setIsFreeUser(true)
-          })
-      }
+    const getUser = (id) => {
+        axios.get(`https://dummyjson.com/users/${id}`).then(user => {
+            setUserDta(user.data)
+            setIsFreeUser(true)
+        })
+    }
     return (
         <>
+            <NavBar />
             {posts === null ? (
                 <Loader />
-            ) : ( isFree &&
+            ) : (isFree &&
                 <div className="overflow-hidden container-fluid">
                     <QuoteMachine />
                     <div className="w-75 my-2 mx-auto">
                         <div>
-                        <form>
-        <textarea
-          placeholder="Whats in your mind today?"
-          rows="4"
-          cols="70"
-          class="form-control  p-text-area w-75 mx-auto" 
-          ref={commentRef}
-        ></textarea>
-      </form>
-      <footer class="panel-footer my-4 mx-auto d-flex justify-content-center align-items-center ">
-        <button class="btn pull-right text-white" onClick={addPost}>
-          Post
-        </button>
-      </footer>
+                            <form>
+                                <textarea
+                                    placeholder="Whats in your mind today?"
+                                    rows="4"
+                                    cols="70"
+                                    class="form-control  p-text-area w-75 mx-auto"
+                                    ref={commentRef}
+                                ></textarea>
+                            </form>
+                            <footer class="panel-footer my-4 mx-auto d-flex justify-content-center align-items-center ">
+                                <button class="btn pull-right text-white" onClick={addPost}>
+                                    Post
+                                </button>
+                            </footer>
                         </div>
                     </div>
                     <div className="row justify-content-center my-3">
@@ -70,31 +72,31 @@ const Newsfeed = () => {
                             <Readingchallenge />
                         </div>
                         <div className="col-md-5">
-                        {user_posts.length !==0 &&
-                user_posts.map((post) => {
-                  console.log(post);
-                  return (
-                    <New_post_item
-                      firstName={"user.first_name"}
-                      lastName={"user.last_name"}
-                      image={"user.image"}
-                      username={"user.username"}
-                      postBody={post}
-                      postReactions={0}
-                      postID={131}
-                    />
-                  );
-                })}
-                            { posts.map((postItem) => {
-                                return<New_post_item
-                                firstName={"userData.first_name"}
-                                lastName={"user.last_name"}
-                                image={"user.image"}
-                                username={"user.username"}
-                                postBody={postItem.body}
-                                postReactions={postItem.reactions}
-                                postID={postItem.id}
-                              />
+                            {user_posts.length !== 0 &&
+                                user_posts.map((post) => {
+                                    console.log(post);
+                                    return (
+                                        <New_post_item
+                                            firstName={"user.first_name"}
+                                            lastName={"user.last_name"}
+                                            image={"user.image"}
+                                            username={"user.username"}
+                                            postBody={post}
+                                            postReactions={0}
+                                            postID={131}
+                                        />
+                                    );
+                                })}
+                            {posts.map((postItem) => {
+                                return <New_post_item
+                                    firstName={"userData.first_name"}
+                                    lastName={"user.last_name"}
+                                    image={"user.image"}
+                                    username={"user.username"}
+                                    postBody={postItem.body}
+                                    postReactions={postItem.reactions}
+                                    postID={postItem.id}
+                                />
                             })}
                         </div>
                         <div className="col-md-3">

@@ -43,10 +43,12 @@ function Signup() {
             .required("Confirm your password !"),
         polices: Yup.string().required("You Must Accept our Polices").matches(true, "Must Accept our Polices")
     })
-    const onSubmit = values => {
-        console.log('form data ', values);
+    const onSubmit = (values, submitProps) => {
+        submitProps.resetForm()
+        console.log(values)
     }
     return (
+    <div>
         <Formik initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={onSubmit}
@@ -105,7 +107,6 @@ function Signup() {
                                         </div>
                                     </div>
                                     <button type="submit" className="btn btn-trans rounded-pill ms-4">Submit</button>
-                                  
                                 </Form>
                             </div>
                         </div>
@@ -114,6 +115,7 @@ function Signup() {
             )
             }
         </Formik >
+    </div>
     )
 }
 export default Signup

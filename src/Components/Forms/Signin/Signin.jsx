@@ -17,9 +17,9 @@ function Signin() {
         password: Yup.string().required('Password is required field'),
         rememberme: Yup.string()
     })
-    const onSubmit = values => {
-        // console.log('form data ', values);
-        sessionStorage.setItem("isLogged","true")
+   const onSubmit = (values, submitProps) => {
+        submitProps.resetForm()
+        console.log(values)
     }
     return (
         <div className="sign_in form overflow-hidden">
