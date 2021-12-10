@@ -1,3 +1,6 @@
+// Edit Post Border (Bootstrap)
+// Comment Button (from 3)
+
 import "./user_profile.css";
 import React, { useEffect, useState, useRef } from "react";
 import { fetchPosts } from "../../Store/getPosts/getPostsActions";
@@ -39,7 +42,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
 
   useEffect(() => {
     axios
-      .get("https://dummyjson.com/users/9")
+      .get("https://dummyjson.com/users/6")
       .then((res) => {
         fetchPosts(res.data.id);
         setuser({
@@ -103,7 +106,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
                   ></textarea>
                 </form>
                 <footer class="panel-footer d-inline w-50 d-flex justify-content-center">
-                  <button className="user_profile_post_button btn mx-auto my-3" onClick={addPost}>Share</button>
+                  <button className="btn-borde btn mx-auto my-3" onClick={addPost}>Share</button>
                 </footer>
               </div>
               <div className="w-75 mx-auto">
@@ -122,7 +125,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
                       />
                     );
                   })}
-                <SliderBook />
+                {/* <SliderBook />   */}
                 {busy &&
                   postsData.posts.data.posts?.map((post) => {
                     return (
@@ -163,7 +166,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
                 )}
               </span>
               <span className="mx-auto">{user.email}</span>
-              <Link to="/settings" className="user_profile_edit_button btn mx-auto my-3 w-100" >Edit Profile</Link>
+              <Link to="/settings" className=" btn mx-auto my-3 w-75 btn-trans" >Edit Profile</Link>
               <span className="p-3 text-center mx-auto  text-muted">
                 {user.first_name} studied at {user.university} in the {user.dept} departement and working as
                 {user.company.title} at {user.company.name}

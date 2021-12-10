@@ -15,7 +15,7 @@ const New_post_item = (props) => {
   // States
   const [commentsTotal, setCommentsTotal] = useState(0);
   const [comments, setComments] = useState({});
-  const [isComment , setIsComment] = useState(false);
+  const [isComment, setIsComment] = useState(false);
   const [isFree, setIsFree] = useState(false);
 
 
@@ -24,7 +24,7 @@ const New_post_item = (props) => {
       .get(`https://dummyjson.com/posts/${props.postID}/comments`)
       .then((res) => {
         setCommentsTotal(res.data.total);
-        if(commentsTotal > 0) {
+        if (commentsTotal > 0) {
           setIsComment(true);
         }
         setComments(res.data.comments);
@@ -37,12 +37,17 @@ const New_post_item = (props) => {
   const [userComments, setUserComments] = useState([]);
   const commentRef = useRef("");
   const addComment = () => {
-    setUserComments([commentRef.current.value, ...userComments])
-    setCommentsTotal(commentsTotal+1)
+    if (commentRef.current.value === "") {
+        commentRef.current.placeholder ="Write Something ..."
+    } else {
+      setUserComments([commentRef.current.value, ...userComments])
+      setCommentsTotal(commentsTotal + 1) 
+    } 
+   
   }
   return (
     isFree &&
-    <div class="new_post_item_card text-left my-2 mx-auto rounded-3">
+    <div class="new_post_item_card text-left my-2 mx-auto rounded-3 w-100">
       <div class="card-header d-flex align-items-center">
         {/* <FaUserCircle className="mx-3 fs-3" /> */}
         <img src={props.image} alt="" />
@@ -71,49 +76,53 @@ const New_post_item = (props) => {
               }}
             />
           )}
-          <BiCommentEdit className="mx-2 fs-3 post-icon" onClick={()=>{
+          <BiCommentEdit className="mx-2 fs-3 post-icon" onClick={() => {
             setIsComment(!isComment)
           }} />
           <RiShareForwardLine className="mx-2 fs-3 post-icon" />
         </div>
       </div>
-      <div class="card-footer d-flex justify-content-between row">
-        <p className="text-muted fw-bold col-md-3">{addLike} Reactions</p>
-        <p className="text-muted fw-bold col-md-3">{commentsTotal} Comments</p>
-        <p className="text-muted fw-bold col-md-3">@{props.username}</p>
+      <div class="card-footer justify-content-between row">
+        <p className="text-muted fw-bold col-md-12">
+          <span className="">
+            @{props.username}
+          </span>
+        </p>
+        <p className="text-muted fw-bold col-md-4">{addLike} Reactions</p>
+        <p className="text-muted fw-bold col-md-4">{commentsTotal} Comments</p>
       </div>
       <div>
         <div className="comment__input d-flex my-1">
           <input type="text" className="form-control w-75 mx-3" ref={commentRef} />
-          <button className="btn btn-primary w-25 mx-3 " onClick={addComment}>POST</button>
+          <button className="btn btn-border w-25 mx-3 " onClick={addComment}>POST</button>
         </div>
-        {isComment &&         <div className="comments">
-        {userComments.map((comment) => {
-          return (
-            <div class="comment_card my-1">
-              <div class="card-body d-flex align-items-center py-1">
-                <img src={props.image}/>
-                <div className="commentdata mx-3">
-                  <sup className="text-primary">@{props.username}</sup>
-                  <p>{comment}</p>
+        {isComment && <div className="comments">
+          {userComments.map((comment) => {
+            return (
+              <div class="comment_card my-1">
+                <div class="card-body d-flex align-items-center py-1">
+                  <img src={props.image} />
+                  <div className="commentdata mx-3">
+                    <sup className="text-primary">@{props.username}</sup>
+                    <p>{comment}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-        {comments.map((comment) => {
-          return (
-            <div class="comment_card my-1">
-              <div class="card-body d-flex align-items-center py-1">
-                <FaUserCircle className="fs-2" />
-                <div className="commentdata mx-3">
-                  <sup className="text-primary">@{comment.user.username}</sup>
-                  <p>{comment.body}</p>
+            );
+          })}
+          {comments.map((comment) => {
+            return (
+              <div class="comment_card my-1">
+                <div class="card-body d-flex align-items-center py-1">
+                  <FaUserCircle className="fs-2" />
+                  <div className="commentdata mx-3">
+                    <sup className="text-primary">@{comment.user.username}</sup>
+                    <p>{comment.body}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
         </div>}
 
 

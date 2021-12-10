@@ -10,7 +10,8 @@ import Wishlist from '../../SharedComponents/wishlist/Wishlist'
 import New_post_item from "../../SharedComponents/posts/new_post_item/New_post_item"
 // import Readingchallenge from '../../SharedComponents/Readingchallenge/Readingchallenge'
 import { useSelector } from "react-redux";
-
+import userIco from '../../../assets/user.ico'
+import SliderBook from '../../SharedComponents/slider/SliderBook'
 const Newsfeed = () => {
     const [isFree , setIsFree] = useState(false) ; 
     const [isFreeUser , setIsFreeUser] = useState(false) ; 
@@ -29,9 +30,18 @@ const Newsfeed = () => {
     const [user_posts, setuser_posts] = useState([])
     const [posts, setposts] = useState(null);
     const [userData , setUserDta] = useState(null)
-    const addPost = () => {
-        setuser_posts([commentRef.current.value , ...user_posts ])
+
+
+      const addPost = () => {
+        if (commentRef.current.value == "") {
+          commentRef.current.placeholder = "Write Something....."
+        } else {
+    
+          setuser_posts([commentRef.current.value, ...user_posts])
+        }
       }
+
+
       const commentRef = useRef(null);
 
       const getUser = (id) => {
@@ -75,22 +85,23 @@ const Newsfeed = () => {
                   console.log(post);
                   return (
                     <New_post_item
-                      firstName={"user.first_name"}
-                      lastName={"user.last_name"}
-                      image={"user.image"}
-                      username={"user.username"}
+                      firstName={"Matthew"}
+                      lastName={"John"}
+                      image={userIco}
+                      username={"username"}
                       postBody={post}
                       postReactions={0}
                       postID={131}
                     />
                   );
                 })}
+                <SliderBook/>
                             { posts.map((postItem) => {
                                 return<New_post_item
-                                firstName={"userData.first_name"}
-                                lastName={"user.last_name"}
-                                image={"user.image"}
-                                username={"user.username"}
+                                firstName={"Matthew"}
+                                lastName={"John"}
+                                image={userIco}
+                                username={"username"}
                                 postBody={postItem.body}
                                 postReactions={postItem.reactions}
                                 postID={postItem.id}
