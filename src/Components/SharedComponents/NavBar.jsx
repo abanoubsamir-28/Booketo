@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux'
 
 
 function NavBar() {
-    // eslint-disable-next-line
     const res = useSelector(state => state.cartStore.CartQuantity)
     const [logged, setlogged] = useState(true);
     function makefalse(){
@@ -18,8 +17,6 @@ function NavBar() {
     return (
         <>
             {
-                logged === true
-                    ?
                     <div>
                         <nav className="grad navbar navbar-expand-lg navbar-light navbar">
                             <div className="container-fluid  ">
@@ -49,14 +46,14 @@ function NavBar() {
                                             <Link onClick={makefalse} to='/' className="textt btn active pt-3 me-3" >Logout</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link to='/cart' className="textt btn active pt-3 me-3" ><span >
-                                                <BsCart4 /> <Badge pill bg="danger">{res ? res : 0}</Badge>
+                                            <Link to='/cart' className=" btn active pt-3 me-3" ><span >
+                                                <BsCart4 /> <Badge pill className="bg-brown">{res ? res : 0}</Badge>
                                                 <span className="visually-hidden">unread messages</span>
                                             </span></Link>
                                         </li>
                                         <li className="nav-item w-25">
                                             <Link to='/userprofile' className=" w-25 btn m-0 p-0 " >
-                                                <img src={profile} className="profilephoto" />
+                                                <img src={profile} className="profilephoto" alt=""/>
                                             </Link>
                                         </li>
                                         
@@ -66,27 +63,6 @@ function NavBar() {
                             </div>
                         </nav>
                     </div>
-                    :
-                    <nav className="navbar grad navbar-expand-lg navbar-light navbar">
-                        <div className="container-fluid">
-                            <img src={logo} className="logo ms-5" alt="" />
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div className=" collapse navbar-collapse ms-5 ps-5" id="navbarSupportedContent">
-                                <ul className=" ms-5 ps-5 navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li className=" nav-item">
-                                        <Link to="/login" className="ms-5  btn textt" type="submit">Log In </Link>
-                                    </li>
-                                    <li className=" nav-item">
-                                        <Link to="/register" className="ms-3 btn textt" type="submit">Register</Link>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-
             }
 
         </>

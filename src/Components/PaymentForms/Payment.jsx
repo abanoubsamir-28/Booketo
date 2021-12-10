@@ -75,12 +75,9 @@ function Payment() {
 
 
 
-                                    <button type="submit" value="submit" className="btn btn-primary ms-4"  >
-                                        <Link disabled={true} to="/pay" className="text-light nav-link p-0 m-0">Pay</Link>
+                                    <button type="submit" value="submit" className="btn  ms-4"  >
+                                        <Link disabled={true} to="/paymentMethod" className="btn rounded-pill btn-trans">Submit</Link>
                                     </button>
-
-                                    <button type="reset" className="btn btn-danger mx-3 ">Clear</button>
-
                                 </Form>
                             </div>
                         </div>

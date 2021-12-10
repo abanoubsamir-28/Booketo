@@ -1,7 +1,11 @@
 .sign_up {
-    background-image: url("../../../assets/forms_assests/SignupBackground.jpg");
+    /* background-image: url("../../../assets/forms_assests/SignupBackground.jpg");
     background-position: center center;
-    background-size: cover;
+    background-size: cover; */
+    min-height:100%;
+    background:linear-gradient(0deg, var(--light-brown), #9f443159), url("../../../assets/forms_assests/SignupBackground.jpg");
+    background-size:cover;
+    
 }
 
 .sign_up .overlay {
