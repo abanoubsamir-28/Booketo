@@ -1,13 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from './../../../assets/navbarFooter/svg (1).svg'
+import logo from './../../../assets/navbarFooter/svg (1).png'
 
 function logInNavbar() {
     return (
         <div>
             <nav className="navbar grad navbar-expand-lg navbar-light navbar">
                 <div className="container-fluid">
-                    <img src={logo} className="logo ms-5" alt="" />
+                    <li className="nav-item w-25 list-unstyled">
+                        <Link to='/newsfeed' className="ms-auto w-25 btn m-0 p-0 " >
+                            <img src={logo} className="w-75 ms-5" alt="" />
+                        </Link>
+                    </li>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
