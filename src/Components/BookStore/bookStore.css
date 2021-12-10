@@ -3,21 +3,21 @@
 }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
-    color: var(--hot-pink)!important;
+    color: var(--light-brown)!important;
 }
 
 .css-1aquho2-MuiTabs-indicator {
-    background-color: var(--hot-pink)!important;
+    background-color: var(--light-brown)!important;
 }
 
 .pagination .page-link {
     background-color: #f1f1f1;
-    color: var(--teal-bg);
-    border: 1px solid var(--teal-bg);
+    color: var(--light-brown);
+    border: 1px solid var(--light-brown);
 }
 
 .pagination .page-link:hover {
-    background-color: var(--teal-bg);
+    background-color: var(--light-brown);
     color: white;
     border: 1px solid #f1f1f1;
 }

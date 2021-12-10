@@ -15,7 +15,7 @@ const FeaturesLogo = () => {
                                 <FaShippingFast style={{ fontSize: "5rem" }} />
                             </div>
                             <div className="feature__item__content">
-                                <h6 className="my-3">FREE SHIPPING WORLDWIDE</h6>
+                                <h6 className="my-3">FREE SHIPPING </h6>
                                 <p className="text-muted">We offer free shipping via Standard Shipping on orders over 200.00EGP</p>
                             </div>
                         </div>

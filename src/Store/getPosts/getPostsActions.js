@@ -29,17 +29,9 @@ export const fetchPosts = (user_id) => {
     axios
       .get(`https://dummyjson.com/users/${user_id}/posts`)
       .then((res) => {
-        console.log(
-          `https://dummyjson.com/users/${user_id}/posts`,
-          "Link to Request from action"
-        );
         dispatch(fetchPostsSuccess(res));
       })
       .catch((err) => {
-        console.log(
-          `https://dummyjson.com/users/${user_id}/posts`,
-          "Link to Request from action error"
-        );
         dispatch(fetchPostsFailure(err));
       });
   };

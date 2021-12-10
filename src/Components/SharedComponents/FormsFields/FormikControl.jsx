@@ -14,7 +14,9 @@ function FormikControl(props) {
         case 'select':
         case 'radio':
         case 'date':
+            return <Input label={label} name={name} {...rest} />
         case 'number':
+            return <Input label={label} name={name} {...rest} />
         default:
             return null;
     }

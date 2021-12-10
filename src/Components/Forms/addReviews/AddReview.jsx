@@ -18,8 +18,7 @@ function AddReview({ values, post }) {
 
     const [newPost, setNewPost] = useState('')
      
-    // console.log("post", post);
-    // console.log("newpost",newPost);
+
 
     return (
         <div className="container">
@@ -29,11 +28,10 @@ function AddReview({ values, post }) {
                     validationSchema={validationSchema}
                     onSubmit={(values, submitProps) => {
                         submitProps.resetForm()
-                        // console.log(post);
-                        // console.log("values",values)
+
                     
                         setNewPost([...post,values])
-                        // console.log("newpost",newPost);
+                        
                     } }                   >
                     {formik => (
                         <div className="row  ">

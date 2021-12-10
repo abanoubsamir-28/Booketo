@@ -11,7 +11,6 @@ const notify = () => toast("You already added this book.");
 const Wishlist = () => {
     const list = useSelector(state => (state.wishList))
     const dispatch = useDispatch()
-    console.log(list)
     const handleRemoveFromWishlist = (book) => {
         dispatch(removeFromWishList(book))
     }
@@ -20,7 +19,7 @@ const Wishlist = () => {
         <div>
             {list ?
                 <p>
-                    {console.log(list.wishList)}
+                    
                     <button className=" wishlistBtn shadow-lg rounded-pill position-fixed p-2 bottom-0 end-0 mb-3 me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <MdOutlineFavorite className="fs-2" />
                     </button>
@@ -42,7 +41,7 @@ const Wishlist = () => {
                                     <td>
                                         <AiOutlineClose
                                             onClick={() => { handleRemoveFromWishlist(book) }}
-                                            className=" btn-danger ms-2 fs-4 rounded " />
+                                            className=" btn-trans  ms-2 fs-4 rounded " />
                                     </td>
 
                                 </tr>

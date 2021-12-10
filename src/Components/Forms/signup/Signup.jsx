@@ -1,9 +1,11 @@
-import React from 'react'
+import React ,{ useState }from 'react'
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
 import './signup.css'
+import { Link } from 'react-router-dom';
+import LogInNavbar from '../../SharedComponents/navbarHome/logInNavbar';
 function Signup() {
     const initialValues = {
         firstName: '',
@@ -43,11 +45,24 @@ function Signup() {
             .required("Confirm your password !"),
         polices: Yup.string().required("You Must Accept our Polices").matches(true, "Must Accept our Polices")
     })
-    const onSubmit = values => {
-        console.log('form data ', values);
+    const onSubmit = (values, submitProps) => {
+        submitProps.resetForm()
+        
+    }
+
+    const [typeofuser, settype] = useState(true)
+    function normaluser() {
+        settype(true)
+        
+    }
+    function bookstoreuser() {
+        settype(false)
     }
     return (
-        <Formik initialValues={initialValues}
+
+       <>
+       <LogInNavbar/>
+       <Formik initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={onSubmit}
         >
@@ -76,13 +91,42 @@ function Signup() {
                                                     <option value="male" className="text-dark">Male</option>
                                                     <option value="female" className="text-dark">Female</option>
                                                 </FormikControl>
+
+                                                <div className="my-2 ">
+                                                        <input
+                                                            className="form-check-input "
+                                                            type="radio"
+                                                            name="payment"
+                                                            id="cash"
+                                                            onChange={normaluser}
+                                                            defaultChecked={true}
+                                                        />
+                                                        <label htmlFor="rememberme" className=" me-5 form-check-label mx-2 text-white">
+                                                            Sign up as user 
+                                                        </label>
+                                                        <input
+                                                            className="ms-5 form-check-input "
+                                                            type="radio"
+                                                            name="payment"
+                                                            id="credit"
+                                                            onChange={bookstoreuser}
+
+                                                        />
+                                                        <label htmlFor="credit" className="form-check-label mx-2 text-white">
+                                                         Sign up as bookstore
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                       
+                                                    </div>
                                             </div>
                                         </div>
+                                        
                                         <div className="row w-100">
                                             <div className="col-12">
                                                 <FormikControl control='input' type='text' label='Last Name ' name='lastName' />
-                                                <FormikControl control='input' type='number' label='Age ' name='age' />
                                                 <FormikControl control='password' type='password' label='Confirm Password ' name='confirmPassword' />
+                                               
                                                 <div className="my-2 mx-3">
                                                     <input
                                                         className="form-check-input "
@@ -104,8 +148,17 @@ function Signup() {
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" className="btn btn-primary ms-4">Submit</button>
-                                    <button type="reset" className="btn btn-danger mx-3">Clear</button>
+
+                                    {
+                                        typeofuser===true
+                                        ?
+                                        <Link to="/login" className="btn btn-trans rounded-pill ms-4 mt-3">Submit</Link>
+                                        :
+                                        <Link to="/bookstore" className="btn btn-trans rounded-pill ms-4 mt-3">Submit</Link>
+                                    }
+                                  
+                                   
+                                  
                                 </Form>
                             </div>
                         </div>
@@ -114,6 +167,9 @@ function Signup() {
             )
             }
         </Formik >
+
+       </>
+
     )
 }
 export default Signup

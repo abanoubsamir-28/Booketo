@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom';
+import NavBar from '../SharedComponents/NavBar';
 
 function Rate() {
     const initialValues = {
@@ -19,12 +20,14 @@ function Rate() {
         comment: Yup.string(),
     })
     const onSubmit = values => {
-        console.log('form data ', values);
+        return values
     }
     return (
-        <div className="sign_in form overflow-hidden">
+       <>
+       <NavBar/>
+       <div className="sign_in form overflow-hidden">
             <div className="overlay w-100 py-5">
-                <h2 className="text-info text-center"> Tell Us Your Feedback </h2>
+                <h2 className="text-center"> Tell Us Your Feedback </h2>
                 <Formik initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={onSubmit}
@@ -36,7 +39,7 @@ function Rate() {
                                     <Form>
 
                                         <div className="my-2 ">
-                                            <p className="text-light"> - Is The Quality Of The Book Was Satisfing ?</p>
+                                            <p className="text-light"> Is The Quality Of The Book Was Satisfing ?</p>
                                             <input
                                                 className="form-check-input "
                                                 type="radio"
@@ -61,7 +64,7 @@ function Rate() {
                                             </label>
                                         </div>
                                         <div className="my-2 ">
-                                            <p className="text-light"> - Is Book Arrived At the Determined Date ?</p>
+                                            <p className="text-light"> Is Book Arrived At the Determined Date ?</p>
                                             <input
                                                 className="form-check-input "
                                                 type="radio"
@@ -86,7 +89,7 @@ function Rate() {
                                             </label>
                                         </div>
                                         <div className="my-2 ">
-                                            <p className="text-light"> - Was There Any Problems With Delivery Man ? </p>
+                                            <p className="text-light"> Was There Any Problems With Delivery Man ? </p>
                                             <input
                                                 className="form-check-input "
                                                 type="radio"
@@ -111,7 +114,7 @@ function Rate() {
                                             </label>
                                         </div>
                                         <div className="my-2 ">
-                                            <p className="text-light"> - Did You Enjoyed Buying From This Bookstore </p>
+                                            <p className="text-light"> Did You Enjoyed Buying From This Bookstore </p>
                                             <input
                                                 className="form-check-input "
                                                 type="radio"
@@ -136,20 +139,20 @@ function Rate() {
                                             </label>
                                         </div>
                                         <div className="my-2 ">
-                                            <p className="text-light"> - Would You Like To Add Any Comment</p>
+                                            <p className="text-light"> Would You Like To Add Any Comment</p>
                                             <input
-                                                className="form-check-input w-75 p-3"
-                                                type="textarea"
+                                                className="form-check-input w-75 p-3 rounded-pill"
+                                                as="textarea"
                                                 name="comment"
                                                 id="comment"
                                                 onChange={formik.handleChange}
                                                 defaultChecked={formik.values.rememberme}
-                                                placeholder="Write Your Comment Here"
+                                                placeholder="Write Your Comment Here..."
                                             />
                                         </div>
-                                        <button type="submit" className="btn btn-primary mt-3">
-                                            <Link to="/thanks" className="text-light nav-link p-0">Submit</Link>
-                                        </button>
+                                        <div type="submit" className=" mt-3">
+                                            <Link to="/thanks" className="btn btn-trans rounded-pill">Submit</Link>
+                                        </div>
 
                                     </Form>
                                 </div>
@@ -159,6 +162,7 @@ function Rate() {
                 </Formik >
             </div>
         </div>
+       </>
     )
 }
 

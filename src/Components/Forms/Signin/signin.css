@@ -1,9 +1,12 @@
 .sign_in {
-    background-image: url("../../../assets/forms_assests/SigninBackground.jpg");
+    /* background-image: url("../../../assets/forms_assests/SigninBackground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    font-family: var(--);
+    font-family: var(--nunito); */
+    min-height: 100%;
+    background: linear-gradient(0deg, var(--light-brown), #9f443159), url("../../../assets/forms_assests/SigninBackground.jpg");
+    background-size: cover;
 }
 
 .sign_in .sing_in_options .icon {
@@ -16,5 +19,5 @@
 }
 
 .sing_in_options .icon:hover {
-    color: var(--light-brown) !important;
+    color: var(--dark-brown) !important;
 }

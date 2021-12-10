@@ -1,10 +1,5 @@
 .contactUs {
-    background-image: url("../../../assets/forms_assests/SigninBackground.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-
-.contactUs .overlay {
-    background-color: rgba(0, 0, 0, .8);
+    min-height:100%;
+    background:linear-gradient(0deg, var(--light-brown), #9f443159), url("../../../assets/forms_assests/SigninBackground.jpg");
+    background-size:cover;
 }

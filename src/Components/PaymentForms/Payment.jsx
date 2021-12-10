@@ -2,6 +2,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../SharedComponents/FormsFields/FormikControl';
 import { Link } from 'react-router-dom';
+import NavBar from '../SharedComponents/NavBar';
 
 function Payment() {
     const initialValues = {
@@ -29,9 +30,10 @@ function Payment() {
     })
     const onSubmit = values => {
         validationSchema(values);
-        console.log('form data ', values);
     }
     return (
+       <>
+       <NavBar/>
         <Formik initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={onSubmit}
@@ -75,12 +77,9 @@ function Payment() {
 
 
 
-                                    <button type="submit" value="submit" className="btn btn-primary ms-4"  >
-                                        <Link disabled={true} to="/pay" className="text-light nav-link p-0 m-0">Pay</Link>
+                                    <button type="submit" value="submit" className="btn  ms-4"  >
+                                        <Link disabled={true} to="/paymentMethod" className="btn rounded-pill btn-trans">Submit</Link>
                                     </button>
-
-                                    <button type="reset" className="btn btn-danger mx-3 ">Clear</button>
-
                                 </Form>
                             </div>
                         </div>
@@ -89,6 +88,7 @@ function Payment() {
             )
             }
         </Formik >
+       </>
 
     )
 }
