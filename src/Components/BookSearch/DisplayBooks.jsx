@@ -17,7 +17,7 @@ function DisplayCom({ match }) {
 
   useEffect(() => {
     getSingleProduct();
-    
+
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const getSingleProduct = () => {
@@ -129,7 +129,7 @@ function DisplayCom({ match }) {
                   onClick={() => handleAddtoCart(data)}
                   className="btn-borde rounded-pill btn mx-3 "
                   type="button"
-                  
+
                 >
                   <span className="fs-5"></span> <AiOutlineShoppingCart /> Add
                   to cart
@@ -147,7 +147,7 @@ function DisplayCom({ match }) {
                   :
                   <button
                     onClick={() => handleRemoveFromWishlist(data)}
-                    className="btn-borde btn "
+                    className="btn-borde btn rounded-pill "
                     type="button"
                   >
                     <span className="fs-5 ms-2"></span> <AiFillHeart className="me-2 fs-4" />

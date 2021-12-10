@@ -148,7 +148,7 @@ function Rate() {
                                             />
                                         </div>
                                         <div type="submit" className=" mt-3">
-                                            <Link to="/thanks" className="btn btn-trans rounded-pill">Submit</Link>
+                                            <Link to="/thanks" className="btn btn-borde rounded-pill">Submit</Link>
                                         </div>
 
                                     </Form>
