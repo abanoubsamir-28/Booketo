@@ -51,9 +51,8 @@ function GetBooks() {
     }
     const indexOfLastBook = currentPage * booksPerPage
     const indexOfFirstBook = indexOfLastBook - booksPerPage
-    const currentPost = result.slice(indexOfFirstBook, indexOfLastBook)
+    const currentPost = result?.slice(indexOfFirstBook, indexOfLastBook)
     return (
-
         <div>
             <NavBar />
             <form onSubmit={handleSubmit}>
