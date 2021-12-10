@@ -12,6 +12,7 @@ import New_post_item from "../../SharedComponents/posts/new_post_item/New_post_i
 import { useSelector } from "react-redux";
 import userIco from '../../../assets/user.ico'
 import SliderBook from '../../SharedComponents/slider/SliderBook'
+import NavBar from '../../SharedComponents/NavBar'
 const Newsfeed = () => {
     const [isFree , setIsFree] = useState(false) ; 
     const [isFreeUser , setIsFreeUser] = useState(false) ; 
@@ -52,6 +53,7 @@ const Newsfeed = () => {
       }
     return (
         <>
+        <NavBar/>
             {posts === null ? (
                 <Loader />
             ) : ( isFree &&

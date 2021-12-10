@@ -42,7 +42,7 @@ function BookCard(props) {
                                 }
                             </div>
                         </Card.Text>
-                        <Link to={`/${book?.id}`} className="btn btn-trans stretched-link mt-2 ">More Details <AiOutlineArrowRight /></Link>
+                        <Link to={`/${book?.id}`} className="btn btn-trans stretched-link  mt-2 ">More Details <AiOutlineArrowRight /></Link>
                     </Card.Body>
                 </Card>
             </div>

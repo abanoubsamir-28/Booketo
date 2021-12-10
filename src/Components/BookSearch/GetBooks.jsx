@@ -3,6 +3,7 @@ import axios from 'axios';
 import BookCard from "./BookCard";
 import { BsSearch } from "react-icons/bs";
 import NewestBooks from "../NewestBooks/NewestBooks";
+import NavBar from "../SharedComponents/NavBar";
 
 function GetBooks() {
     const [book, setBook] = useState('');
@@ -38,13 +39,15 @@ function GetBooks() {
             })
     }
     return (
+     <>
+     <NavBar/>
         <form onSubmit={handleSubmit}>
             <div className="card-header main-search bg-transparent border-secondary">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-12 col-md-3 col-xl-3">
                         <input className="AutoFocus form-control rounded-pill" placeholder="Type something..." type="text" onChange={searchItem} />
                     </div>
-                    <div className="d-flex text-center my-1 col-12 col-md-3 col-xl-3">
+                    <div className="d-flex text-center my-1 col-12 col-md-3 col-xl-4">
                         <button type="submit" className="mx-4 btn px-4 btn-trans rounded-pill" >
                             <BsSearch/> Search
                         </button>
@@ -65,6 +68,7 @@ function GetBooks() {
                 </div>
             </div>
         </form >
+     </>
     )
 }
 

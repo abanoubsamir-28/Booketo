@@ -27,10 +27,10 @@ function NavBar() {
                                 <div className="ms-5 ps-4 collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul className="ps-5 ms-5 navbar-nav me-auto mb-2 mb-lg-0">
                                         <li className="nav-item ">
-                                            <Link to="/newsfeed" className="textt btn active pt-3 me-3 ms-5 ps-5" >Home</Link>
+                                            <Link to="/newsfeed" className="textt btn active pt-3 me-3 ms-5 ps-5" >News feed</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link to="/getbooks" className="textt btn active pt-3 me-3" >Books</Link>
+                                            <Link to="/getbooks" className="textt btn active pt-3 me-3" >All Books</Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link to='/contactus' className="textt btn active pt-3  me-3 " > Contact Us </Link>
@@ -38,9 +38,6 @@ function NavBar() {
 
                                         <li className="nav-item">
                                             <Link to='/settings' className="textt btn active pt-3  me-3 " > Settings </Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to="/wishlist" className="textt btn active pt-3 me-3" >Wish List</Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link onClick={makefalse} to='/' className="textt btn active pt-3 me-3" >Logout</Link>
@@ -52,8 +49,8 @@ function NavBar() {
                                             </span></Link>
                                         </li>
                                         <li className="nav-item w-25">
-                                            <Link to='/userprofile' className=" w-25 btn m-0 p-0 " >
-                                                <img src={profile} className="profilephoto" alt=""/>
+                                            <Link to='/userprofile' className="ms-auto w-25 btn m-0 p-0 " >
+                                                <img src={profile} className=" profilephoto" alt=""/>
                                             </Link>
                                         </li>
                                         

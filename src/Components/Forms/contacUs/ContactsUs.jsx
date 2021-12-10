@@ -4,6 +4,7 @@ import * as yup from 'yup'
 import FormikControl from '../../SharedComponents/FormsFields/FormikControl'
 import './contactUs.css'
 import { Button } from 'react-bootstrap'
+import NavBar from '../../SharedComponents/NavBar'
 
 const initialValues = {
     name: '',
@@ -21,6 +22,8 @@ const onSubmit = (values, submitProps) => {
 }
 function ContactsUs() {
     return (
+      <>
+      <NavBar/>
         <section className="contactUs form" >
             <div className=" py-5 w-100">
                 <h2 className="text-center">Contact Us</h2>
@@ -50,6 +53,7 @@ function ContactsUs() {
                 </Formik>
             </div>
         </section>
+      </>
     )
 }
 
