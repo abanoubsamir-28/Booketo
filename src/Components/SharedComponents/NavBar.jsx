@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux'
 function NavBar() {
     const res = useSelector(state => state.cartStore.CartQuantity)
     const [logged, setlogged] = useState(true);
-    function makefalse(){
+    function makefalse() {
         setlogged(false)
     }
     return (
@@ -58,10 +58,10 @@ function NavBar() {
                                     </ul>
                                 </div>
                             </div>
-                        </nav>
-                    </div>
+                        </div>
+                    </nav>
+                </div>
             }
-
         </>
     )
 }

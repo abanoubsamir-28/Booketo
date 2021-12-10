@@ -17,7 +17,8 @@ const New_post_item = (props) => {
   const [comments, setComments] = useState({});
   const [isComment, setIsComment] = useState(false);
   const [isFree, setIsFree] = useState(false);
-
+  const [isShared, setIsShared] = useState(false);
+  const [shareCounter , setShareCounter] = useState(0)
 
   useEffect(() => {
     axios
@@ -38,12 +39,12 @@ const New_post_item = (props) => {
   const commentRef = useRef("");
   const addComment = () => {
     if (commentRef.current.value === "") {
-        commentRef.current.placeholder ="Write Something ..."
+      commentRef.current.placeholder = "Write Something ..."
     } else {
       setUserComments([commentRef.current.value, ...userComments])
-      setCommentsTotal(commentsTotal + 1) 
-    } 
-   
+      setCommentsTotal(commentsTotal + 1)
+    }
+
   }
   return (
     isFree &&
@@ -79,17 +80,27 @@ const New_post_item = (props) => {
           <BiCommentEdit className="mx-2 fs-3 post-icon" onClick={() => {
             setIsComment(!isComment)
           }} />
-          <RiShareForwardLine className="mx-2 fs-3 post-icon" />
+          {isShared ? (<RiShareForwardLine className="mx-2 fs-3 post-icon " 
+          style={{color : "#9f4431"}}
+          onClick={()=>{
+            setIsShared(!isShared)
+            setShareCounter(shareCounter-1)
+          }}/>) : (<RiShareForwardLine className="mx-2 fs-3 post-icon" onClick={()=>{
+            setIsShared(!isShared)
+            setShareCounter(shareCounter+1)
+          }} />)}
+
         </div>
       </div>
-      <div class="card-footer justify-content-between row">
-        <p className="text-muted fw-bold col-md-12">
+      <div class="card-footer justify-content-between p-0 m-0 row">
+        <p className="text-muted fw-bold col-md-10">
           <span className="">
             @{props.username}
           </span>
         </p>
-        <p className="text-muted fw-bold col-md-4">{addLike} Reactions</p>
-        <p className="text-muted fw-bold col-md-4">{commentsTotal} Comments</p>
+        <p className="text-muted fw-bold col-md-3">{addLike} Reactions</p>
+        <p className="text-muted fw-bold col-md-3">{commentsTotal} Comments</p>
+        <p className="text-muted fw-bold col-md-3">{shareCounter} shares</p>
       </div>
       <div>
         <div className="comment__input d-flex my-1">
