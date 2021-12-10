@@ -82,14 +82,14 @@ const New_post_item = (props) => {
           <RiShareForwardLine className="mx-2 fs-3 post-icon" />
         </div>
       </div>
-      <div class="card-footer justify-content-between row">
-        <p className="text-muted fw-bold col-md-12">
+      <div class="card-footer justify-content-between p-0 m-0 row">
+        <p className="text-muted fw-bold col-md-10">
           <span className="">
             @{props.username}
           </span>
         </p>
-        <p className="text-muted fw-bold col-md-4">{addLike} Reactions</p>
-        <p className="text-muted fw-bold col-md-4">{commentsTotal} Comments</p>
+        <p className="text-muted fw-bold col-md-3">{addLike} Reactions</p>
+        <p className="text-muted fw-bold col-md-3">{commentsTotal} Comments</p>
       </div>
       <div>
         <div className="comment__input d-flex my-1">
