@@ -11,7 +11,7 @@ const Reviews = ({ values }) => {
     const [title, setTitle] = useState('')
     useEffect(() => {
         getOnePost()
-        console.log(values);
+        
 
     }, [])
     const getOnePost = () => {
@@ -34,7 +34,7 @@ const Reviews = ({ values }) => {
     }
     const addReview = (values) => {
         setPost([...post, values])
-        console.log(values);
+        
     }
 
     return (

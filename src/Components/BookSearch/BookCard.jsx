@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 function BookCard(props) {
     const result = props.books
-console.log(result);
     const ratingChanged = (newRating) => {
         return newRating;
     };

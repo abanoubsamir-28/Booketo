@@ -75,7 +75,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
         setbusy(true);
       })
       .catch((err) => {
-        console.log(err);
+        return err
       });
   }, []);
   const commentRef = useRef(null);
@@ -115,7 +115,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
               <div className="w-75 mx-auto">
                 {user_posts.length !== 0 &&
                   user_posts.map((post) => {
-                    console.log(post);
+                    
                     return (
                       <New_post_item
                         firstName={user.first_name}

@@ -23,7 +23,6 @@ function Signin() {
 
    const onSubmit = (values, submitProps) => {
         submitProps.resetForm()
-        console.log(values)
 
     }
     return (

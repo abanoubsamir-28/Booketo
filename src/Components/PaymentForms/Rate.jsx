@@ -20,7 +20,7 @@ function Rate() {
         comment: Yup.string(),
     })
     const onSubmit = values => {
-        console.log('form data ', values);
+        return values
     }
     return (
        <>

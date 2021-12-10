@@ -21,7 +21,6 @@ const New_create_post = (props) => {
       axios
         .post("https://dummyjson.com/posts/add", body, { headers })
         .then((res) => {
-          console.log("Post Added to the Api", res);
           sharePost(createPost(res.data.body));
         });
     } else {
@@ -31,7 +30,7 @@ const New_create_post = (props) => {
   return (
     <div class="panel d-flex justify-content-center align-items-center my-5">
       <form>
-        {console.log("from create", props.user_id)}
+        
         <textarea
           placeholder="Whats in your mind today?"
           rows="4"

@@ -16,10 +16,10 @@ const UserSettings = () => {
     axios
       .put("https://dummyjson.com/users/1", body, { headers })
       .then((res) => {
-        console.log(res);
+        
       })
       .catch((err) => {
-        console.log(err);
+        return err ;
       });
   };
   const initialValues = {
@@ -66,7 +66,7 @@ const UserSettings = () => {
     state: Yup.string().required("State is Required"),
   });
   const onSubmit = (values) => {
-    console.log("form data ", values);
+    return values ; 
   };
   return (
    <>

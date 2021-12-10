@@ -22,10 +22,9 @@ const Newsfeed = () => {
       .then((incomingPosts) => {
         setposts(incomingPosts.data.posts);
         setIsFree(true);
-        console.log(incomingPosts.data.posts);
       })
       .catch((err) => {
-        console.log(err);
+        return err ;
       });
   }, []);
   const [user_posts, setuser_posts] = useState([])
@@ -87,7 +86,6 @@ const Newsfeed = () => {
             <div className="col-md-5">
               {user_posts.length !== 0 &&
                 user_posts.map((post) => {
-                  console.log(post);
                   return (
                     <New_post_item
                       firstName={"Matthew"}

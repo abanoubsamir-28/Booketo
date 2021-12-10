@@ -29,7 +29,6 @@ function PaymentMethods() {
     })
     const onSubmit = values => {
         validationSchema(values);
-        console.log('form data ', values);
     }
 
     const [credit, setcredit] = useState(false)

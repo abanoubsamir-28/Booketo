@@ -18,7 +18,6 @@ const validationSchema = yup.object({
 })
 const onSubmit = (values, submitProps) => {
     submitProps.resetForm()
-    console.log(values)
 }
 function ContactsUs() {
     return (

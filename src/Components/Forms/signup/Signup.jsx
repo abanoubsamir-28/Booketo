@@ -47,13 +47,13 @@ function Signup() {
     })
     const onSubmit = (values, submitProps) => {
         submitProps.resetForm()
-        console.log(values)
+        
     }
 
     const [typeofuser, settype] = useState(true)
     function normaluser() {
         settype(true)
-        console.log("normal user")
+        
     }
     function bookstoreuser() {
         settype(false)

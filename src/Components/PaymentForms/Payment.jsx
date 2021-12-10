@@ -30,7 +30,6 @@ function Payment() {
     })
     const onSubmit = values => {
         validationSchema(values);
-        console.log('form data ', values);
     }
     return (
        <>

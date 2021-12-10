@@ -20,7 +20,7 @@ const QuoteMachine = () => {
                 });
             })
             .catch((err) => {
-                console.log("Error Occured", err);
+                return err
             });
     }, []);
     return Quote.quote === "" ? (
