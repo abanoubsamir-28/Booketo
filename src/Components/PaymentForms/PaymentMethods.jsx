@@ -89,13 +89,10 @@ function PaymentMethods() {
                                                                     <div className="col-12">
 
                                                                         <FormikControl control='number' type='text' label='Credit Card Number' name='cardnumber' />
-                                                                        {/* <label htmlFor="credit" className="form-check-label mx-2 text-white">
-                                                                        Expires At:
-                                                                    </label> */}
-                                                                        <FormikControl control="date" type="date" lable="dhghdgfd" name="expire" className="text-danger bg-danger" />
-                                                                        <FormikControl control='date' type='date' label='Expires at ' name='expire' />
                                                                         <FormikControl control='input' type='text' label=' Name On Credit Card ' name='name' />
                                                                         <FormikControl control='number' type='text' label='CVC ' name='cvc' />
+                                                                        <label htmlFor="expire" className='text-white'>Expires at: </label>
+                                                                        <FormikControl control='date' type='date' label='Expires at ' name='expire' />
                                                                         <div type="submit" className="ms-1 mt-4">
                                                                             <Link to="/rate" className="btn btn-trans rounded-pill">Completet Payment</Link>
                                                                         </div>

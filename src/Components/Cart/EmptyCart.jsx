@@ -6,8 +6,8 @@ function EmptyCart() {
     return (
         <div>
             <div className=" text-center mt-2">
-                {/* <img className="w-50 d-block m-auto " src={emptyCart} alt="empty basket" /> */}
-                <Link to='/getbooks' className="btn btn-trans rounded-pill">shopping now <FaArrowRight />
+                <img className="w-50 d-block m-auto " src={emptyCart} alt="empty basket" />
+                <Link to='/getbooks' className="btn btn-trans rounded-pill my-5">shopping now <FaArrowRight />
                 </Link>
             </div>
         </div>

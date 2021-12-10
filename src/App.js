@@ -50,6 +50,7 @@ function App() {
       <Router>
         {/* <NavBar /> */}
         <Switch>
+          
           <Route exact path="/" component={Home} />
           <Route path="/newsfeed" component={Newsfeed} />
           <Route path="/userprofile" component={User_profile} />
@@ -61,7 +62,6 @@ function App() {
           <Route path="/card" component={BookCard} />
           <Route path="/uploadBook" component={UploadBookForm} />
           <Route path="/wishlist" component={Wishlist} />
-          <Route path="/notfound" component={NotFound} />
           <Route path="/publishers" component={Publisher} />
           <Route path="/storebooks" component={StoreBooks}/>
           <Route path="/payment" component={Payment} />
@@ -72,6 +72,7 @@ function App() {
           <Route path="/contactUs" component={ContactsUs} />
           <Route path="/:details_id" component={DisplayBooks} />
         </Switch>
+          {/* <Route component={NotFound} /> */}
         <Footer />
       </Router>
     </Provider>
