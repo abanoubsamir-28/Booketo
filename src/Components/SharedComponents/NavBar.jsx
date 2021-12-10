@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux'
 
 
 function NavBar() {
-    // eslint-disable-next-line
     const res = useSelector(state => state.cartStore.CartQuantity)
     const [logged, setlogged] = useState(true);
     function makefalse(){
