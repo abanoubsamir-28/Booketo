@@ -1,0 +1,56 @@
+.reviews h3 {
+    color: var(--light-brown);
+    font-family: var(--nunito-font);
+}
+
+.reviews h4 {
+    color: var(--light-brown);
+    font-family: var(--nunito-font);
+}
+
+.reviews h5 {
+    color: var(--light-brown);
+    font-family: var(--nunito-font);
+}
+
+.reviews .reviewBtn {
+    background-color: var(--secondary-bg);
+    transition: all ease-in-out 0.5s;
+}
+
+.reviews .reviewBtn:hover {
+    background-color: var(--baby-blue);
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.reviews .input_text {
+    word-break: break-all;
+}
+
+@media (max-width:576px) {
+    .reviews form {
+        width: 100% !important;
+    }
+    .reviews img {
+        width: 40% !important;
+    }
+}
+
+@media (min-width:576px) {
+    .reviews form {
+        width: 100% !important;
+    }
+    .reviews img {
+        width: 100% !important;
+    }
+}
+
+@media (min-width:1200px) {
+    .reviews form {
+        width: 50% !important;
+    }
+    /* .bookprofile.reviews img {
+        width: 50% !important;
+    } */
+}

@@ -1,0 +1,16 @@
+<svg id="books" xmlns="http://www.w3.org/2000/svg" width="311.6" height="244.251" viewBox="0 0 311.6 244.251">
+    <defs>
+        <style>
+            .cls-1{fill:#3a3a3a}
+        </style>
+    </defs>
+    <path id="Path_911" data-name="Path 911" class="cls-1" d="M0 280.33 58.662 69.047l50.566 14.039-5.586 20.12h56.243V75.183h52.478v20.739h28.42V50.207H311.6v244.251H94.053V137.739L50.566 294.368zM202.3 85.244h-32.354v24.915H202.3zm0 66.644h-32.354v114.406H202.3zm0-10.061v-5.773h-32.354v5.773zm0-15.834v-5.774h-32.354v5.774zm48.541 138.827h50.7V79.713h-50.7zm0-204.553v9.385h50.7v-9.384zm50.7 224.13v-9.517h-50.7v9.52zm-89.176 0h28.42V105.982h-28.42zm-10.061 0v-8.044h-32.358v8.047zm-98.189 0h55.771V113.266h-55.772zm-60.551-2.415 35.373-127.406-31.177-8.657-35.375 127.408zm38.066-137.1 2.77-9.982-31.178-8.657-2.772 9.983zm-15.965-63.45-9.75 35.117 31.178 8.657 9.75-35.117z" transform="translate(0 -50.207)"/>
+    <path id="Rectangle_78" data-name="Rectangle 78" class="cls-1" transform="translate(115.797 73.945)" d="M0 0h32.405v10.061H0z"/>
+    <path id="Rectangle_79" data-name="Rectangle 79" class="cls-1" transform="translate(115.797 91.62)" d="M0 0h32.405v10.061H0z"/>
+    <path id="Rectangle_80" data-name="Rectangle 80" class="cls-1" transform="translate(115.797 109.296)" d="M0 0h32.405v10.061H0z"/>
+    <path id="Rectangle_81" data-name="Rectangle 81" class="cls-1" transform="translate(115.797 211.668)" d="M0 0h32.405v10.061H0z"/>
+    <path id="Rectangle_82" data-name="Rectangle 82" class="cls-1" transform="translate(221.543 148.942)" d="M0 0h10.061v16.939H0z"/>
+    <path id="Rectangle_83" data-name="Rectangle 83" class="cls-1" transform="translate(221.543 175.455)" d="M0 0h10.061v38.297H0z"/>
+    <path id="Rectangle_84" data-name="Rectangle 84" class="cls-1" transform="translate(221.543 93.706)" d="M0 0h10.061v45.662H0z"/>
+    <path id="Rectangle_85" data-name="Rectangle 85" class="cls-1" transform="translate(221.543 67.191)" d="M0 0h10.061v17.676H0z"/>
+</svg>

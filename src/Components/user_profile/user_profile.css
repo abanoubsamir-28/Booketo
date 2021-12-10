@@ -1,0 +1,66 @@
+
+
+.user__profile .user_card {
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer ; 
+    font-family: 'Bebas Neue', cursive;
+    /* background-image: url('../../assets/UserProfile/books.svg');
+    background-position: bottom right;
+    background-size: 15%;
+    background-repeat: no-repeat; */
+}
+
+
+.user__profile .user_card:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #26A3A6;
+    transform: scaleY(1);
+    transition: all 0.5s;
+    transform-origin: bottom
+}
+
+
+.user__profile .user_card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #D1314F;
+    transform: scaleY(0);
+    transition: all 0.5s;
+    transform-origin: bottom
+}
+
+
+.user__profile .user_card:hover::after {
+    transform: scaleY(1)
+}
+
+
+.user__profile .fonts {
+    font-size: 11px
+}
+
+
+.user__profile .contact_info h5 {
+    color: #26A3A6;
+    text-align: left;
+}
+
+.user__profile .contact_info h5 span {
+    color: #D1314F;
+}
+
+.user__profile p {
+    color: #D1314F;
+}

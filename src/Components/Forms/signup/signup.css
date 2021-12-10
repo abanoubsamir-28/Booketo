@@ -1,0 +1,17 @@
+.sign_up {
+    background-image: url("../../../assets/forms_assests/SignupBackground.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.sign_up .overlay {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.polices span {
+    transition: .5s;
+}
+
+.polices span:hover {
+    color: var(--light-brown) !important;
+}

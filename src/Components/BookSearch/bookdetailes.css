@@ -1,0 +1,58 @@
+    .bookProfile img {
+        width: 50% !important;
+    }
+    
+    .bookProfile__content h2 {
+        font-family: var(--nunito-font);
+    }
+    
+    .bookProfile .wishBtn {
+        background-color: var(--secondary-bg);
+        transition: all ease-in-out 0.5s;
+    }
+    
+    .bookProfile .wishBtn:hover {
+        background-color: var(--baby-blue);
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+    
+    .bookProfile .cartBtn {
+        background-color: var( --light-brown);
+        transition: all ease-in-out 0.5s;
+    }
+    
+    .bookProfile .cartBtn:hover {
+        background-color: var(--baby-blue);
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+    
+    @media (max-width:576px) {
+        .bookProfile img {
+            width: 100% !important;
+            margin-bottom: 1rem;
+        }
+        .reviews img {
+            width: 40% !important;
+        }
+    }
+    
+    @media (min-width:576px) {
+        .bookProfile img {
+            width: 100% !important;
+        }
+        .reviews img {
+            width: 100% !important;
+        }
+    }
+    
+    @media (min-width:1200px) {
+        .bookProfile img {
+            width: 100% !important;
+            margin-top: 0.5rem;
+        }
+        .reviews img {
+            width: 75% !important;
+        }
+    }

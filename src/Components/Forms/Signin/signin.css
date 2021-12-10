@@ -1,0 +1,20 @@
+.sign_in {
+    background-image: url("../../../assets/forms_assests/SigninBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-family: var(--);
+}
+
+.sign_in .sing_in_options .icon {
+    cursor: pointer;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+
+.sing_in_options .icon:hover {
+    color: var(--light-brown) !important;
+}

@@ -1,0 +1,56 @@
+.header .carousel-indicators [data-bs-target] {
+    background-color: #000 !important;
+}
+
+.header .carousel-caption {
+    bottom: 30% !important;
+}
+
+.header h1 {
+    font-weight: 700;
+    color: #9f4431;
+}
+
+.header .btn {
+    background-color: #9f4431 !important;
+    color: #fff;
+}
+
+@media (max-width: 576px) {
+    .header .carousel-caption {
+        bottom: 5% !important;
+        left: 4%;
+    }
+    .header .carousel-caption .center {
+        position: absolute;
+        right: -10% !important;
+        bottom: 40%;
+    }
+    .header .carousel-control-next div {
+        display: none;
+    }
+    .header .carousel-control-prev div {
+        display: none;
+    }
+    .header .carousel-indicators [data-bs-target] {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header h1 {
+        font-size: 3.6rem;
+    }
+}
