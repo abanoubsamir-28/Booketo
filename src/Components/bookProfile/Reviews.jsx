@@ -72,9 +72,11 @@ const Reviews = ({ values }) => {
                                 onChange={inputReview}
                                 placeholder="Write your review here">
                             </textarea>
-                            <button type="submit" className="reviewBtn btn ms-2 my-3" >Add Review</button>
+
+                            <button type="submit" className="reviewBtn btn btn-trans mb-5 rounded-pill ms-2 mt-3" >Add Review</button>
+
                         </form>
-                        
+
                     </div>
                 </div >)
                 : <Loader />

@@ -6,7 +6,9 @@ import '../../../main-style.css'
 import './signin.css'
 import { GrFacebook, GrTwitter, GrGoogle } from 'react-icons/gr'
 import { Link } from 'react-router-dom';
+
 import LogInNavbar from '../../SharedComponents/navbarHome/logInNavbar';
+
 function Signin() {
     const initialValues = {
         email: '',
@@ -18,8 +20,11 @@ function Signin() {
         password: Yup.string().required('Password is required field'),
         rememberme: Yup.string()
     })
-    const onSubmit = values => {
-        sessionStorage.setItem("isLogged","true")
+
+   const onSubmit = (values, submitProps) => {
+        submitProps.resetForm()
+        console.log(values)
+
     }
     return (
         <>
@@ -51,11 +56,9 @@ function Signin() {
                                                 Remember Me
                                             </label>
                                         </div>
-                                   
                                         <Link to="/newsfeed" className="btn btn-trans rounded-pill ms-3 nmt-3">Log in </Link>
-                                        <span className="text-white mx-1">
-                                            <a href="#google"> Register?</a>
-                                        </span>
+                                            <Link to="/register" className='text-decoration-none fw-bold'>Register?</Link>
+
                                     </Form>
                                 </div>
                             </div>
@@ -64,9 +67,9 @@ function Signin() {
                 </Formik >
                 <h5 className="text-white text-center py-4">More Sign in Options</h5>
                 <div className="sing_in_options d-flex justify-content-center align-items-center">
-                    <GrFacebook className="icon text-white fs-3 mx-3" />
-                    <GrTwitter className="icon text-white fs-3 mx-3" />
-                    <GrGoogle className="icon text-white fs-3 mx-3" />
+                    <GrFacebook className="icon facebook text-white fs-3 mx-3" />
+                    <GrTwitter className="icon twitter text-white fs-3 mx-3" />
+                    <GrGoogle className="icon google text-white fs-3 mx-3" />
                 </div>
             </div>
         </div>

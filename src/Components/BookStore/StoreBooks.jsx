@@ -30,7 +30,7 @@ function StoreBooks() {
         <div>
             {books ? (
                 <div>
-                    <Book books={currentPost} />
+                    <Book books={currentPost}  />
                     <Pagination booksPerPage={booksPerPage} totalBooks={books.length} paginate={paginate} />
                 </div>
             )

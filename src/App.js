@@ -41,6 +41,7 @@ import Publisher from "./Components/publishers/Publisher.jsx";
 // ||||||| e346519
 import "./App.css";
 import Payment from "./Components/PaymentForms/Payment.jsx";
+import StoreBooks from "./Components/BookStore/StoreBooks.jsx";
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
@@ -62,6 +63,7 @@ function App() {
           <Route path="/wishlist" component={Wishlist} />
           <Route path="/notfound" component={NotFound} />
           <Route path="/publishers" component={Publisher} />
+          <Route path="/storebooks" component={StoreBooks}/>
           <Route path="/payment" component={Payment} />
           <Route path="/paymentMethod" component={PaymentMethods} />
           <Route path="/rate" component={Rate} />
