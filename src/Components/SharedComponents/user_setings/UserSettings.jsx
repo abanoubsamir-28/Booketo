@@ -219,41 +219,7 @@ const UserSettings = () => {
                   />
                 </div>
               </div>
-              <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center address">
-                  <span>Edit Bank Account</span>
-                  <span class="border px-3 p-1 add-address">
-                    <i class="fa fa-plus"></i>&nbsp;Bank Account
-                  </span>
-                </div>
-                <div class="col-md-12">
-                  <label class="labels">Card Expire</label>
-                  <FormikControl
-                    control="input"
-                    type="text"
-                    label="Adress "
-                    name="cardexpire"
-                  />
-                </div>
-                <div class="col-md-12">
-                  <label class="labels">Card Number</label>
-                  <FormikControl
-                    control="input"
-                    type="number"
-                    label="City "
-                    name="cardnumber"
-                  />
-                </div>
-                <div class="col-md-12">
-                  <label class="labels">Card type</label>
-                  <FormikControl
-                    control="input"
-                    type="text"
-                    label="State "
-                    name="cardtype"
-                  />
-                </div>
-              </div>
+
             </div>
           </div>
         </div>

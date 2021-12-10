@@ -43,7 +43,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
 
   useEffect(() => {
     axios
-      .get("https://dummyjson.com/users/6")
+      .get("https://dummyjson.com/users/5")
       .then((res) => {
         fetchPosts(res.data.id);
         setuser({
