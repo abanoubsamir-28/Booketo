@@ -64,7 +64,7 @@ const Newsfeed = () => {
                   ></textarea>
                 </form>
                 <footer class="panel-footer my-4 mx-auto d-flex justify-content-center align-items-center ">
-                  <button class="btn pull-right text-white" onClick={addPost}>
+                  <button class="btn btn-trans rounded-pill" onClick={addPost}>
                     Post
                   </button>
                 </footer>
