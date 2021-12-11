@@ -176,7 +176,7 @@ const UserSettings = () => {
                   </div>
                   <div class="mt-5 text-center">
                     <button
-                      class="btn btn-primary profile-button"
+                      class="btn btn-trans rounded-pill"
                       type="button"
                       onClick={updateUser}
                     >
