@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup'
 import FormikControl from '../SharedComponents/FormsFields/FormikControl';
 import { Link } from 'react-router-dom';
+import NavBar from '../SharedComponents/NavBar';
 
 function PaymentMethods() {
     const initialValues = {
@@ -27,10 +29,9 @@ function PaymentMethods() {
     })
     const onSubmit = values => {
         validationSchema(values);
-        console.log('form data ', values);
     }
 
-    const [credit, setcredit] = useState()
+    const [credit, setcredit] = useState(false)
     function paywithcredit() {
         setcredit(true)
     }
@@ -38,85 +39,88 @@ function PaymentMethods() {
         setcredit(false)
     }
     return (
-        <div>
-            <div className="sign_up form position-relative vh-100 ">
-                <div className="overlay w-100 position-absolute w-100 h-100 d-flex justify-content-center align-items-center ">
-                    <div className="row py-2 justify-content-center w-100">
-                        <div className="col-11">
-                            <h2 className="mx-3 fw-bold text-center">Payment Methods</h2>
-                            <Formik initialValues={initialValues}
-                                validationSchema={validationSchema}
-                                onSubmit={onSubmit}
-                            >
-                                {formik => (
-                                    <div className="form__content container">
-                                        <div className="row form__content__row">
-                                            <div className="col-6">
-                                                <Form>
-                                                    <div className="my-2 ">
-                                                        <input
-                                                            className="form-check-input "
-                                                            type="radio"
-                                                            name="payment"
-                                                            id="cash"
-                                                            onChange={paywithcash}
-                                                            defaultChecked={true}
-                                                        />
-                                                        <label htmlFor="rememberme" className="form-check-label mx-2 text-white">
-                                                            Cash On Delivery
-                                                        </label>
-                                                    </div>
-                                                    <div>
-                                                        <input
-                                                            className="form-check-input "
-                                                            type="radio"
-                                                            name="payment"
-                                                            id="credit"
-                                                            onChange={paywithcredit}
+        <>
+            <NavBar />
+            <div>
+                <div className="sign_up form position-relative vh-100 ">
+                    <div className="overlay w-100 position-absolute w-100 h-100 d-flex justify-content-center align-items-center ">
+                        <div className="row py-2 justify-content-center w-100">
+                            <div className="col-11">
+                                <h2 className="mx-3 fw-bold text-center">Payment Methods</h2>
+                                <Formik initialValues={initialValues}
+                                    validationSchema={validationSchema}
+                                    onSubmit={onSubmit}
+                                >
+                                    {formik => (
+                                        <div className="form__content container">
+                                            <div className="row form__content__row">
+                                                <div className="col-6">
+                                                    <Form>
+                                                        <div className="my-2 ">
+                                                            <input
+                                                                className="form-check-input "
+                                                                type="radio"
+                                                                name="payment"
+                                                                id="cash"
+                                                                onChange={paywithcash}
+                                                                defaultChecked={true}
+                                                            />
+                                                            <label htmlFor="rememberme" className="form-check-label mx-2 text-white">
+                                                                Cash On Delivery
+                                                            </label>
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                                className="form-check-input "
+                                                                type="radio"
+                                                                name="payment"
+                                                                id="credit"
+                                                                onChange={paywithcredit}
 
-                                                        />
-                                                        <label htmlFor="credit" className="form-check-label mx-2 text-white">
-                                                            Credit Card
-                                                        </label>
-                                                    </div>
-                                                    {
-                                                        credit === true
-                                                            ?
-                                                            <div className="row w-100">
-                                                                <div className="col-12">
+                                                            />
+                                                            <label htmlFor="credit" className="form-check-label mx-2 text-white">
+                                                                Credit Card
+                                                            </label>
+                                                        </div>
+                                                        {
+                                                            credit === true
+                                                                ?
+                                                                <div div className="row w-100">
+                                                                    <div className="col-12">
 
-                                                                    <FormikControl control='number' type='text' label='Credit Card Number' name='cardnumber' />
-                                                                    <label htmlFor="credit" className="form-check-label mx-2 text-white">
-                                                                        Expires At:
-                                                                    </label>
-                                                                    <FormikControl control='date' type='date' label='Expires at ' name='expire' />
-                                                                    <FormikControl control='input' type='text' label=' Name On Credit Card ' name='name' />
-                                                                    <FormikControl control='number' type='text' label='CVC ' name='cvc' />
-                                                                    <div type="submit" className="ms-1 mt-4">
-                                                                        <Link to="/rate" className="btn btn-trans rounded-pill">Completet Payment</Link>
+                                                                        <FormikControl control='number' type='text' label='Credit Card Number' name='cardnumber' />
+                                                                        <FormikControl control='input' type='text' label=' Name On Credit Card ' name='name' />
+                                                                        <FormikControl control='number' type='text' label='CVC ' name='cvc' />
+                                                                        <label htmlFor="expire" className='text-white'>Expires at: </label>
+                                                                        <FormikControl control='date' type='date' label='Expires at ' name='expire' />
+                                                                        <div type="submit" className="ms-1 mt-4">
+                                                                            <Link to="/rate" className="btn btn-trans rounded-pill">Completet Payment</Link>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            :
-                                                            <div type="submit" className="ms-1 mt-4">
-                                                                <Link to="/rate" className="btn btn-trans rounded-pill ">Completet Payment</Link>
-                                                            </div>
-                                                    }
+                                                                :
+                                                                <div type="submit" className="ms-1 mt-4">
+                                                                    <Link to="/rate" className="btn btn-trans rounded-pill ">Completet Payment</Link>
+                                                                </div>
+                                                        }
 
-                                                </Form>
+                                                    </Form>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                )}
-                            </Formik >
+                                    )}
+                                </Formik >
 
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </div>
+        </>
+
     )
 }
 
-export default PaymentMethods
+export default PaymentMethods ; 

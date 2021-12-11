@@ -5,6 +5,10 @@ import FormikControl from '../../SharedComponents/FormsFields/FormikControl';
 import '../../../main-style.css'
 import './signin.css'
 import { GrFacebook, GrTwitter, GrGoogle } from 'react-icons/gr'
+import { Link } from 'react-router-dom';
+
+import LogInNavbar from '../../SharedComponents/navbarHome/logInNavbar';
+
 function Signin() {
     const initialValues = {
         email: '',
@@ -16,10 +20,14 @@ function Signin() {
         password: Yup.string().required('Password is required field'),
         rememberme: Yup.string()
     })
-    const onSubmit = values => {
-        // console.log('form data ', values);
+
+   const onSubmit = (values, submitProps) => {
+        submitProps.resetForm()
+
     }
     return (
+        <>
+        <LogInNavbar/>
         <div className="sign_in form overflow-hidden">
             <div className="overlay  w-100 py-5">
                 <h2 className="text-white text-center">Login</h2>
@@ -47,10 +55,9 @@ function Signin() {
                                                 Remember Me
                                             </label>
                                         </div>
-                                        <button type="submit" className="btn me-3">Login</button>
-                                        <span className="text-white mx-1">
-                                            <a href="#google"> Register?</a>
-                                        </span>
+                                        <Link to="/newsfeed" className="btn btn-trans rounded-pill ms-3 nmt-3">Log in </Link>
+                                            <Link to="/register" className='text-decoration-none fw-bold'>Register?</Link>
+
                                     </Form>
                                 </div>
                             </div>
@@ -59,13 +66,14 @@ function Signin() {
                 </Formik >
                 <h5 className="text-white text-center py-4">More Sign in Options</h5>
                 <div className="sing_in_options d-flex justify-content-center align-items-center">
-                    <GrFacebook className="icon text-white fs-3 mx-3" />
-                    <GrTwitter className="icon text-white fs-3 mx-3" />
-                    <GrGoogle className="icon text-white fs-3 mx-3" />
+                    <GrFacebook className="icon facebook text-white fs-3 mx-3" />
+                    <GrTwitter className="icon twitter text-white fs-3 mx-3" />
+                    <GrGoogle className="icon google text-white fs-3 mx-3" />
                 </div>
             </div>
         </div>
 
+        </>
     )
 }
 export default Signin

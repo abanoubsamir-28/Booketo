@@ -19,7 +19,7 @@ const Readingchallenge = () => {
     return (
         <div className="card reading-challenge text-white bg-warning w-100">
             <div className="card-header text-center">Reading Challenge
-                {noReads && <p className="text-center text-danger fw-bold py-1">Time to Read More Books !
+                {noReads && <p className="text-center text-white fw-bold py-1">Time to Read More Books !
                 </p>}</div>
             <div className="card-body row justify-content-center">
                 <button className="text-white increase btn fs-1 col-md-2 p-1" onClick={increaseReads}><BsFileEarmarkArrowUpFill /></button>

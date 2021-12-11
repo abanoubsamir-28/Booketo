@@ -11,12 +11,13 @@ function StoreBooks() {
     const [booksPerPage] = useState(10)
     useEffect(() => {
         getBooks()
+        // eslint-disable-next-line
     }, [])
     //Fetching data
     const getBooks = () => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=+inpublisher:${publisher}&key=AIzaSyCM7I-qPZ4-QwXU4xupLOBKpTX2N4XWc0E&maxResults=40`)
             .then(res => { setbooks(res.data.items) })
-            .catch(error => { console.log(error) })
+            .catch(error => { return error })
     }
     //Get cuurent books
     const indexOfLastBook = currentPage * booksPerPage
@@ -30,7 +31,7 @@ function StoreBooks() {
         <div>
             {books ? (
                 <div>
-                    <Book books={currentPost} />
+                    <Book books={currentPost}  />
                     <Pagination booksPerPage={booksPerPage} totalBooks={books.length} paginate={paginate} />
                 </div>
             )

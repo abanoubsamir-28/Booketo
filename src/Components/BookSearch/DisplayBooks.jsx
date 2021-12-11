@@ -10,6 +10,7 @@ import { addToWishList, removeFromWishList } from "../../Store/wishList/WishList
 import Wishlist from "../SharedComponents/wishlist/Wishlist";
 import './bookdetailes.css'
 import { ToastContainer } from "react-toastify";
+import NavBar from "../SharedComponents/NavBar";
 function DisplayCom({ match }) {
   const dispatch = useDispatch();
   const [data, setData] = useState(null);
@@ -49,11 +50,12 @@ function DisplayCom({ match }) {
   return (
     <>   {data ? (
       <>
+        <NavBar />
         <Wishlist />
         <section className="bookProfile">
           <div className="container mt-5">
             <div className="row">
-              <div className="bookProfile__img col-4">
+              <div className="bookProfile__img col-md-4 ">
                 <img src={data?.volumeInfo?.imageLinks !== undefined ? data?.volumeInfo?.imageLinks.thumbnail : "https://via.placeholder.com/150"} alt={data?.title} />
               </div>
               <div className="bookData.bookProfile__content col-md-8 col-lg-6">
@@ -76,7 +78,7 @@ function DisplayCom({ match }) {
                   ""
                 )}
                 {data.volumeInfo?.description !== undefined ? (
-                  <p className="ms-2">{data.volumeInfo?.description}</p>
+                  <p className="ms-2">{data.volumeInfo?.description.substring(0, 350)}</p>
                 ) : (
                   ""
                 )}
@@ -129,7 +131,6 @@ function DisplayCom({ match }) {
                   onClick={() => handleAddtoCart(data)}
                   className="btn-borde rounded-pill btn mx-3 "
                   type="button"
-
                 >
                   <span className="fs-5"></span> <AiOutlineShoppingCart /> Add
                   to cart

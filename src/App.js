@@ -41,35 +41,39 @@ import Publisher from "./Components/publishers/Publisher.jsx";
 // ||||||| e346519
 import "./App.css";
 import Payment from "./Components/PaymentForms/Payment.jsx";
+import StoreBooks from "./Components/BookStore/StoreBooks.jsx";
 // import getData, { BookAction } from './Store/bookProfile/BookAction'
 // import BookProfile from './Components/bookProfile/BookProfile'
 function App() {
   return (
     <Provider store={store}>
       <Router>
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/newsfeed" component={Newsfeed} />
-          <Route path="/userprofile" component={User_profile} />
-          <Route path="/login" component={Signin} />
-          <Route path="/settings" component={UserSettings} />
-          <Route path="/register" component={Signup} />
-          <Route path="/getbooks" component={GetBooks} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/card" component={BookCard} />
-          <Route path="/uploadBook" component={UploadBookForm} />
-          <Route path="/wishlist" component={Wishlist} />
-          <Route path="/notfound" component={NotFound} />
-          <Route path="/publishers" component={Publisher} />
-          <Route path="/payment" component={Payment} />
-          <Route path="/paymentMethod" component={PaymentMethods} />
-          <Route path="/rate" component={Rate} />
-          <Route path="/thanks" component={Thanks} />
-          <Route path="/bookstore" component={BasicTabs} exact />
-          <Route path="/contactUs" component={ContactsUs} />
-          <Route path="/:details_id" component={DisplayBooks} />
-        </Switch>
+        {/* <NavBar /> */}
+        <div className="wrapper">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/newsfeed" component={Newsfeed} />
+            <Route path="/userprofile" component={User_profile} />
+            <Route path="/login" component={Signin} />
+            <Route path="/settings" component={UserSettings} />
+            <Route path="/register" component={Signup} />
+            <Route path="/getbooks" component={GetBooks} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/card" component={BookCard} />
+            <Route path="/uploadBook" component={UploadBookForm} />
+            <Route path="/wishlist" component={Wishlist} />
+            <Route path="/publishers" component={Publisher} />
+            <Route path="/storebooks" component={StoreBooks} />
+            <Route path="/payment" component={Payment} />
+            <Route path="/paymentMethod" component={PaymentMethods} />
+            <Route path="/rate" component={Rate} />
+            <Route path="/thanks" component={Thanks} />
+            <Route path="/bookstore" component={BasicTabs} exact />
+            <Route path="/contactUs" component={ContactsUs} />
+            <Route path="/:details_id" component={DisplayBooks} />
+          </Switch>
+        </div>
+        {/* <Route component={NotFound} /> */}
         <Footer />
       </Router>
     </Provider>

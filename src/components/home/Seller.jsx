@@ -9,7 +9,7 @@ const Seller = () => {
         <div className="seller p-5 my-5">
             <div className="container ">
                 <div className="seller__header text-center">
-                    <h2 className="h1 mb-4 fw-bold">Best seller</h2>
+                    <h2 className="h1 mb-4 fw-bold" style={{ color: "var(--dark-brown)", fontFamily: 'var(--nunito-font)' }}>Best seller</h2>
                 </div>
                 <div className="seller__item row align-items-between px-lg-5 text-center">
                     {/* start */}
@@ -48,7 +48,7 @@ const Seller = () => {
                                         activeColor="#ffd700"
                                     />
                                 </div>
-                                    <h6 className="fw-bold">223 EGP</h6>
+                                <h6 className="fw-bold">223 EGP</h6>
                             </figcaption>
                         </figure>
                     </div>
@@ -67,7 +67,7 @@ const Seller = () => {
                                         activeColor="#ffd700"
                                     />
                                 </div>
-                                    <h6 className="fw-bold">160 EGP</h6>
+                                <h6 className="fw-bold">160 EGP</h6>
                             </figcaption>
                         </figure>
                     </div>
@@ -86,7 +86,7 @@ const Seller = () => {
                                         activeColor="#ffd700"
                                     />
                                 </div>
-                                    <h6 className="fw-bold">46 EGP</h6>
+                                <h6 className="fw-bold">46 EGP</h6>
                             </figcaption>
                         </figure>
                         {/* <div className="seller__contnent ">

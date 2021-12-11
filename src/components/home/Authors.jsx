@@ -7,7 +7,7 @@ const Authors = () => {
         <div className="author mt-5">
             <div className="container p-5">
                 <div className="author__title">
-                    <h2 className=" ms-4 mb-5 text-center fw-bolder h1">Authors</h2>
+                    <h2 className=" ms-4 mb-5 text-center fw-bolder h1" style={{ color: "var(--dark-brown)", fontFamily: 'var(--nunito-font)' }}>Authors</h2>
                 </div>
                 <div className="row justify-content-center">
                     {/* start */}

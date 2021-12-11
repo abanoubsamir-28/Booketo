@@ -4,9 +4,9 @@
     background-size: cover;
     background-position: center center;
     font-family: var(--nunito); */
-    min-height:100%;
-    background:linear-gradient(0deg, var(--light-brown), #9f443159), url("../../../assets/forms_assests/SigninBackground.jpg");
-    background-size:cover;
+    min-height: 100%;
+    background: linear-gradient(0deg, var(--light-brown), #9f443159), url("../../../assets/forms_assests/SigninBackground.jpg");
+    background-size: cover;
 }
 
 .sign_in .sing_in_options .icon {
@@ -19,5 +19,5 @@
 }
 
 .sing_in_options .icon:hover {
-    color: var(--light-brown) !important;
+    color: var(--dark-brown) !important;
 }

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { nodeName } from 'jquery';
 import React, { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap';
 import { AiOutlineArrowRight } from 'react-icons/ai';
@@ -34,7 +33,7 @@ function NewestBooks() {
                                         <p className="py-2">
                                             Featuring the first three Novellas in the series this is perfect for lovers of Detectives.
                                         </p>
-                                        <button className="btn px-4 call-to-action rounded-pill">find more</button>
+                                        <Link to="/newsfeed" className="btn px-4 call-to-action rounded-pill">find more</Link>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +72,7 @@ function NewestBooks() {
                                                 }
                                             </div>
                                         </Card.Text>
-                                        <Link to={`/${book?.id}`} className="btn btn-trans stretched-link mt-2">More Details <AiOutlineArrowRight /></Link>
+                                        <Link to={`/${book?.id}`} className="btn btn-trans stretched-link p-2 mt-2">More Details <AiOutlineArrowRight /></Link>
                                     </Card.Body>
                                 </Card>
                             </div>
