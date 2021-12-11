@@ -4,8 +4,9 @@ import { MdOutlineFavorite } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromWishList } from '../../../Store/wishList/WishListAction'
 import './wishlist.css'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// eslint-disable-next-line
 const notify = () => toast("You already added this book.");
 
 const Wishlist = () => {
@@ -19,7 +20,7 @@ const Wishlist = () => {
         <div>
             {list ?
                 <p>
-                    
+
                     <button className=" wishlistBtn shadow-lg rounded-pill position-fixed p-2 bottom-0 end-0 mb-3 me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <MdOutlineFavorite className="fs-2" />
                     </button>
@@ -50,7 +51,7 @@ const Wishlist = () => {
                     </div>
                 </p>
                 : ''}
-                
+
         </div>
     )
 }

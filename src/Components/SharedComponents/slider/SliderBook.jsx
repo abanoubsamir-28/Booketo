@@ -56,7 +56,7 @@ function SliderBook() {
             {result ?
                 <div className="slider container px-5 my-5">
                     <div className="slider__header">
-                        <h2 className='text-center mb-4 fw-bold h1'> Newest Book </h2>
+                        <h2 className='text-center mb-4 fw-bold h1' style={{color:"var(--dark-brown)", fontFamily:'var(--nunito-font)'}}> Newest Book </h2>
                       
                     </div>
                     <Slider {...settings}>

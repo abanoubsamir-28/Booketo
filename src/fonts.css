@@ -27,6 +27,12 @@
     margin-right: 2%;
 }
 .profilephoto{
-    width: 70%;
-    border-radius: 50%;
+    width: 30% !important;
 }
+@media (max-width:576px)  {
+    .profilephoto{
+        width: 50% !important;
+    }
+    
+}
+

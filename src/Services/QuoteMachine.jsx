@@ -26,8 +26,8 @@ const QuoteMachine = () => {
     return Quote.quote === "" ? (
         <Loader />
     ) : (
-        <div class="card quote-machine text-center w-75 mx-auto mb-3">
-            <div class="card-header fw-bold text-white" style={{ background: '#ae7a5d' }}>Quote of The Day</div>
+        <div class="card quote-machine text-center w-100 my-3 mx-auto mb-3">
+            <div class="card-header fw-bold text-dark" style={{ background: '#f1f1f1' }}>Quote of The Day</div>
             <div class="card-body">
                 <h5 class="card-title">{Quote.author === "Unknown" ? "" : Quote.author}</h5>
                 <p class="card-text d-flex align-align-items-center justify-content-center">
@@ -42,7 +42,7 @@ const QuoteMachine = () => {
                     </div>
                 </p>
             </div>
-            <div class="card-footer fw-bold text-white" style={{ background: '#ae7a5d' }}>Booketo</div>
+            <div class="card-footer fw-bold text-dark" style={{ background: '#f1f1f1' }}>Booketo</div>
         </div>
     );
 };

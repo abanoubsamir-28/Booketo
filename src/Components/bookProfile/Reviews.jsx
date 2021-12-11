@@ -3,7 +3,6 @@ import avatar from "./../../assets/bookProfile/Mask Group 1@2x.webp"
 import axios from "axios"
 import './reviews.css'
 import Loader from './../SharedComponents/Loader/Loader'
-import AddReview from '../Forms/addReviews/AddReview'
 
 const Reviews = ({ values }) => {
     const [post, setPost] = useState('')
@@ -11,7 +10,7 @@ const Reviews = ({ values }) => {
     const [title, setTitle] = useState('')
     useEffect(() => {
         getOnePost()
-        
+
 
     }, [])
     const getOnePost = () => {
@@ -34,7 +33,7 @@ const Reviews = ({ values }) => {
     }
     const addReview = (values) => {
         setPost([...post, values])
-        
+
     }
 
     return (
@@ -46,7 +45,7 @@ const Reviews = ({ values }) => {
                         {post.map((ele, i) => {
                             return (
 
-                                <div key={i} className="row col-lg-6 col-9 mt-3 border border-2 p-3 shadow">
+                                <div key={i} className="row col-lg-6  col-12 mt-3 border border-2 p-3 shadow">
                                     <div className="col-sm-3">
 
                                         <img src={avatar} alt="avatar" />

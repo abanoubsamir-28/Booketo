@@ -1,21 +1,12 @@
-// Edit Post Border (Bootstrap)
-// Comment Button (from 3)
-
 import "./user_profile.css";
 import React, { useEffect, useState, useRef } from "react";
 import { fetchPosts } from "../../Store/getPosts/getPostsActions";
 import axios from "axios";
 import { connect } from "react-redux";
 import Loader from "../SharedComponents/Loader/Loader";
-import New_create_post from "../SharedComponents/posts/new_create_post/New_create_post";
-import { useSelector } from "react-redux";
-import Postitem from "../SharedComponents/Postitem/Postitem";
 import New_post_item from "../SharedComponents/posts/new_post_item/New_post_item";
-
 import Wishlist from "../SharedComponents/wishlist/Wishlist";
 import { Link } from "react-router-dom";
-import SliderBook from '../SharedComponents/slider/SliderBook'
-
 import NavBar from "../SharedComponents/NavBar";
 const User_profile = ({ postsData, fetchPosts }) => {
   const [busy, setbusy] = useState(false);
@@ -77,11 +68,12 @@ const User_profile = ({ postsData, fetchPosts }) => {
       .catch((err) => {
         return err
       });
+    // eslint-disable-next-line
   }, []);
   const commentRef = useRef(null);
   const [user_posts, setuser_posts] = useState([])
   const addPost = () => {
-    if (commentRef.current.value == "") {
+    if (commentRef.current.value === "") {
       commentRef.current.placeholder = "Write Something....."
     } else {
 
@@ -90,7 +82,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
   }
   return (
     <>
-    <NavBar/>
+      <NavBar />
       {postsData.loading === true ? (
         <Loader />
       ) : (
@@ -115,8 +107,9 @@ const User_profile = ({ postsData, fetchPosts }) => {
               <div className="w-75 mx-auto">
                 {user_posts.length !== 0 &&
                   user_posts.map((post) => {
-                    
+
                     return (
+                      // eslint-disable-next-line
                       <New_post_item
                         firstName={user.first_name}
                         lastName={user.last_name}
@@ -132,6 +125,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
                 {busy &&
                   postsData.posts.data.posts?.map((post) => {
                     return (
+                      // eslint-disable-next-line
                       <New_post_item
                         firstName={user.first_name}
                         lastName={user.last_name}
@@ -147,7 +141,7 @@ const User_profile = ({ postsData, fetchPosts }) => {
             </div>
             <div className="user__card col-md-3 h-50 my-5 d-flex flex-column justify-content-center">
               <figure className="user__profile__image d-flex justify-content-center mt-5">
-                <img src={user.image} className="w-25 rounded-circle  " />
+                <img src={user.image} className="w-25 rounded-circle  " alt="" />
               </figure>
               <h5 class="text-center">
                 {user.first_name} {user.last_name}

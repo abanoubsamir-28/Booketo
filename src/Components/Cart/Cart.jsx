@@ -93,7 +93,9 @@ const Cart = () => {
                     </div>
                 </div>
                 :
-                <EmptyCart />
+                <div className="py-5">
+                    <EmptyCart />
+                </div>
             }
         </>
     )

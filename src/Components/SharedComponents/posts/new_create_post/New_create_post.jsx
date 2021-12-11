@@ -30,7 +30,7 @@ const New_create_post = (props) => {
   return (
     <div class="panel d-flex justify-content-center align-items-center my-5">
       <form>
-        
+
         <textarea
           placeholder="Whats in your mind today?"
           rows="4"
@@ -40,7 +40,7 @@ const New_create_post = (props) => {
         ></textarea>
       </form>
       <footer class="panel-footer mx-3">
-        <button class="btn pull-right text-white" onClick={sendPost}>
+        <button class="btn btn-trans rounded-pill" onClick={sendPost}>
           Post
         </button>
       </footer>

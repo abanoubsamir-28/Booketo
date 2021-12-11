@@ -1,8 +1,6 @@
 import { ADD_TO_WISHLIST, DELETE_FROM_WISHLIST } from "./WishListTypes";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { RiInformationLine } from "react-icons/ri";
-
 
 const initialState = {
     wishList: [],
@@ -16,7 +14,7 @@ export const WishListReducer = (state = initialState, action) => {
             );
             //found books in array
             if (bookFound.length > 0) {
-                toast.error('You already added this item',{position:'top-right'})
+                toast.error('You already added this item', { position: 'top-right' })
                 return {
                     ...state,
                     //same book

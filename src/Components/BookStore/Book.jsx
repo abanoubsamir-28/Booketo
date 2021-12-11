@@ -10,6 +10,7 @@ function Book({ books }) {
         <div>
             {books ? (
                 <div className="container mt-3">
+                    <h1 className='text-center my-5' style={{ color: "var(--dark-brown)", fontFamily: 'var(--nunito-font)' }}>Books Store</h1>
                     <div className="row">
                         {books.map((book, index) => (
                             <div className=" col-xl-3 col-md-4 col-sm-6 py-2" key={index}>
@@ -55,7 +56,7 @@ function Book({ books }) {
                         ))}
                     </div>
                 </div>
-               
+
             )
                 : <Loader />}
         </div >

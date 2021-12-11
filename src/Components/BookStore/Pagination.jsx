@@ -12,7 +12,8 @@ function Pagination({ booksPerPage, totalBooks, paginate }) {
                 {pageNumbers.map(number => (
                     <li key={number} className="page-item" aria-current="page">
                         {number > 0 ?
-                            (<a className="page-link " onClick={() => { paginate(number) }} style={{ cursor: 'pointer' }}>
+                        // eslint-disable-next-line
+                            (<a className="page-link" onClick={() => { paginate(number) }} style={{ cursor: 'pointer' }}>
                                 {number}
                             </a>)
                             : null}

@@ -18,7 +18,7 @@ function DisplayCom({ match }) {
 
   useEffect(() => {
     getSingleProduct();
-    
+
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const getSingleProduct = () => {
@@ -50,12 +50,12 @@ function DisplayCom({ match }) {
   return (
     <>   {data ? (
       <>
-      <NavBar/>
+        <NavBar />
         <Wishlist />
         <section className="bookProfile">
           <div className="container mt-5">
             <div className="row">
-              <div className="bookProfile__img col-4">
+              <div className="bookProfile__img col-md-4 ">
                 <img src={data?.volumeInfo?.imageLinks !== undefined ? data?.volumeInfo?.imageLinks.thumbnail : "https://via.placeholder.com/150"} alt={data?.title} />
               </div>
               <div className="bookData.bookProfile__content col-md-8 col-lg-6">
@@ -78,7 +78,7 @@ function DisplayCom({ match }) {
                   ""
                 )}
                 {data.volumeInfo?.description !== undefined ? (
-                  <p className="ms-2">{data.volumeInfo?.description.substring(0, 350) }</p>
+                  <p className="ms-2">{data.volumeInfo?.description.substring(0, 350)}</p>
                 ) : (
                   ""
                 )}
@@ -131,7 +131,6 @@ function DisplayCom({ match }) {
                   onClick={() => handleAddtoCart(data)}
                   className="btn-borde rounded-pill btn mx-3 "
                   type="button"
-                  
                 >
                   <span className="fs-5"></span> <AiOutlineShoppingCart /> Add
                   to cart
@@ -149,7 +148,7 @@ function DisplayCom({ match }) {
                   :
                   <button
                     onClick={() => handleRemoveFromWishlist(data)}
-                    className="btn-borde btn "
+                    className="btn-borde btn rounded-pill "
                     type="button"
                   >
                     <span className="fs-5 ms-2"></span> <AiFillHeart className="me-2 fs-4" />

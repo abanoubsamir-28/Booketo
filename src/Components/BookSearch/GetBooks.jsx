@@ -11,7 +11,9 @@ function GetBooks() {
     const [search, setsearch] = useState('')
     const [cat, setcat] = useState('')
     const [result, setResult] = useState([]);
+    // eslint-disable-next-line
     const [books, setbooks] = useState([])
+    // eslint-disable-next-line
     const [publisher] = useState('Bloomsbury Publishing')
     const [currentPage, setcurrentPage] = useState(1)
     const [booksPerPage] = useState(10)

@@ -11,6 +11,7 @@ function StoreBooks() {
     const [booksPerPage] = useState(10)
     useEffect(() => {
         getBooks()
+        // eslint-disable-next-line
     }, [])
     //Fetching data
     const getBooks = () => {
